@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+/* Force all major headings to use the premium serif font */
+h1, h2, h3 {
+  font-family: var(--font-serif);
+}

@@ -28,8 +28,8 @@ export default function Navbar() {
 
           {/* Call to Action Button */}
           <div className="flex items-center">
-            <Link href="/#golden-ticket" className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-5 rounded-lg shadow-sm transition-all hover:shadow-md">
-              Move to Sterling
+            <Link href="/#guide" className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-5 rounded-lg shadow-sm transition-all hover:shadow-md">
+              Get the Guide
             </Link>
           </div>
 
