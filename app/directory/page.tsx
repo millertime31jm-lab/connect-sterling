@@ -6,40 +6,40 @@ export default function Directory() {
       id: "civic",
       category: "City & Civic Services",
       items: [
-        { name: "City of Sterling", desc: "City Hall, Utility Billing, and General Municipal Inquiries.", link: "https://www.sterlingks.org/", phone: "(620) 278-3423" },
-        { name: "Sterling Chamber of Commerce", desc: "Local business networking, Mainstreet events, and economic development.", link: "#", phone: "Contact via Website" },
-        { name: "Planning & Zoning Commission", desc: "Building permits, zoning regulations, and town development plans.", link: "#", phone: "Via City Hall" },
-        { name: "Sterling Police Department", desc: "Non-emergency dispatch and local law enforcement.", link: "#", phone: "(620) 278-2100" }
+        { name: "City of Sterling (City Hall)", desc: "Utility billing, municipal inquiries, and city management.", link: "https://www.sterling-kansas.com", phone: "(620) 278-3423" },
+        { name: "Sterling Police Department", desc: "Non-emergency dispatch and local law enforcement.", link: "https://www.sterling-kansas.com", phone: "(620) 278-2100" },
+        { name: "Planning & Zoning Commission", desc: "Building permits, zoning regulations, and town development plans.", link: "https://www.sterling-kansas.com", phone: "Via City Hall" },
+        { name: "Sterling Chamber of Commerce", desc: "Local business networking, Mainstreet events, and economic development.", link: "#", phone: "Contact via Website" }
       ]
     },
     {
       id: "utilities",
       category: "Utilities & Essential Services",
       items: [
-        { name: "City Water & Trash", desc: "Set up your residential water, sewer, and refuse collection.", link: "#", phone: "(620) 278-3423" },
+        { name: "City Water, Sewer & Trash", desc: "Set up your residential water, sewer, and Stutzman refuse collection.", link: "https://www.sterling-kansas.com/609/Public-Utilities", phone: "(620) 278-3423" },
         { name: "Evergy (Electric)", desc: "Primary electrical provider for residential and commercial.", link: "https://www.evergy.com", phone: "800-383-1183" },
         { name: "Kansas Gas Service", desc: "Natural gas provider for the region.", link: "https://www.kansasgasservice.com", phone: "800-794-4780" },
-        { name: "MTC / IdeaTek / Brightspeed", desc: "Local fiber internet providers.", link: "/why-sterling#infrastructure", phone: "See Infrastructure Page" }
+        { name: "MTC / IdeaTek / Brightspeed", desc: "Local fiber internet providers. Up to 2 Gbps symmetrical.", link: "/why-sterling#infrastructure", phone: "See Infrastructure Page" }
       ]
     },
     {
-      id: "clubs",
-      category: "Clubs & Organizations",
+      id: "education",
+      category: "Education & Library",
       items: [
-        { name: "Sterling Rotary Club", desc: "Service organization focused on community initiatives and local scholarships.", link: "#", phone: "Meets Weekly" },
-        { name: "American Legion", desc: "Veterans organization supporting local service members and community events.", link: "#", phone: "Contact Local Post" },
-        { name: "Sterling Rec Commission", desc: "Youth sports leagues, summer camps, and adult recreation.", link: "#", phone: "(620) 278-2155" },
-        { name: "Rice County 4-H", desc: "Youth development, agriculture education, and county fair organization.", link: "#", phone: "Extension Office" }
+        { name: "Sterling Grade School (USD 376)", desc: "Pre-K through 6th grade education. Home of the Black Bears.", link: "https://www.usd376.com", phone: "(620) 278-3112" },
+        { name: "Sterling High School (USD 376)", desc: "7th through 12th grade. Athletics, arts, and college prep.", link: "https://www.usd376.com", phone: "(620) 278-2171" },
+        { name: "Sterling Free Public Library", desc: "Summer reading programs, public Wi-Fi, and toddler storytimes. Located at 138 N. Broadway.", link: "https://sterling.scklslibrary.info/", phone: "(620) 278-3191" },
+        { name: "Sterling College", desc: "Four-year Christ-centered liberal arts college.", link: "https://www.sterling.edu", phone: "(800) 346-1017" }
       ]
     },
     {
-      id: "faith",
-      category: "Churches & Faith Communities",
+      id: "recreation",
+      category: "Parks & Recreation",
       items: [
-        { name: "First Baptist Church", desc: "Southern Baptist congregation. Sunday services, youth groups, and community outreach.", link: "#", phone: "Check Website" },
-        { name: "United Methodist Church", desc: "Traditional services, community food bank support, and family ministries.", link: "#", phone: "Check Website" },
-        { name: "Sterling Reformed Presbyterian", desc: "Reformed theology, strong campus ministry connections with Sterling College.", link: "#", phone: "Check Website" },
-        { name: "Calvary Baptist Church", desc: "Independent Baptist congregation with active children's ministries.", link: "#", phone: "Check Website" }
+        { name: "Sterling Recreation Commission", desc: "Youth sports leagues, summer camps, and adult recreation.", link: "https://www.sterlingrec.org", phone: "(620) 278-2357" },
+        { name: "Sterling Municipal Pool", desc: "City pool access, swimming lessons, and private party rentals.", link: "https://www.sterling-kansas.com/266/Municipal-Swimming-Pool", phone: "(620) 904-7033" },
+        { name: "Sterling Community Wellness Center", desc: "Modern fitness hub with personal trainers and health coaches.", link: "https://www.sterlingrec.org", phone: "(620) 278-2357" },
+        { name: "Sterling Lake & Campground", desc: "Fishing, RV hookups, and community picnic areas.", link: "https://www.sterling-kansas.com/253/Parks-and-Recreation", phone: "Via City Hall" }
       ]
     }
   ];
@@ -54,7 +54,7 @@ export default function Directory() {
             The <span className="text-blue-700">Sterling</span> Directory.
           </h1>
           <p className="text-lg text-slate-600 leading-relaxed">
-            The contacts, organizations, and services you need to navigate life in town. 
+            The exact contacts, organizations, and local services you need to navigate life in town. 
           </p>
         </div>
       </div>
