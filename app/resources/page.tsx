@@ -1,79 +1,136 @@
 import Link from "next/link";
 
 export default function Resources() {
-  // PHASE 1 DATA STRUCTURE:
-  // Organized by category to make it highly scannable for newcomers.
-  const directory = [
+  const directoryData = [
     {
+      id: "housing",
       category: "Real Estate & Housing",
       items: [
-        { name: "Sterling Real Estate", description: "Local experts in residential and commercial properties.", contact: "555-0101" },
-        { name: "Midwest Builders", description: "Custom home construction and major renovations.", contact: "555-0102" }
+        { name: "Sterling Real Estate", desc: "Ready to find your family's landing spot? Our local agents know every block, every neighborhood, and the true value of a rural home.", link: "#", phone: "555-0101" },
+        { name: "Midwest Builders", desc: "Looking to build a custom home on a few acres? These are the local guys who actually show up, communicate, and do it right.", link: "#", phone: "555-0102" },
+        { name: "Title & Closing Services", desc: "Local professionals to ensure your closing process is smooth and frictionless.", link: "#", phone: "Pending" },
+        { name: "Local Lending", desc: "Community banks that actually understand rural and small-town housing markets.", link: "#", phone: "Pending" }
       ]
     },
     {
-      category: "Utilities & Infrastructure",
-      // Note: Added Gigabit Fiber here as it is a massive selling point for remote workers
+      id: "utilities",
+      category: "Utilities & Essential Services",
       items: [
-        { name: "Sterling City Utilities", description: "Water, trash, and local city services setup.", contact: "555-0103" },
-        { name: "ConnectKS Fiber", description: "Gigabit fiber internet installation for remote work.", contact: "555-0104" }
+        { name: "City Water, Sewer & Trash", desc: "Set up your residential water, sewer, and Stutzman refuse collection.", link: "https://www.sterling-kansas.com/609/Public-Utilities", phone: "(620) 278-3423" },
+        { name: "Evergy (Electric)", desc: "Primary electrical provider for residential and commercial.", link: "https://www.evergy.com", phone: "800-383-1183" },
+        { name: "Kansas Gas Service", desc: "Natural gas provider for the region.", link: "https://www.kansasgasservice.com", phone: "800-794-4780" },
+        { name: "MTC / IdeaTek / Brightspeed", desc: "Local fiber internet providers. Up to 2 Gbps symmetrical.", link: "/why-sterling#infrastructure", phone: "See Infrastructure Page" }
       ]
     },
     {
-      category: "Healthcare & Wellness",
+      id: "civic",
+      category: "City & Civic Services",
       items: [
-        { name: "Sterling Medical Clinic", description: "Primary care, pediatrics, and general practice.", contact: "555-0105" },
-        { name: "Main Street Pharmacy", description: "Local prescriptions and wellness supplies.", contact: "555-0106" }
+        { name: "City of Sterling (City Hall)", desc: "Utility billing, municipal inquiries, and city management.", link: "https://www.sterling-kansas.com", phone: "(620) 278-3423" },
+        { name: "Sterling Police Department", desc: "Non-emergency dispatch and local law enforcement.", link: "https://www.sterling-kansas.com", phone: "(620) 278-2100" },
+        { name: "Planning & Zoning Commission", desc: "Building permits, zoning regulations, and town development plans.", link: "https://www.sterling-kansas.com", phone: "Via City Hall" },
+        { name: "Sterling Chamber of Commerce", desc: "Local business networking, Mainstreet events, and economic development.", link: "#", phone: "Contact via Website" }
+      ]
+    },
+    {
+      id: "education",
+      category: "Education & Library",
+      items: [
+        { name: "Sterling Grade School (USD 376)", desc: "Pre-K through 6th grade education. Home of the Black Bears.", link: "https://www.usd376.com", phone: "(620) 278-3112" },
+        { name: "Sterling High School (USD 376)", desc: "7th through 12th grade. Athletics, arts, and college prep.", link: "https://www.usd376.com", phone: "(620) 278-2171" },
+        { name: "Sterling Free Public Library", desc: "Summer reading programs, public Wi-Fi, and toddler storytimes. Located at 138 N. Broadway.", link: "https://sterling.scklslibrary.info/", phone: "(620) 278-3191" },
+        { name: "Sterling College", desc: "Four-year Christ-centered liberal arts college.", link: "https://www.sterling.edu", phone: "(800) 346-1017" }
+      ]
+    },
+    {
+      id: "recreation",
+      category: "Parks & Recreation",
+      items: [
+        { name: "Sterling Recreation Commission", desc: "Youth sports leagues, summer camps, and adult recreation.", link: "https://www.sterlingrec.org", phone: "(620) 278-2357" },
+        { name: "Sterling Community Wellness Center", desc: "See the community in action. A modern fitness hub with personal trainers and health coaches.", link: "https://www.facebook.com/p/Sterling-Community-Wellness-Center-100063711904797/", phone: "(620) 278-2357" },
+        { name: "Sterling Municipal Pool", desc: "City pool access, swimming lessons, and private party rentals.", link: "https://www.sterling-kansas.com/266/Municipal-Swimming-Pool", phone: "(620) 904-7033" },
+        { name: "Sterling Lake & Campground", desc: "Fishing, RV hookups, and community picnic areas.", link: "https://www.sterling-kansas.com/253/Parks-and-Recreation", phone: "Via City Hall" }
       ]
     }
   ];
 
   return (
-    <main className="min-h-screen bg-slate-50 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto space-y-12">
-        
-        {/* Header */}
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Relocation <span className="text-blue-700">Directory</span>
+    <main className="min-h-screen bg-slate-50 py-16">
+      
+      {/* Page Header */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <div className="text-center">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+            Relocation <span className="text-blue-700">Resources.</span>
           </h1>
-          <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 leading-relaxed">
             Everything you need to make the transition smooth. From finding a home to setting up gigabit internet, start here.
           </p>
         </div>
+      </div>
 
-        {/* Directory Listings */}
-        <div className="space-y-10">
-          {directory.map((section, index) => (
-            <div key={index} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6 border-b border-slate-100 pb-4">
-                {section.category}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {section.items.map((item, itemIdx) => (
-                  <div key={itemIdx} className="space-y-1">
-                    <h3 className="text-lg font-bold text-blue-700">{item.name}</h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
-                    <p className="text-sm font-semibold text-slate-900 pt-1">{item.contact}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+      {/* Quick Jump Navigation */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <div className="flex flex-wrap justify-center gap-3">
+          {directoryData.map((section) => (
+            <a 
+              key={section.id} 
+              href={`#${section.id}`}
+              className="px-5 py-2.5 bg-white border border-slate-200 rounded-full text-sm font-bold text-slate-700 hover:bg-slate-100 hover:border-slate-300 transition-all shadow-sm"
+            >
+              {section.category}
+            </a>
           ))}
         </div>
-
-        {/* Relocation Concierge CTA */}
-        <div id="golden-ticket" className="mt-16 bg-blue-900 rounded-3xl p-10 text-center text-white shadow-lg">
-          <h3 className="text-3xl font-bold mb-4">Need a personal guide?</h3>
-          <p className="text-blue-100 mb-8 max-w-2xl mx-auto text-lg">
-            Navigating a move can be overwhelming. Claim your Golden Ticket and connect directly with our relocation team to get personalized answers and see if you qualify for the Rural Opportunity Zone incentives.
-          </p>
-          <Link href="mailto:hello@connectsterling.com" className="inline-block px-8 py-4 bg-white text-blue-900 font-bold rounded-xl shadow hover:bg-slate-100 transition-colors">
-            Contact the Relocation Team
-          </Link>
-        </div>
-
       </div>
+
+      {/* Directory Sections */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+        {directoryData.map((section) => (
+          <section key={section.id} id={section.id} className="scroll-mt-8">
+            <h2 className="text-2xl font-bold text-slate-900 mb-6 pb-2 border-b-2 border-slate-200">
+              {section.category}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {section.items.map((item, index) => (
+                <div key={index} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{item.name}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">{item.desc}</p>
+                  
+                  <div className="flex items-center justify-between pt-4 border-t border-slate-100 mt-auto">
+                    <span className="text-sm font-semibold text-slate-500">{item.phone}</span>
+                    {item.link !== "#" && !item.link.startsWith("/") ? (
+                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 text-sm font-bold hover:text-blue-800">
+                        Visit Website →
+                      </a>
+                    ) : item.link.startsWith("/") ? (
+                      <Link href={item.link} className="text-blue-600 text-sm font-bold hover:text-blue-800">
+                        View Page →
+                      </Link>
+                    ) : (
+                      <span className="text-slate-400 text-sm font-medium">Link Pending</span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+
+      {/* Crowdsourcing Maintenance CTA */}
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 mb-12">
+        <div className="bg-slate-900 rounded-3xl p-10 text-center shadow-xl">
+          <h2 className="text-2xl font-bold text-white mb-3">Are we missing something?</h2>
+          <p className="text-slate-400 mb-8">
+            This directory is a living document. If you represent a local organization, club, or service that should be listed here, let us know so we can get you added.
+          </p>
+          <a href="mailto:hello@connectsterling.com" className="inline-block px-8 py-3 bg-white text-slate-900 font-bold rounded-xl shadow hover:bg-slate-100 transition-colors">
+            Suggest an Addition
+          </a>
+        </div>
+      </div>
+
     </main>
   );
 }
