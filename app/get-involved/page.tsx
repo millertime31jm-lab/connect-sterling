@@ -1,35 +1,35 @@
 import Link from "next/link";
 
 export default function GetInvolved() {
-  // Updated to match the 4 specific parent-focused categories
+  // Updated with real external URLs
   const hubs = [
     { 
       category: "Sports & Recreation",
       title: "Leagues, Lessons & Courts", 
       desc: "From summer swim lessons and youth soccer with the Sterling Rec Commission to weekend rounds at the golf course and local pickleball matches, there is always a way to stay active.",
       linkText: "View the Rec Schedule →",
-      linkHref: "#" // Add actual link to Sterling Rec
+      linkHref: "https://www.sterlingrec.org" 
     },
     { 
       category: "School Events",
       title: "Cheer on the Black Bears", 
       desc: "The whole town turns out. Whether it is Friday night football, state-contending debate tournaments, or high school theatre, school events are the easiest way to naturally cross paths with your neighbors.",
       linkText: "View the Athletics Calendar →",
-      linkHref: "#" // Add actual link to USD 376
+      linkHref: "https://www.usd376.com" 
     },
     { 
       category: "Community Events",
       title: "Mainstreet & Milestones", 
       desc: "We celebrate big. Join us for the famous Old Fashioned 4th of July parade down Main Street, the bustling Mainstreet Market, and massive summer community picnics out at Sterling Lake.",
       linkText: "See Upcoming Events →",
-      linkHref: "#" // Add actual link to Chamber/City events
+      linkHref: "https://www.sterling-kansas.com" 
     },
     { 
       category: "Kids & Family",
       title: "Programs, Parks & Play", 
       desc: "Keep the little ones engaged year-round with robust summer reading programs and toddler storytimes at the Sterling Free Public Library, or burn off energy at the city splash park.",
       linkText: "Explore Family Activities →",
-      linkHref: "#" // Add actual link to Library/Parks
+      linkHref: "https://sterling.scklslibrary.info/" 
     }
   ];
 
@@ -62,7 +62,8 @@ export default function GetInvolved() {
               <p className="text-slate-600 leading-relaxed mb-8 flex-grow">
                 {hub.desc}
               </p>
-              <a href={hub.linkHref} className="inline-flex items-center text-blue-700 font-bold group-hover:text-blue-800">
+              {/* Note the target="_blank" and rel="noopener noreferrer" for security and UX */}
+              <a href={hub.linkHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-700 font-bold group-hover:text-blue-800">
                 {hub.linkText}
               </a>
             </div>
