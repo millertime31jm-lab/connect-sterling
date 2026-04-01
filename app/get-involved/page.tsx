@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 export default function GetInvolved() {
-  // Updated with real external URLs
   const hubs = [
     { 
       category: "Sports & Recreation",
@@ -36,7 +35,6 @@ export default function GetInvolved() {
   return (
     <main className="min-h-screen bg-slate-50 py-16">
       
-      {/* Page Header */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <div className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
@@ -48,7 +46,6 @@ export default function GetInvolved() {
         </div>
       </div>
 
-      {/* Primary Focus: The Compass Grid (The 4 Core Categories) */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {hubs.map((hub, index) => (
@@ -62,7 +59,6 @@ export default function GetInvolved() {
               <p className="text-slate-600 leading-relaxed mb-8 flex-grow">
                 {hub.desc}
               </p>
-              {/* Note the target="_blank" and rel="noopener noreferrer" for security and UX */}
               <a href={hub.linkHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-700 font-bold group-hover:text-blue-800">
                 {hub.linkText}
               </a>
@@ -71,7 +67,6 @@ export default function GetInvolved() {
         </div>
       </section>
 
-      {/* Secondary Focus: Adult Networking (The Golden Ticket) */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
         <div className="bg-amber-50 rounded-3xl p-10 md:p-12 border border-amber-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-10">
           <div className="max-w-2xl">
@@ -89,14 +84,13 @@ export default function GetInvolved() {
         </div>
       </section>
 
-      {/* Bottom CTA / Directory Anchor */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <div className="bg-slate-100 rounded-3xl p-10 text-center border border-slate-200">
           <h2 className="text-2xl font-bold text-slate-900 mb-3">Don&apos;t see what you&apos;re looking for?</h2>
           <p className="text-slate-600 mb-8 max-w-xl mx-auto">
             Whether it&apos;s a specific church denomination, a volunteer fire department, or a niche hobby group, let us know what your family is looking for and we will point you in the right direction.
           </p>
-          <Link href="/directory" className="inline-block px-8 py-3 bg-slate-900 text-white font-bold rounded-xl shadow hover:bg-slate-800 transition-colors">
+          <Link href="/resources" className="inline-block px-8 py-3 bg-slate-900 text-white font-bold rounded-xl shadow hover:bg-slate-800 transition-colors">
             Browse the Directory
           </Link>
         </div>
