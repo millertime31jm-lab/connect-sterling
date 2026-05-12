@@ -54,12 +54,12 @@ export default function AskConnectSterlingPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-emerald-950/75 to-amber-900/70" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32">
+        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:py-32">
           <div className="max-w-4xl">
-            <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
               Ask the question you actually need answered.
             </h1>
-            <p className="mt-6 text-xl leading-8 text-slate-100">
+            <p className="mt-6 text-lg leading-8 text-slate-100 sm:text-xl">
               You do not need to know who owns the answer. Tell Connect Sterling what
               you are trying to figure out, and we will help point you toward the right
               local contact, organization, calendar, or next step.
@@ -72,7 +72,7 @@ export default function AskConnectSterlingPage() {
             <div className="mt-10">
               <Link
                 href="#ask-form"
-                className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-slate-950 shadow-sm transition hover:bg-amber-100"
+                className="inline-flex w-full justify-center rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-slate-950 shadow-sm transition hover:bg-amber-100 sm:w-auto"
               >
                 Go to the form
               </Link>
@@ -81,8 +81,8 @@ export default function AskConnectSterlingPage() {
         </div>
       </section>
 
-      <section id="ask-form" className="scroll-mt-28 bg-stone-50">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
+      <section id="ask-form" className="scroll-mt-40 bg-stone-50 sm:scroll-mt-32">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               Send your question.
@@ -204,7 +204,7 @@ export default function AskConnectSterlingPage() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               What can you ask about?
@@ -229,7 +229,7 @@ export default function AskConnectSterlingPage() {
       </section>
 
       <section className="bg-slate-950 text-white">
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="max-w-4xl">
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               A few common starting points.

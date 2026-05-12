@@ -32,29 +32,6 @@ const proofStats = [
   },
 ];
 
-const storyMoments = [
-  {
-    title: "Your kids are not anonymous here.",
-    description:
-      "In Sterling, your kids can be known by teachers, coaches, neighbors, church leaders, and families who see more than a name on a roster. That matters. Kids grow differently when adults know them, expect something from them, and cheer for them beyond the classroom.",
-  },
-  {
-    title: "Your calendar can feel less frantic.",
-    description:
-      "A better life is not always dramatic. Sometimes it is a shorter drive, a quick trip across town, dinner together, a walk near the lake, and not feeling like every day is a race you are already losing.",
-  },
-  {
-    title: "Community is still visible.",
-    description:
-      "You can see it at school games, community events, church activities, Sterling Rec programs, Main Street, and the moments when people show up because that is what neighbors do.",
-  },
-  {
-    title: "You can live with more margin.",
-    description:
-      "Margin changes a family. More time. More space. More ability to save, give, serve, rest, coach, volunteer, and be present. That is the kind of wealth people often miss when they only measure opportunity by skyline.",
-  },
-];
-
 const comparisonCards = [
   {
     title: "Less noise",
@@ -70,30 +47,6 @@ const comparisonCards = [
     title: "More shared life",
     description:
       "School events, sports, churches, college activities, youth programs, and local traditions give families natural ways to connect.",
-  },
-];
-
-const nextPages = [
-  {
-    title: "See if Sterling fits your family.",
-    description:
-      "Explore schools, healthcare, internet, groceries, housing, outdoor space, and daily-life essentials.",
-    href: "/move-here",
-    cta: "Explore Moving Here",
-  },
-  {
-    title: "Look closer at schools and family life.",
-    description:
-      "See why Sterling’s schools, sports, activities, and college-town energy matter to families.",
-    href: "/education-family-life",
-    cta: "Explore Education",
-  },
-  {
-    title: "Find your first connection.",
-    description:
-      "Find calendars, youth activities, churches, volunteer opportunities, Golden Ticket, and local starting points.",
-    href: "/get-connected",
-    cta: "Get Connected",
   },
 ];
 

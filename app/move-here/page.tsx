@@ -152,12 +152,12 @@ export default function MoveHerePage() {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-emerald-950/75 to-amber-900/70" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32">
+        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:py-32">
           <div className="max-w-4xl">
-            <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
               A move should give your family something back.
             </h1>
-            <p className="mt-6 text-xl leading-8 text-slate-100">
+            <p className="mt-6 text-lg leading-8 text-slate-100 sm:text-xl">
               If you are considering Sterling, you are probably not just looking for a
               different address. You are looking for more margin, stronger schools,
               a better rhythm, and a place where your family can belong.
@@ -193,7 +193,7 @@ export default function MoveHerePage() {
       </section>
 
       <section className="bg-gradient-to-r from-amber-100 via-orange-50 to-emerald-100">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               What do you want your normal week to feel like?
@@ -219,7 +219,7 @@ export default function MoveHerePage() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="max-w-4xl">
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               Check the essentials before you make the move.
@@ -236,8 +236,9 @@ export default function MoveHerePage() {
               <Link
                 key={item.title}
                 href={item.href}
-                className="group overflow-hidden rounded-[2rem] bg-stone-50 shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
+                className="group flex h-full overflow-hidden rounded-[2rem] bg-stone-50 shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
               >
+                <article className="flex h-full w-full flex-col">
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={item.image}
@@ -247,7 +248,7 @@ export default function MoveHerePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
                 </div>
 
-                <div className="p-6">
+                <div className="flex flex-1 flex-col p-6">
                   <h3 className="text-xl font-bold text-slate-950 group-hover:text-amber-800">
                     {item.title}
                   </h3>
@@ -261,6 +262,7 @@ export default function MoveHerePage() {
                     {item.cta} →
                   </span>
                 </div>
+                </article>
               </Link>
             ))}
           </div>
@@ -268,7 +270,7 @@ export default function MoveHerePage() {
       </section>
 
       <section className="bg-slate-950 text-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               Ask the questions that actually decide the move.
@@ -295,7 +297,7 @@ export default function MoveHerePage() {
       </section>
 
       <section className="bg-gradient-to-r from-emerald-100 via-amber-50 to-sky-100">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               Want Sterling, but do not see the perfect home yet?
@@ -324,7 +326,7 @@ export default function MoveHerePage() {
       </section>
 
       <section className="relative overflow-hidden bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               Picture a weekday that does not feel like a race.
@@ -348,7 +350,7 @@ export default function MoveHerePage() {
       </section>
 
       <section className="bg-stone-50">
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="max-w-4xl">
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               Start where your family needs the most clarity.
@@ -364,8 +366,9 @@ export default function MoveHerePage() {
               <Link
                 key={step.title}
                 href={step.href}
-                className="group overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
+                className="group flex h-full overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
               >
+                <article className="flex h-full w-full flex-col">
                 <div className="relative h-44 overflow-hidden">
                   <img
                     src={step.image}
@@ -375,7 +378,7 @@ export default function MoveHerePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
                 </div>
 
-                <div className="p-6">
+                <div className="flex flex-1 flex-col p-6">
                   <h3 className="text-xl font-bold text-slate-950 group-hover:text-amber-800">
                     {step.title}
                   </h3>
@@ -386,6 +389,7 @@ export default function MoveHerePage() {
                     {step.cta} →
                   </span>
                 </div>
+                </article>
               </Link>
             ))}
           </div>

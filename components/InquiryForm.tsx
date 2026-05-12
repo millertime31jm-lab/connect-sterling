@@ -77,7 +77,7 @@ export default function InquiryForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-[2rem] bg-white p-6 shadow-sm ring-1 ring-stone-200"
+      className="rounded-[2rem] bg-white p-5 shadow-sm ring-1 ring-stone-200 sm:p-6"
     >
       <div>
         <h3 className="text-2xl font-bold tracking-tight text-slate-950">
@@ -161,14 +161,14 @@ export default function InquiryForm({
               href={gmailHref}
               target="_blank"
               rel="noreferrer"
-              className="rounded-full bg-slate-950 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-emerald-900"
+              className="w-full rounded-full bg-slate-950 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-emerald-900 sm:w-auto"
             >
               Open in Gmail
             </a>
 
             <a
               href={mailtoHref}
-              className="rounded-full border border-slate-300 bg-white px-5 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-stone-100"
+              className="w-full rounded-full border border-slate-300 bg-white px-5 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-stone-100 sm:w-auto"
             >
               Try Email App Again
             </a>
@@ -176,7 +176,7 @@ export default function InquiryForm({
             <button
               type="button"
               onClick={copyMessage}
-              className="rounded-full border border-slate-300 bg-white px-5 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-stone-100"
+              className="w-full rounded-full border border-slate-300 bg-white px-5 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-stone-100 sm:w-auto"
             >
               {copied ? "Copied" : "Copy Message"}
             </button>

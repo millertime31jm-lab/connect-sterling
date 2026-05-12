@@ -143,12 +143,12 @@ export default function CommunityCalendarPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-emerald-950/75 to-amber-900/70" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32">
+        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:py-32">
           <div className="max-w-4xl">
-            <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
               Find what’s happening in Sterling.
             </h1>
-            <p className="mt-6 text-xl leading-8 text-slate-100">
+            <p className="mt-6 text-lg leading-8 text-slate-100 sm:text-xl">
               You do not need to follow every organization on day one. Start here and
               find the calendars that match what your family is looking for.
             </p>
@@ -177,7 +177,7 @@ export default function CommunityCalendarPage() {
       </section>
 
       <section className="bg-gradient-to-r from-amber-100 via-orange-50 to-emerald-100">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               A connected town still needs a good map.
@@ -200,7 +200,7 @@ export default function CommunityCalendarPage() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               The town has more rhythm than one calendar can capture.
@@ -227,7 +227,7 @@ export default function CommunityCalendarPage() {
       </section>
 
       <section className="border-y border-stone-200 bg-stone-50">
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="max-w-4xl">
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               Go to the source that owns the details.
@@ -249,8 +249,9 @@ export default function CommunityCalendarPage() {
                   href={card.href}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noreferrer" : undefined}
-                  className="group overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
+                  className="group flex h-full overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
                 >
+                  <article className="flex h-full w-full flex-col">
                   <div className="relative h-48 overflow-hidden">
                     <img
                       src={card.image}
@@ -260,7 +261,7 @@ export default function CommunityCalendarPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
                   </div>
 
-                  <div className="p-6">
+                  <div className="flex flex-1 flex-col p-6">
                     <h3 className="text-xl font-bold text-slate-950 group-hover:text-amber-800">
                       {card.title}
                     </h3>
@@ -274,6 +275,7 @@ export default function CommunityCalendarPage() {
                       {card.cta} →
                     </span>
                   </div>
+                  </article>
                 </Link>
               );
             })}
@@ -297,7 +299,7 @@ export default function CommunityCalendarPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/85 to-emerald-950/80" />
         </div>
 
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               Not sure which calendar to check?

@@ -12,12 +12,12 @@ const navItems = [
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-stone-200 bg-white/95 backdrop-blur">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3.5 sm:gap-6 sm:px-6 sm:py-4">
         <Link href="/" className="group">
-          <div className="text-lg font-bold tracking-tight text-slate-950 group-hover:text-emerald-800">
+          <div className="text-base font-bold tracking-tight text-slate-950 group-hover:text-emerald-800 sm:text-lg">
             Connect Sterling
           </div>
-          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-700">
+          <div className="max-w-[11rem] text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-700 sm:max-w-none sm:text-xs">
             Trade the commute for community
           </div>
         </Link>
@@ -43,7 +43,7 @@ export default function Navbar() {
       </nav>
 
       <div className="border-t border-stone-100 bg-stone-50 lg:hidden">
-        <div className="mx-auto flex max-w-7xl gap-4 overflow-x-auto px-6 py-3">
+        <div className="mx-auto flex max-w-7xl gap-4 overflow-x-auto px-4 py-3 sm:px-6">
           {navItems.map((item) => (
             <Link
               key={item.href}

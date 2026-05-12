@@ -157,13 +157,13 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-emerald-950/75 to-amber-900/70" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32">
+        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:py-32">
           <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
-              <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
+              <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
                 Trade the commute for community.
               </h1>
-              <p className="mt-6 max-w-3xl text-xl leading-8 text-slate-100">
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-100 sm:text-xl">
                 What if your family could find strong schools, real opportunity,
                 everyday essentials, and a place to belong without carrying the pace,
                 pressure, and cost of a bigger market?
@@ -176,13 +176,13 @@ export default function Home() {
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/move-here"
-                  className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-slate-950 shadow-sm transition hover:bg-amber-100"
+                  className="w-full rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-slate-950 shadow-sm transition hover:bg-amber-100 sm:w-auto"
                 >
                   See if Sterling fits your family
                 </Link>
                 <Link
                   href="/ask-connect-sterling#ask-form"
-                  className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
+                  className="w-full rounded-full border border-white/30 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20 sm:w-auto"
                 >
                   Ask Connect Sterling
                 </Link>
@@ -235,7 +235,7 @@ export default function Home() {
         id="life-back"
         className="bg-gradient-to-r from-amber-100 via-orange-50 to-emerald-100"
       >
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               You were not made to spend your best hours rushing from one thing to the next.
@@ -265,7 +265,7 @@ export default function Home() {
       </section>
 
       <section className="bg-stone-50">
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="max-w-4xl">
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               Start with the question on your mind.
@@ -282,8 +282,9 @@ export default function Home() {
               <Link
                 key={path.title}
                 href={path.href}
-                className="group overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
+                className="group flex h-full overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
               >
+                <article className="flex h-full w-full flex-col">
                 <div className="relative h-44 overflow-hidden">
                   <img
                     src={path.image}
@@ -295,7 +296,7 @@ export default function Home() {
                   />
                 </div>
 
-                <div className="p-6">
+                <div className="flex flex-1 flex-col p-6">
                   <h3 className="text-xl font-bold text-slate-950 group-hover:text-amber-800">
                     {path.title}
                   </h3>
@@ -309,6 +310,7 @@ export default function Home() {
                     {path.cta} →
                   </span>
                 </div>
+                </article>
               </Link>
             ))}
           </div>
@@ -316,7 +318,7 @@ export default function Home() {
       </section>
 
       <section className="bg-slate-950 text-white">
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
             <div>
               <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
@@ -352,7 +354,7 @@ export default function Home() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               You do not have to give up the basics to gain a better rhythm.
@@ -364,7 +366,7 @@ export default function Home() {
             </p>
             <Link
               href="/move-here"
-              className="mt-8 inline-flex rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+              className="mt-8 inline-flex w-full justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 sm:w-auto"
             >
               Explore the essentials
             </Link>
@@ -396,7 +398,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/85 to-amber-900/70" />
         </div>
 
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               Your kids can have a chance to play, and a chance to win.
@@ -415,7 +417,7 @@ export default function Home() {
             </p>
             <Link
               href="/education-family-life"
-              className="inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-100"
+              className="inline-flex w-full justify-center rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-amber-100 sm:w-auto"
             >
               Explore schools, sports, and family life
             </Link>
@@ -424,7 +426,7 @@ export default function Home() {
       </section>
 
       <section className="bg-gradient-to-r from-emerald-100 via-amber-50 to-sky-100">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               Want Sterling, but do not see your perfect home yet?
@@ -443,7 +445,7 @@ export default function Home() {
             </p>
             <Link
               href="/housing-growth"
-              className="inline-flex rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+              className="inline-flex w-full justify-center rounded-full bg-slate-950 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-slate-800 sm:w-auto"
             >
               Explore Housing & Growth
             </Link>
@@ -452,7 +454,7 @@ export default function Home() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               New here? You do not have to figure it out alone.

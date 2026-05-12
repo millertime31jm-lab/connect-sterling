@@ -186,7 +186,7 @@ export default function HousingGrowthPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-950 via-slate-950 to-amber-900" />
         <div className="absolute inset-0 opacity-25 [background-image:radial-gradient(circle_at_20%_20%,rgba(251,191,36,0.55),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(16,185,129,0.45),transparent_26%),radial-gradient(circle_at_60%_80%,rgba(56,189,248,0.35),transparent_30%)]" />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32">
+        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:py-32">
           <div className="max-w-4xl">
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
               Get into Sterling while the opportunity still makes sense.
@@ -214,7 +214,7 @@ export default function HousingGrowthPage() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-14">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
           <div className="mb-8 max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Lower entry point. Real appreciation signal.
@@ -252,7 +252,7 @@ export default function HousingGrowthPage() {
       </section>
 
       <section className="bg-gradient-to-r from-amber-100 via-orange-50 to-emerald-100">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Don’t wait for the perfect listing to appear.
@@ -275,7 +275,7 @@ export default function HousingGrowthPage() {
       </section>
 
       <section className="bg-stone-50">
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Choose the housing path that fits your season.
@@ -339,7 +339,7 @@ export default function HousingGrowthPage() {
       </section>
 
       <section className="bg-slate-950 text-white">
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               The housing story is bigger than listings.
@@ -367,7 +367,7 @@ export default function HousingGrowthPage() {
       </section>
 
       <section className="bg-gradient-to-r from-emerald-100 via-amber-50 to-sky-100">
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Better housing options help everyone.
@@ -395,8 +395,8 @@ export default function HousingGrowthPage() {
         </div>
       </section>
 
-      <section id="housing-interest" className="bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
+      <section id="housing-interest" className="scroll-mt-40 bg-white sm:scroll-mt-32">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Tell us what kind of housing path you are exploring.
@@ -493,7 +493,7 @@ export default function HousingGrowthPage() {
       </section>
 
       <section className="bg-gradient-to-r from-slate-950 via-emerald-950 to-amber-900 text-white">
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Housing is one part of a bigger Sterling story.

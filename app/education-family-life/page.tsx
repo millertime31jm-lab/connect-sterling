@@ -234,12 +234,12 @@ export default function EducationFamilyLifePage() {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-emerald-950/75 to-amber-900/70" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32">
+        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:py-32">
           <div className="max-w-4xl">
-            <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
               Your kids can be known, challenged, involved, and surrounded by people who care.
             </h1>
-            <p className="mt-6 text-xl leading-8 text-slate-100">
+            <p className="mt-6 text-lg leading-8 text-slate-100 sm:text-xl">
               Sterling gives families a full education path from childcare through
               college, with strong school culture, championship sports, standout
               activities, and a community that still shows up for kids.
@@ -274,7 +274,7 @@ export default function EducationFamilyLifePage() {
       </section>
 
       <section className="bg-gradient-to-r from-amber-100 via-orange-50 to-emerald-100">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               You are not just choosing a school. You are choosing part of your child’s childhood.
@@ -296,7 +296,7 @@ export default function EducationFamilyLifePage() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="max-w-4xl">
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               From childcare to college, Sterling gives families a real education path.
@@ -318,8 +318,9 @@ export default function EducationFamilyLifePage() {
                   href={item.href}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noreferrer" : undefined}
-                  className="group overflow-hidden rounded-[2rem] bg-stone-50 shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
+                  className="group flex h-full overflow-hidden rounded-[2rem] bg-stone-50 shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
                 >
+                  <article className="flex h-full w-full flex-col">
                   <div className="relative h-48 overflow-hidden">
                     <img
                       src={item.image}
@@ -329,7 +330,7 @@ export default function EducationFamilyLifePage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
                   </div>
 
-                  <div className="p-6">
+                  <div className="flex flex-1 flex-col p-6">
                     <h3 className="text-xl font-bold text-slate-950 group-hover:text-amber-800">
                       {item.title}
                     </h3>
@@ -343,6 +344,7 @@ export default function EducationFamilyLifePage() {
                       {item.cta} →
                     </span>
                   </div>
+                  </article>
                 </Link>
               );
             })}
@@ -351,7 +353,7 @@ export default function EducationFamilyLifePage() {
       </section>
 
       <section className="bg-slate-950 text-white">
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="max-w-4xl">
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               Families need more than a warm feeling. They need reasons to believe.
@@ -383,7 +385,7 @@ export default function EducationFamilyLifePage() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               Your kids can have a chance to play, and a chance to win.
@@ -407,7 +409,7 @@ export default function EducationFamilyLifePage() {
           </div>
         </div>
 
-        <div className="mx-auto max-w-7xl px-6 pb-16">
+        <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6">
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {sportsHighlights.map((card) => {
               const isExternal = card.href.startsWith("http");
@@ -456,7 +458,7 @@ export default function EducationFamilyLifePage() {
       </section>
 
       <section className="bg-stone-50">
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="max-w-4xl">
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               Your child can find a place to grow beyond the gym and field.
@@ -512,7 +514,7 @@ export default function EducationFamilyLifePage() {
       </section>
 
       <section className="bg-gradient-to-r from-amber-100 via-orange-50 to-emerald-100">
-        <div className="mx-auto grid max-w-7xl gap-6 px-6 py-16 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl gap-6 px-4 py-16 sm:px-6 lg:grid-cols-3">
           {familyLife.map((item) => (
             <div key={item.title} className="rounded-[2rem] bg-white p-8 ring-1 ring-amber-100">
               <h3 className="text-2xl font-bold text-slate-950">{item.title}</h3>
@@ -532,7 +534,7 @@ export default function EducationFamilyLifePage() {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/85 to-emerald-950/80" />
         </div>
 
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               Why one family chose Sterling.
@@ -554,7 +556,7 @@ export default function EducationFamilyLifePage() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               Sterling College gives the town another layer of energy.
@@ -593,7 +595,7 @@ export default function EducationFamilyLifePage() {
       </section>
 
       <section className="bg-gradient-to-r from-slate-950 via-emerald-950 to-amber-900 text-white">
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               Ask the school questions that matter to your family.
