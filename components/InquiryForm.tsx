@@ -77,10 +77,12 @@ export default function InquiryForm({
       setSubmitState("success");
       setMessage("Thanks. Your inquiry has been sent to Connect Sterling.");
       setValues(initialValues);
-    } catch {
+    } catch (error) {
       setSubmitState("error");
       setMessage(
-        "Sorry, something went wrong. Please email hello@connectsterling.com directly."
+        error instanceof Error
+          ? `${error.message} You can also email hello@connectsterling.com directly.`
+          : "Sorry, something went wrong. Please email hello@connectsterling.com directly."
       );
     }
   }

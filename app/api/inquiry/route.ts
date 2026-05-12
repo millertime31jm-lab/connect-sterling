@@ -2,7 +2,9 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const TO_EMAIL = process.env.CONNECT_STERLING_TO_EMAIL || "hello@connectsterling.com";
+const TO_EMAIL =
+  process.env.CONNECT_STERLING_TO_EMAIL || "hello@connectsterling.com";
+
 const FROM_EMAIL =
   process.env.CONNECT_STERLING_FROM_EMAIL ||
   "Connect Sterling <hello@connectsterling.com>";
@@ -25,11 +27,21 @@ function escapeHtml(value: string) {
     .replaceAll("'", "&#039;");
 }
 
+function isValidEmail(value?: string) {
+  if (!value) return false;
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
 export async function POST(request: Request) {
   try {
     if (!process.env.RESEND_API_KEY) {
+      console.error("Missing RESEND_API_KEY");
       return Response.json(
-        { ok: false, message: "Email service is not configured." },
+        {
+          ok: false,
+          message:
+            "Email service is missing its API key. Please check Vercel environment variables.",
+        },
         { status: 500 }
       );
     }
@@ -38,6 +50,13 @@ export async function POST(request: Request) {
 
     const title = payload.title?.trim() || "Connect Sterling Inquiry";
     const fields = payload.fields || [];
+
+    if (!fields.length) {
+      return Response.json(
+        { ok: false, message: "No inquiry details were submitted." },
+        { status: 400 }
+      );
+    }
 
     const nameField = fields.find((field) =>
       field.name.toLowerCase().includes("name")
@@ -68,11 +87,11 @@ export async function POST(request: Request) {
       )
       .join("");
 
-    const { error } = await resend.emails.send({
+    const emailPayload = {
       from: FROM_EMAIL,
       to: [TO_EMAIL],
       subject: `Connect Sterling Inquiry: ${title}`,
-      replyTo: senderEmail || undefined,
+      replyTo: isValidEmail(senderEmail) ? senderEmail : undefined,
       text: textBody,
       html: `
         <div style="font-family: Arial, sans-serif; color: #0f172a;">
@@ -85,11 +104,18 @@ export async function POST(request: Request) {
           </table>
         </div>
       `,
-    });
+    };
+
+    const { error } = await resend.emails.send(emailPayload);
 
     if (error) {
+      console.error("Resend inquiry error:", error);
       return Response.json(
-        { ok: false, message: "Inquiry could not be sent." },
+        {
+          ok: false,
+          message:
+            "The inquiry reached the site, but the email service rejected it. Check the Vercel logs for the Resend error.",
+        },
         { status: 500 }
       );
     }
@@ -98,9 +124,14 @@ export async function POST(request: Request) {
       ok: true,
       message: "Inquiry sent successfully.",
     });
-  } catch {
+  } catch (error) {
+    console.error("Inquiry route error:", error);
     return Response.json(
-      { ok: false, message: "Something went wrong sending the inquiry." },
+      {
+        ok: false,
+        message:
+          "Something went wrong sending the inquiry. Check the Vercel function logs.",
+      },
       { status: 500 }
     );
   }

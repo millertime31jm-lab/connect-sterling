@@ -9,7 +9,7 @@ const resourceGroups = [
       "Moving comes with a dozen small questions: utilities, trash, internet, school enrollment, healthcare, childcare, and who to call first.",
     proof:
       "Start here if you are new, moving soon, or trying to help someone land well in Sterling.",
-    href: "/ask-connect-sterling",
+    href: "/ask-connect-sterling#ask-form",
     cta: "Ask for newcomer help",
   },
   {
@@ -24,15 +24,15 @@ const resourceGroups = [
     cta: "Explore education",
   },
   {
-    title: "Find everyday care.",
+    title: "Find everyday care and wellness.",
     image:
-      "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80",
     description:
-      "Need clinic, pharmacy, dental, chiropractic, counseling, physical therapy, or wellness-related providers?",
+      "Need clinic, pharmacy, dental, chiropractic, counseling, physical therapy, wellness, or fitness resources? Sterling has practical health and wellness starting points close to home.",
     proof:
-      "A small-town move works better when routine care is close enough for daily life.",
-    href: "/ask-connect-sterling",
-    cta: "Ask for healthcare contacts",
+      "The Sterling Community Wellness Center offers fitness and wellness access through Sterling Recreation Commission, including cardio equipment, weights, classes, sauna, HydroMassage, and membership options.",
+    href: "https://sterlingrec.org/wellness-center/",
+    cta: "Visit Wellness Center",
   },
   {
     title: "Explore housing options.",
@@ -75,7 +75,7 @@ const resourceGroups = [
       "Find groceries, pharmacy, restaurants, local services, Main Street businesses, and practical daily-life starting points.",
     proof:
       "Sterling’s strength is not pretending to be a city. It is making daily life work at a better pace.",
-    href: "/ask-connect-sterling",
+    href: "/ask-connect-sterling#ask-form",
     cta: "Ask for local recommendations",
   },
   {
@@ -86,7 +86,7 @@ const resourceGroups = [
       "Need city services, utilities, trash, or internet? Sterling has multiple internet providers, including Cox, Brightspeed, and MTC.",
     proof:
       "Internet availability and speeds vary by address, so verify service before choosing a home.",
-    href: "/ask-connect-sterling",
+    href: "/ask-connect-sterling#ask-form",
     cta: "Ask about setup",
   },
   {
@@ -109,9 +109,19 @@ const directLinks = [
     note: "Youth sports, recreation programs, wellness, leagues, and activities.",
   },
   {
+    label: "Sterling Community Wellness Center",
+    href: "https://sterlingrec.org/wellness-center/",
+    note: "Fitness facility, cardio equipment, weights, sauna, HydroMassage, memberships, and wellness access.",
+  },
+  {
     label: "Sterling Chamber Main Street",
     href: "https://www.visitsterlingks.com/",
     note: "Business resources, Main Street, events, and community connections.",
+  },
+  {
+    label: "City of Sterling",
+    href: "https://www.sterling-kansas.com/",
+    note: "City services, local government, pool, utilities, and civic information.",
   },
   {
     label: "USD 376",
@@ -122,11 +132,6 @@ const directLinks = [
     label: "Sterling College",
     href: "https://www.sterling.edu/",
     note: "College events, athletics, theatre, music, academics, and campus life.",
-  },
-  {
-    label: "City of Sterling",
-    href: "https://www.sterling-kansas.com/",
-    note: "City services, local government, pool, utilities, and civic information.",
   },
   {
     label: "Golden Ticket",
@@ -164,14 +169,14 @@ export default function ResourcesPage() {
               page helps you find the right starting point faster.
             </p>
             <p className="mt-5 text-lg leading-8 text-slate-200">
-              Schools, housing, healthcare, utilities, internet, recreation, business,
-              community life, or a simple “who should I call?” question can all start
-              here.
+              Schools, housing, healthcare, wellness, utilities, internet, recreation,
+              business, community life, or a simple “who should I call?” question can
+              all start here.
             </p>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/ask-connect-sterling"
+                href="/ask-connect-sterling#ask-form"
                 className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-slate-950 shadow-sm transition hover:bg-amber-100"
               >
                 Ask Connect Sterling
@@ -288,7 +293,9 @@ export default function ResourcesPage() {
                 <h3 className="text-lg font-bold text-slate-950 group-hover:text-amber-800">
                   {link.label}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{link.note}</p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  {link.note}
+                </p>
                 <span className="mt-4 inline-flex text-sm font-semibold text-emerald-800">
                   Visit site →
                 </span>
@@ -321,7 +328,7 @@ export default function ResourcesPage() {
               to the right local contact.
             </p>
             <Link
-              href="/ask-connect-sterling"
+              href="/ask-connect-sterling#ask-form"
               className="inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-100"
             >
               Ask Connect Sterling
