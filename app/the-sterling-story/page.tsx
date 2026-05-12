@@ -139,7 +139,7 @@ export default function TheSterlingStoryPage() {
                 See if Sterling fits your family
               </Link>
               <Link
-                href="/ask-connect-sterling"
+                href="/ask-connect-sterling#ask-form"
                 className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
               >
                 Ask Connect Sterling
@@ -357,7 +357,7 @@ export default function TheSterlingStoryPage() {
                 See if Sterling fits
               </Link>
               <Link
-                href="/ask-connect-sterling"
+                href="/ask-connect-sterling#ask-form"
                 className="rounded-full border border-slate-300 bg-white px-6 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-stone-100"
               >
                 Ask Connect Sterling

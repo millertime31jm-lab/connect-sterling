@@ -149,7 +149,7 @@ export const calendarLinks = [
   { title: "City meetings", href: "https://www.sterling-kansas.com" },
   { title: "Library events", href: "https://sterling.scklslibrary.info/" },
   { title: "Youth sports and recreation", href: "https://www.sterlingrec.org" },
-  { title: "Church/community events", href: "/ask-connect-sterling" },
+  { title: "Church/community events", href: "/ask-connect-sterling#ask-form" },
   { title: "Golden Ticket", href: goldenTicketUrl },
 ];
 
@@ -180,7 +180,7 @@ export const resources = [
         name: "Ask Connect Sterling",
         description: "Tell us what you need and we will point you toward the right local contact.",
         action: "Request an Introduction",
-        href: "/ask-connect-sterling",
+        href: "/ask-connect-sterling#ask-form",
       },
       {
         name: "City of Sterling",
@@ -198,7 +198,7 @@ export const resources = [
         name: "Lil Cub Childcare",
         description: "Primary local childcare resource for families with young children.",
         action: "Request an Introduction",
-        href: "/ask-connect-sterling",
+        href: "/ask-connect-sterling#ask-form",
       },
       {
         name: "Sterling USD 376",
@@ -223,7 +223,7 @@ export const resources = [
         description:
           "Ask for an introduction to local clinic, pharmacy, dental, chiropractic, counseling, physical therapy, and wellness-related providers.",
         action: "Request an Introduction",
-        href: "/ask-connect-sterling",
+        href: "/ask-connect-sterling#ask-form",
       },
     ],
   },
@@ -242,7 +242,7 @@ export const resources = [
         description:
           "Request a routed introduction to real estate, lending, building, rental, or development conversations.",
         action: "Request an Introduction",
-        href: "/ask-connect-sterling",
+        href: "/ask-connect-sterling#ask-form",
       },
     ],
   },
@@ -255,7 +255,7 @@ export const resources = [
         description:
           "Connect with local employer pathways, business momentum, Chamber support, and Main Street resources.",
         action: "Request an Introduction",
-        href: "/ask-connect-sterling",
+        href: "/ask-connect-sterling#ask-form",
       },
     ],
   },
@@ -287,7 +287,7 @@ export const resources = [
         description:
           "Ask Connect Sterling for help finding the daily-life resources that match your needs.",
         action: "Request an Introduction",
-        href: "/ask-connect-sterling",
+        href: "/ask-connect-sterling#ask-form",
       },
     ],
   },
@@ -306,7 +306,7 @@ export const resources = [
         description:
           "Cox, Brightspeed, and MTC serve parts of the Sterling area. Availability and speeds vary by address.",
         action: "Request an Introduction",
-        href: "/ask-connect-sterling",
+        href: "/ask-connect-sterling#ask-form",
       },
     ],
   },

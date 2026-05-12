@@ -97,7 +97,7 @@ const calendarLinks = [
       "Churches help host worship, youth activities, meals, service opportunities, small groups, and community support.",
     proof:
       "Programs like 5th Quarter help give students safe places to gather after big school events.",
-    href: "/ask-connect-sterling",
+    href: "/ask-connect-sterling#ask-form",
     cta: "Ask for church connections",
   },
   {
@@ -166,7 +166,7 @@ export default function CommunityCalendarPage() {
                 Get Connected
               </Link>
               <Link
-                href="/ask-connect-sterling"
+                href="/ask-connect-sterling#ask-form"
                 className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
               >
                 Ask Connect Sterling
@@ -310,7 +310,7 @@ export default function CommunityCalendarPage() {
               contact, church, Rec program, or community group.
             </p>
             <Link
-              href="/ask-connect-sterling"
+              href="/ask-connect-sterling#ask-form"
               className="inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-100"
             >
               Ask for help finding an event

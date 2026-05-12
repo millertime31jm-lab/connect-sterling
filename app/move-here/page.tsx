@@ -20,7 +20,7 @@ const essentials = [
       "Remote work only works if the internet works. Sterling has multiple internet providers, including Cox, Brightspeed, and MTC.",
     proof:
       "Availability and speeds vary by address, so verify service before choosing a specific home.",
-    href: "/ask-connect-sterling",
+    href: "/ask-connect-sterling#ask-form",
     cta: "Ask about internet options",
   },
   {
@@ -128,7 +128,7 @@ const nextSteps = [
       "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
     description:
       "Tell Connect Sterling what you are trying to figure out and we’ll help point you toward the right local contact.",
-    href: "/ask-connect-sterling",
+    href: "/ask-connect-sterling#ask-form",
     cta: "Ask Connect Sterling",
   },
 ];
@@ -182,7 +182,7 @@ export default function MoveHerePage() {
                 Explore housing
               </Link>
               <Link
-                href="/ask-connect-sterling"
+                href="/ask-connect-sterling#ask-form"
                 className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
               >
                 Ask a question

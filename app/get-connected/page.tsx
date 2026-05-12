@@ -75,7 +75,7 @@ const connectionCards = [
       "Churches are part of Sterling’s connective tissue. They support worship, youth activities, meals, service opportunities, and informal care networks.",
     proof:
       "If you are looking for a church home or youth activity, Connect Sterling can help point you toward local contacts.",
-    href: "/ask-connect-sterling",
+    href: "/ask-connect-sterling#ask-form",
     cta: "Ask for church connections",
   },
   {
@@ -86,7 +86,7 @@ const connectionCards = [
       "After big school events, students need safe places to gather. Programs like 5th Quarter give high school students food, games, and time together at no cost.",
     proof:
       "Local churches help create safe, community-supported spaces for teens.",
-    href: "/ask-connect-sterling",
+    href: "/ask-connect-sterling#ask-form",
     cta: "Ask about youth activities",
   },
   {
@@ -119,7 +119,7 @@ const connectionCards = [
       "Moving comes with small questions: utilities, school enrollment, internet, trash, healthcare, childcare, activities, and who to call first.",
     proof:
       "You do not need to know which organization owns the answer. Ask and we’ll help route you.",
-    href: "/ask-connect-sterling",
+    href: "/ask-connect-sterling#ask-form",
     cta: "Ask Connect Sterling",
   },
 ];
@@ -156,7 +156,7 @@ export default function GetConnectedPage() {
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/ask-connect-sterling"
+                href="/ask-connect-sterling#ask-form"
                 className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-slate-950 shadow-sm transition hover:bg-amber-100"
               >
                 Tell us what you need
@@ -278,7 +278,7 @@ export default function GetConnectedPage() {
               who says, “Come sit with us.”
             </p>
             <Link
-              href="/ask-connect-sterling"
+              href="/ask-connect-sterling#ask-form"
               className="inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-100"
             >
               Ask for a connection

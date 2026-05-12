@@ -9,7 +9,7 @@ const educationPath = [
       "For young families, childcare can decide whether a move is even possible. Lil Cub Childcare gives Sterling an important local foundation for early childhood care.",
     proof:
       "This is one of the first questions many families need answered before they can seriously consider Sterling.",
-    href: "/ask-connect-sterling",
+    href: "/ask-connect-sterling#ask-form",
     cta: "Ask about childcare",
   },
   {
@@ -263,7 +263,7 @@ export default function EducationFamilyLifePage() {
                 View Black Bear Athletics
               </Link>
               <Link
-                href="/ask-connect-sterling"
+                href="/ask-connect-sterling#ask-form"
                 className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
               >
                 Ask about schools
@@ -606,7 +606,7 @@ export default function EducationFamilyLifePage() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/ask-connect-sterling"
+                href="/ask-connect-sterling#ask-form"
                 className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-amber-100"
               >
                 Ask Connect Sterling

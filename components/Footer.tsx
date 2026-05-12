@@ -45,7 +45,7 @@ export default function Footer() {
               See if Sterling fits
             </Link>
             <Link
-              href="/ask-connect-sterling"
+              href="/ask-connect-sterling#ask-form"
               className="rounded-full border border-white/25 bg-white/10 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/20"
             >
               Ask Connect Sterling

@@ -181,7 +181,7 @@ export default function Home() {
                   See if Sterling fits your family
                 </Link>
                 <Link
-                  href="/ask-connect-sterling"
+                  href="/ask-connect-sterling#ask-form"
                   className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
                 >
                   Ask Connect Sterling
@@ -473,7 +473,7 @@ export default function Home() {
 
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/ask-connect-sterling"
+                href="/ask-connect-sterling#ask-form"
                 className="rounded-full bg-slate-950 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-slate-800"
               >
                 Ask Connect Sterling
