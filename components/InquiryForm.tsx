@@ -18,6 +18,8 @@ type InquiryFormProps = {
   fields: InquiryField[];
 };
 
+const CONNECT_STERLING_EMAIL = "hello@connectsterling.com";
+
 export default function InquiryForm({
   title,
   description,
@@ -50,7 +52,7 @@ export default function InquiryForm({
         .join("\n\n")
     );
 
-    window.location.href = `mailto:connectsterling@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${CONNECT_STERLING_EMAIL}?subject=${subject}&body=${body}`;
   }
 
   return (
