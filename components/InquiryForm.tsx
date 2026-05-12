@@ -18,7 +18,7 @@ type InquiryFormProps = {
   fields: InquiryField[];
 };
 
-const CONNECT_STERLING_EMAIL = "hello@connectsterling.com";
+type SubmitState = "idle" | "submitting" | "success" | "error";
 
 export default function InquiryForm({
   title,
@@ -33,6 +33,8 @@ export default function InquiryForm({
   }, [fields]);
 
   const [values, setValues] = useState<Record<string, string>>(initialValues);
+  const [submitState, setSubmitState] = useState<SubmitState>("idle");
+  const [message, setMessage] = useState("");
 
   function updateValue(name: string, value: string) {
     setValues((current) => ({
@@ -41,18 +43,46 @@ export default function InquiryForm({
     }));
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const subject = encodeURIComponent(`Connect Sterling Inquiry: ${title}`);
+    setSubmitState("submitting");
+    setMessage("");
 
-    const body = encodeURIComponent(
-      fields
-        .map((field) => `${field.label}: ${values[field.name] || ""}`)
-        .join("\n\n")
-    );
+    try {
+      const response = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title,
+          fields: fields.map((field) => ({
+            name: field.name,
+            label: field.label,
+            value: values[field.name] || "",
+          })),
+        }),
+      });
 
-    window.location.href = `mailto:${CONNECT_STERLING_EMAIL}?subject=${subject}&body=${body}`;
+      const data = (await response.json()) as {
+        ok?: boolean;
+        message?: string;
+      };
+
+      if (!response.ok || !data.ok) {
+        throw new Error(data.message || "Inquiry could not be sent.");
+      }
+
+      setSubmitState("success");
+      setMessage("Thanks. Your inquiry has been sent to Connect Sterling.");
+      setValues(initialValues);
+    } catch {
+      setSubmitState("error");
+      setMessage(
+        "Sorry, something went wrong. Please email hello@connectsterling.com directly."
+      );
+    }
   }
 
   return (
@@ -116,15 +146,23 @@ export default function InquiryForm({
 
       <button
         type="submit"
-        className="mt-7 w-full rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-900"
+        disabled={submitState === "submitting"}
+        className="mt-7 w-full rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-900 disabled:cursor-not-allowed disabled:opacity-60"
       >
-        Send Inquiry
+        {submitState === "submitting" ? "Sending..." : "Send Inquiry"}
       </button>
 
-      <p className="mt-4 text-xs leading-5 text-slate-500">
-        This opens your email app with the details filled in so you can review before
-        sending.
-      </p>
+      {message ? (
+        <p
+          className={`mt-4 rounded-2xl p-4 text-sm leading-6 ${
+            submitState === "success"
+              ? "bg-emerald-50 text-emerald-900 ring-1 ring-emerald-100"
+              : "bg-red-50 text-red-900 ring-1 ring-red-100"
+          }`}
+        >
+          {message}
+        </p>
+      ) : null}
     </form>
   );
 }
