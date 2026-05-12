@@ -144,8 +144,7 @@ export default function Home() {
               where people still notice, invite, serve, and show up?
             </p>
             <p>
-              That is the promise behind Connect Sterling. Not a perfect town. A better
-              rhythm.
+              That is the promise behind Sterling. Not a perfect town. A better life.
             </p>
           </div>
         </div>
@@ -213,7 +212,7 @@ export default function Home() {
 
       <section className="overflow-hidden bg-slate-950 text-white">
         <div className="mx-auto max-w-7xl px-6 py-16">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
             <div className="max-w-2xl">
               <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
                 Small-town life only works if the town is strong.
@@ -225,23 +224,27 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4">
               {proofCards.map((card) => (
                 <Link
                   key={card.title}
                   href={card.href}
-                  className="flex min-h-[270px] flex-col rounded-[2rem] bg-white/10 p-6 ring-1 ring-white/10 transition hover:bg-white/15"
+                  className="grid gap-5 rounded-[2rem] bg-white/10 p-6 ring-1 ring-white/10 transition hover:bg-white/15 sm:grid-cols-[210px_1fr_auto] sm:items-center"
                 >
-                  <p className="text-3xl font-bold leading-tight text-amber-200">
+                  <p className="text-3xl font-bold leading-tight text-amber-200 sm:text-4xl">
                     {card.value}
                   </p>
-                  <h3 className="mt-4 text-xl font-bold leading-snug text-white">
-                    {card.title}
-                  </h3>
-                  <p className="mt-4 flex-1 text-sm leading-6 text-slate-300">
-                    {card.description}
-                  </p>
-                  <span className="mt-6 inline-flex text-sm font-semibold text-amber-200">
+
+                  <div>
+                    <h3 className="text-xl font-bold leading-snug text-white">
+                      {card.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-300">
+                      {card.description}
+                    </p>
+                  </div>
+
+                  <span className="inline-flex text-sm font-semibold text-amber-200 sm:justify-self-end">
                     Learn more →
                   </span>
                 </Link>
@@ -255,7 +258,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
-              Sterling is not selling escape.
+              Sterling offers more than a change of scenery.
             </h2>
           </div>
 
@@ -268,7 +271,7 @@ export default function Home() {
             <p>
               That is why families take a closer look. Not because Sterling is bigger,
               louder, or flashier. Because it may give them something they have been
-              missing.
+              missing: a better life.
             </p>
           </div>
         </div>
