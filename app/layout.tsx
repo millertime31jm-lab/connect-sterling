@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
-// Load the fonts and assign them to CSS variables
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
+// Configure the Nunito font
+const nunito = Nunito({ 
+  subsets: ["latin"],
+  variable: '--font-nunito',
+});
 
+// This dictates what shows up in Google Search and browser tabs
 export const metadata: Metadata = {
-  title: "Connect Sterling | Your Rural Opportunity Zone",
-  description: "Discover community, opportunity, and belonging in Sterling, Kansas.",
+  title: "Connect Sterling | Remote Work Relocation",
+  description: "Keep your remote job. Keep more of your paycheck. Move to Sterling, Kansas.",
 };
 
 export default function RootLayout({
@@ -20,15 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      {/* We inject the variables into the body tag so the whole site can access them */}
-      <body className={`${inter.variable} ${playfair.variable} font-sans bg-slate-50 text-slate-900 flex flex-col min-h-screen`}>
+      <body className={`${nunito.variable} font-sans antialiased text-slate-900 bg-brand-50`}>
+        {/* The Navbar will now automatically appear at the top of every page */}
         <Navbar />
         
-        <div className="flex-grow">
-          {children}
-        </div>
-
-        <Footer />
+        {/* The children prop represents the specific page content */}
+        {children}
       </body>
     </html>
   );

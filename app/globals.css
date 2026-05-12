@@ -1,6 +1,13 @@
 @import "tailwindcss";
 
-/* Force all major headings to use the premium serif font */
-h1, h2, h3 {
-  font-family: var(--font-serif);
+@theme {
+  /* Option B: The Bright Horizon Palette */
+  --color-brand-50: #f0f9ff;
+  --color-brand-100: #e0f2fe;
+  --color-brand-500: #0ea5e9;
+  --color-brand-700: #0369a1;
+  --color-brand-900: #0c4a6e;
+  
+  /* Link our Nunito font */
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
