@@ -33,6 +33,22 @@ export default function InquiryForm({
   }, [fields]);
 
   const [values, setValues] = useState<Record<string, string>>(initialValues);
+  const [showFallback, setShowFallback] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const subject = `Connect Sterling Inquiry: ${title}`;
+
+  const body = fields
+    .map((field) => `${field.label}: ${values[field.name] || ""}`)
+    .join("\n\n");
+
+  const mailtoHref = `mailto:${CONNECT_STERLING_EMAIL}?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(body)}`;
+
+  const gmailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+    CONNECT_STERLING_EMAIL
+  )}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
   function updateValue(name: string, value: string) {
     setValues((current) => ({
@@ -43,16 +59,19 @@ export default function InquiryForm({
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setShowFallback(true);
+    window.location.href = mailtoHref;
+  }
 
-    const subject = encodeURIComponent(`Connect Sterling Inquiry: ${title}`);
-
-    const body = encodeURIComponent(
-      fields
-        .map((field) => `${field.label}: ${values[field.name] || ""}`)
-        .join("\n\n")
-    );
-
-    window.location.href = `mailto:${CONNECT_STERLING_EMAIL}?subject=${subject}&body=${body}`;
+  async function copyMessage() {
+    try {
+      await navigator.clipboard.writeText(
+        `To: ${CONNECT_STERLING_EMAIL}\nSubject: ${subject}\n\n${body}`
+      );
+      setCopied(true);
+    } catch {
+      setCopied(false);
+    }
   }
 
   return (
@@ -124,8 +143,50 @@ export default function InquiryForm({
       </button>
 
       <p className="mt-4 text-xs leading-5 text-slate-500">
-        This opens your email app with the message filled in so you can review and send it.
+        This tries to open your default email app with the message filled in.
       </p>
+
+      {showFallback ? (
+        <div className="mt-5 rounded-2xl bg-amber-50 p-5 ring-1 ring-amber-100">
+          <h4 className="font-bold text-slate-950">
+            Nothing opened?
+          </h4>
+          <p className="mt-2 text-sm leading-6 text-slate-700">
+            Your browser may not have a default email app set. You can use Gmail or copy
+            the message instead.
+          </p>
+
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={gmailHref}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full bg-slate-950 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-emerald-900"
+            >
+              Open in Gmail
+            </a>
+
+            <a
+              href={mailtoHref}
+              className="rounded-full border border-slate-300 bg-white px-5 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-stone-100"
+            >
+              Try Email App Again
+            </a>
+
+            <button
+              type="button"
+              onClick={copyMessage}
+              className="rounded-full border border-slate-300 bg-white px-5 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-stone-100"
+            >
+              {copied ? "Copied" : "Copy Message"}
+            </button>
+          </div>
+
+          <p className="mt-4 text-xs leading-5 text-slate-600">
+            Send to: {CONNECT_STERLING_EMAIL}
+          </p>
+        </div>
+      ) : null}
     </form>
   );
 }
