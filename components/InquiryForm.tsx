@@ -1,160 +1,128 @@
 "use client";
 
-import { useState } from "react";
+import { FormEvent, useMemo, useState } from "react";
 
-type Field =
-  | {
-      type: "text" | "email" | "tel";
-      name: string;
-      label: string;
-      required?: boolean;
-      placeholder?: string;
-    }
-  | {
-      type: "select";
-      name: string;
-      label: string;
-      options: string[];
-      required?: boolean;
-    }
-  | {
-      type: "checkbox";
-      name: string;
-      label: string;
-    }
-  | {
-      type: "textarea";
-      name: string;
-      label: string;
-      required?: boolean;
-      placeholder?: string;
-    };
+type FieldType = "text" | "email" | "tel" | "select" | "textarea";
+
+type InquiryField = {
+  name: string;
+  label: string;
+  type: FieldType;
+  required?: boolean;
+  options?: string[];
+};
 
 type InquiryFormProps = {
   title: string;
-  intro: string;
-  subject: string;
-  fields: Field[];
-  submitLabel?: string;
+  description?: string;
+  fields: InquiryField[];
 };
-
-const contactEmail = "hello@connectsterling.com";
 
 export default function InquiryForm({
   title,
-  intro,
-  subject,
+  description,
   fields,
-  submitLabel = "Send Inquiry",
 }: InquiryFormProps) {
-  const [status, setStatus] = useState<"idle" | "ready">("idle");
+  const initialValues = useMemo(() => {
+    return fields.reduce<Record<string, string>>((acc, field) => {
+      acc[field.name] = "";
+      return acc;
+    }, {});
+  }, [fields]);
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  const [values, setValues] = useState<Record<string, string>>(initialValues);
+
+  function updateValue(name: string, value: string) {
+    setValues((current) => ({
+      ...current,
+      [name]: value,
+    }));
+  }
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const lines = fields.map((field) => {
-      const value =
-        field.type === "checkbox"
-          ? formData.get(field.name)
-            ? "Yes"
-            : "No"
-          : String(formData.get(field.name) || "").trim();
-      return `${field.label}: ${value || "Not provided"}`;
-    });
 
-    const mailto = `mailto:${contactEmail}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(lines.join("\n"))}`;
+    const subject = encodeURIComponent(`Connect Sterling Inquiry: ${title}`);
 
-    setStatus("ready");
-    window.location.href = mailto;
+    const body = encodeURIComponent(
+      fields
+        .map((field) => `${field.label}: ${values[field.name] || ""}`)
+        .join("\n\n")
+    );
+
+    window.location.href = `mailto:connectsterling@gmail.com?subject=${subject}&body=${body}`;
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm md:p-8">
-      <div className="mb-6">
-        <h2 className="text-2xl font-extrabold text-slate-950">{title}</h2>
-        <p className="mt-2 text-sm leading-6 text-slate-600">{intro}</p>
+    <form
+      onSubmit={handleSubmit}
+      className="rounded-[2rem] bg-white p-6 shadow-sm ring-1 ring-stone-200"
+    >
+      <div>
+        <h3 className="text-2xl font-bold tracking-tight text-slate-950">
+          {title}
+        </h3>
+        {description ? (
+          <p className="mt-3 text-sm leading-6 text-slate-600">
+            {description}
+          </p>
+        ) : null}
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2">
-        {fields.map((field) => {
-          if (field.type === "textarea") {
-            return (
-              <label key={field.name} className="md:col-span-2">
-                <span className="block text-sm font-bold text-slate-800">{field.label}</span>
-                <textarea
-                  name={field.name}
-                  required={field.required}
-                  placeholder={field.placeholder}
-                  rows={5}
-                  className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-950 outline-none transition focus:border-brand-700 focus:ring-2 focus:ring-brand-100"
-                />
-              </label>
-            );
-          }
+      <div className="mt-6 grid gap-5">
+        {fields.map((field) => (
+          <label key={field.name} className="grid gap-2">
+            <span className="text-sm font-semibold text-slate-800">
+              {field.label}
+              {field.required ? <span className="text-amber-700"> *</span> : null}
+            </span>
 
-          if (field.type === "select") {
-            return (
-              <label key={field.name}>
-                <span className="block text-sm font-bold text-slate-800">{field.label}</span>
-                <select
-                  name={field.name}
-                  required={field.required}
-                  className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-950 outline-none transition focus:border-brand-700 focus:ring-2 focus:ring-brand-100"
-                >
-                  <option value="">Choose one</option>
-                  {field.options.map((option) => (
-                    <option key={option} value={option}>
-                      {option}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            );
-          }
-
-          if (field.type === "checkbox") {
-            return (
-              <label key={field.name} className="flex items-start gap-3 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
-                <input
-                  type="checkbox"
-                  name={field.name}
-                  className="mt-1 h-4 w-4 rounded border-slate-300 text-brand-700 focus:ring-brand-700"
-                />
-                <span className="text-sm font-bold leading-6 text-slate-800">{field.label}</span>
-              </label>
-            );
-          }
-
-          return (
-            <label key={field.name}>
-              <span className="block text-sm font-bold text-slate-800">{field.label}</span>
-              <input
-                type={field.type}
-                name={field.name}
+            {field.type === "textarea" ? (
+              <textarea
                 required={field.required}
-                placeholder={field.placeholder}
-                className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-950 outline-none transition focus:border-brand-700 focus:ring-2 focus:ring-brand-100"
+                value={values[field.name] || ""}
+                onChange={(event) => updateValue(field.name, event.target.value)}
+                rows={5}
+                className="rounded-2xl border border-stone-300 bg-white px-4 py-3 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-100"
               />
-            </label>
-          );
-        })}
+            ) : field.type === "select" ? (
+              <select
+                required={field.required}
+                value={values[field.name] || ""}
+                onChange={(event) => updateValue(field.name, event.target.value)}
+                className="rounded-2xl border border-stone-300 bg-white px-4 py-3 text-sm text-slate-950 outline-none transition focus:border-emerald-700 focus:ring-4 focus:ring-emerald-100"
+              >
+                <option value="">Select one</option>
+                {(field.options || []).map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            ) : (
+              <input
+                required={field.required}
+                type={field.type}
+                value={values[field.name] || ""}
+                onChange={(event) => updateValue(field.name, event.target.value)}
+                className="rounded-2xl border border-stone-300 bg-white px-4 py-3 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-emerald-700 focus:ring-4 focus:ring-emerald-100"
+              />
+            )}
+          </label>
+        ))}
       </div>
 
-      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-        <button
-          type="submit"
-          className="rounded-lg bg-brand-700 px-6 py-3 text-center font-extrabold text-white shadow-sm transition hover:bg-brand-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
-        >
-          {submitLabel}
-        </button>
-        <p className="text-sm text-slate-500">
-          {status === "ready"
-            ? "Your email app should open with the details filled in."
-            : "Submissions are routed through your email app for now."}
-        </p>
-      </div>
+      <button
+        type="submit"
+        className="mt-7 w-full rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-900"
+      >
+        Send Inquiry
+      </button>
+
+      <p className="mt-4 text-xs leading-5 text-slate-500">
+        This opens your email app with the details filled in so you can review before
+        sending.
+      </p>
     </form>
   );
 }
