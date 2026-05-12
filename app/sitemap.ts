@@ -1,33 +1,23 @@
 import { MetadataRoute } from 'next'
  
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Replace this with your actual production URL when you launch
   const baseUrl = 'https://connectsterling.com' 
+  const routes = [
+    { path: '', priority: 1.0, changeFrequency: 'weekly' as const },
+    { path: '/move-here', priority: 0.85, changeFrequency: 'monthly' as const },
+    { path: '/education-family-life', priority: 0.9, changeFrequency: 'monthly' as const },
+    { path: '/work-here', priority: 0.8, changeFrequency: 'monthly' as const },
+    { path: '/housing-growth', priority: 0.9, changeFrequency: 'monthly' as const },
+    { path: '/get-connected', priority: 0.85, changeFrequency: 'weekly' as const },
+    { path: '/community-calendar', priority: 0.75, changeFrequency: 'weekly' as const },
+    { path: '/resources', priority: 0.8, changeFrequency: 'monthly' as const },
+    { path: '/ask-connect-sterling', priority: 0.9, changeFrequency: 'monthly' as const },
+  ];
 
-  return [
-    {
-      url: `${baseUrl}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1.0, // The homepage is the most important
-    },
-    {
-      url: `${baseUrl}/why-sterling`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/get-involved`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/resources`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-  ]
+  return routes.map((route) => ({
+    url: `${baseUrl}${route.path}`,
+    lastModified: new Date(),
+    changeFrequency: route.changeFrequency,
+    priority: route.priority,
+  }))
 }

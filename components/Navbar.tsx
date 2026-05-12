@@ -2,71 +2,75 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { navLinks } from "../data/content";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white border-b border-brand-100 sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
-          <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0 flex items-center gap-1">
-              <span className="text-2xl font-black text-brand-900 tracking-tight">
-                Connect<span className="text-brand-500">Sterling</span>
-              </span>
-            </Link>
-          </div>
+    <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex min-h-20 items-center justify-between gap-4">
+          <Link href="/" className="flex min-w-fit flex-col leading-none" onClick={() => setIsOpen(false)}>
+            <span className="text-xl font-black tracking-tight text-slate-950 sm:text-2xl">
+              Connect <span className="text-brand-700">Sterling</span>
+            </span>
+            <span className="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
+              Sterling, Kansas
+            </span>
+          </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
-            <Link href="/why-sterling" className="text-slate-600 hover:text-brand-700 font-bold transition-colors">
-              Why Sterling
-            </Link>
-            <Link href="/get-involved" className="text-slate-600 hover:text-brand-700 font-bold transition-colors">
-              Get Involved
-            </Link>
-            <Link href="/resources" className="text-slate-600 hover:text-brand-700 font-bold transition-colors">
-              Resources
-            </Link>
-            <Link href="/#guide" className="px-5 py-2.5 bg-brand-500 text-white font-bold rounded-xl shadow-sm hover:bg-brand-700 transition-colors">
-              Get the Guide
-            </Link>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="flex items-center md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-600 hover:text-brand-900 focus:outline-none p-2"
+          <div className="hidden items-center gap-5 lg:flex">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm font-bold text-slate-700 transition hover:text-brand-900"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              href="/ask-connect-sterling"
+              className="rounded-lg bg-brand-700 px-4 py-2.5 text-sm font-extrabold text-white shadow-sm transition hover:bg-brand-900"
             >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {isOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
+              Ask Connect Sterling
+            </Link>
           </div>
+
+          <button
+            type="button"
+            onClick={() => setIsOpen((open) => !open)}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 lg:hidden"
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
+            aria-label="Toggle navigation"
+          >
+            <span className="sr-only">Toggle navigation</span>
+            <span className="block text-2xl leading-none">{isOpen ? "x" : "="}</span>
+          </button>
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-brand-50 absolute w-full shadow-xl">
-          <div className="px-4 pt-2 pb-6 space-y-2">
-            <Link onClick={() => setIsOpen(false)} href="/why-sterling" className="block px-3 py-3 text-slate-700 font-bold hover:bg-brand-50 rounded-lg">
-              Why Sterling
-            </Link>
-            <Link onClick={() => setIsOpen(false)} href="/get-involved" className="block px-3 py-3 text-slate-700 font-bold hover:bg-brand-50 rounded-lg">
-              Get Involved
-            </Link>
-            <Link onClick={() => setIsOpen(false)} href="/resources" className="block px-3 py-3 text-slate-700 font-bold hover:bg-brand-50 rounded-lg">
-              Resources
-            </Link>
-            <Link onClick={() => setIsOpen(false)} href="/#guide" className="block px-3 py-3 mt-4 text-center bg-brand-500 text-white font-bold rounded-xl shadow-sm">
-              Get the Guide
+        <div id="mobile-navigation" className="border-t border-slate-200 bg-white lg:hidden">
+          <div className="mx-auto max-w-7xl space-y-1 px-4 py-4 sm:px-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="block rounded-lg px-3 py-3 text-base font-bold text-slate-800 hover:bg-brand-50"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              href="/ask-connect-sterling"
+              onClick={() => setIsOpen(false)}
+              className="mt-3 block rounded-lg bg-brand-700 px-4 py-3 text-center font-extrabold text-white"
+            >
+              Ask Connect Sterling
             </Link>
           </div>
         </div>

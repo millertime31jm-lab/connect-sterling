@@ -1,18 +1,16 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
-// Configure the Nunito font
-const nunito = Nunito({ 
-  subsets: ["latin"],
-  variable: '--font-nunito',
-});
-
-// This dictates what shows up in Google Search and browser tabs
 export const metadata: Metadata = {
-  title: "Connect Sterling | Remote Work Relocation",
-  description: "Keep your remote job. Keep more of your paycheck. Move to Sterling, Kansas.",
+  metadataBase: new URL("https://connectsterling.com"),
+  title: {
+    default: "Connect Sterling | Move, Work, Build, and Belong in Sterling, Kansas",
+    template: "%s | Connect Sterling",
+  },
+  description:
+    "Connect Sterling helps families, remote workers, job seekers, builders, and new residents get connected in Sterling, Kansas.",
 };
 
 export default function RootLayout({
@@ -22,12 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${nunito.variable} font-sans antialiased text-slate-900 bg-brand-50`}>
-        {/* The Navbar will now automatically appear at the top of every page */}
+      <body className="bg-brand-50 font-sans text-slate-900 antialiased">
         <Navbar />
-        
-        {/* The children prop represents the specific page content */}
         {children}
+        <Footer />
       </body>
     </html>
   );

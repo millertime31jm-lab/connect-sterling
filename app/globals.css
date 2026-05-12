@@ -1,13 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  /* Option B: The Bright Horizon Palette */
-  --color-brand-50: #f0f9ff;
-  --color-brand-100: #e0f2fe;
-  --color-brand-500: #0ea5e9;
-  --color-brand-700: #0369a1;
-  --color-brand-900: #0c4a6e;
+  --color-brand-50: #f7f3ea;
+  --color-brand-100: #ece1cb;
+  --color-brand-300: #d7b46a;
+  --color-brand-500: #9f6f2d;
+  --color-brand-700: #315f52;
+  --color-brand-900: #17352f;
+  --color-skyline: #2f6f8f;
+  --color-clay: #a75238;
   
-  /* Link our Nunito font */
-  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  min-width: 320px;
+}
+
+::selection {
+  background: #d7b46a;
+  color: #17352f;
 }

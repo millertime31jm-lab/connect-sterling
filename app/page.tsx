@@ -1,196 +1,231 @@
-"use client";
-
 import Link from "next/link";
-import { useState } from "react";
-import { siteStats, testimonials } from "../data/content";
+import Image from "next/image";
+import {
+  employers,
+  essentials,
+  goldenTicketUrl,
+  housingPaths,
+  jedMillerTestimonial,
+  pathways,
+} from "../data/content";
 
 export default function Home() {
-  const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-
-  async function handleSubscribe(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setFormStatus('loading');
-    
-    const formData = new FormData(e.currentTarget);
-    const firstName = formData.get('firstName');
-    const email = formData.get('email');
-
-    try {
-      const res = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ firstName, email }),
-      });
-      
-      if (res.ok) {
-        setFormStatus('success');
-      } else {
-        setFormStatus('error');
-      }
-    } catch (err) {
-      setFormStatus('error');
-    }
-  }
-
   return (
     <main className="min-h-screen bg-brand-50">
-      
-      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-brand-900 tracking-tight mb-6">
-            Your career shouldn&apos;t cost you <br className="hidden md:block" />
-            <span className="text-brand-500">your family time.</span>
-          </h1>
-          <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-10">
-            Keep your remote job. Keep more of your paycheck. Move to Sterling, Kansas—a town wired with gigabit fiber, anchored by elite schools, and built for a better family rhythm.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Link href="#guide" className="px-8 py-4 bg-brand-500 text-white font-bold rounded-xl shadow-lg hover:bg-brand-700 transition-colors text-lg w-full sm:w-auto text-center">
-              Get the Relocation Guide
-            </Link>
-            <Link href="/why-sterling" className="px-8 py-4 bg-white text-brand-900 font-bold rounded-xl border border-slate-200 shadow-sm hover:bg-brand-50 transition-colors text-lg w-full sm:w-auto text-center">
-              Compare Cost of Living
-            </Link>
+      <section className="relative overflow-hidden bg-slate-950 text-white">
+        <Image
+          src="/photos/5.jpg"
+          alt="Sterling community gathering outdoors"
+          fill
+          priority
+          sizes="100vw"
+          className="absolute inset-0 h-full w-full object-cover opacity-45"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/20" />
+        <div className="relative mx-auto grid min-h-[calc(100vh-5rem)] max-w-7xl content-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-extrabold uppercase tracking-[0.22em] text-brand-300">
+              Sterling, Kansas
+            </p>
+            <h1 className="mt-5 text-5xl font-black leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
+              Trade the commute for community.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-100 sm:text-xl">
+              Sterling, Kansas is a growing small town where families, remote workers, job seekers, and builders can find strong schools, real opportunity, everyday essentials, and a place to belong.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/move-here"
+                className="rounded-lg bg-brand-300 px-6 py-3 text-center font-extrabold text-slate-950 shadow-sm transition hover:bg-white"
+              >
+                Explore Moving to Sterling
+              </Link>
+              <Link
+                href="/get-connected"
+                className="rounded-lg border border-white/40 bg-white/10 px-6 py-3 text-center font-extrabold text-white backdrop-blur transition hover:bg-white hover:text-slate-950"
+              >
+                Get Connected Locally
+              </Link>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3 text-sm font-bold text-slate-200">
+              <Link href="/education-family-life" className="rounded-full bg-white/10 px-4 py-2 hover:bg-white/20">
+                Education & Family Life
+              </Link>
+              <Link href="/housing-growth" className="rounded-full bg-white/10 px-4 py-2 hover:bg-white/20">
+                Housing & Growth
+              </Link>
+              <Link href="/work-here" className="rounded-full bg-white/10 px-4 py-2 hover:bg-white/20">
+                Work in Sterling
+              </Link>
+            </div>
           </div>
-        </div>
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 flex flex-wrap justify-between gap-6 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-slate-100">
-            {siteStats.map((stat, index) => (
-              <div key={index} className="flex-1 min-w-[150px] pt-4 md:pt-0 md:px-6 first:pl-0 first:pt-0 border-t-0">
-                <div className="text-2xl mb-2">{stat.icon}</div>
-                <p className="text-3xl font-black text-brand-900 mb-1">{stat.value}</p>
-                <p className="text-sm font-bold text-slate-700 mb-1">{stat.label}</p>
-                <p className="text-xs text-slate-400 uppercase tracking-wide font-semibold">{stat.source}</p>
-              </div>
-            ))}
+          <div className="self-end rounded-lg border border-white/20 bg-white/10 p-6 shadow-2xl backdrop-blur">
+            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-brand-300">A practical first stop</p>
+            <p className="mt-4 text-2xl font-black leading-tight">
+              Tell us what you need, and we will point you to the right person.
+            </p>
+            <p className="mt-3 text-sm leading-6 text-slate-200">
+              Moving questions, school questions, housing questions, employer connections, community groups, and local introductions can all start in one place.
+            </p>
+            <Link
+              href="/ask-connect-sterling"
+              className="mt-6 inline-flex rounded-lg bg-white px-5 py-3 text-sm font-extrabold text-slate-950 transition hover:bg-brand-100"
+            >
+              Ask Connect Sterling
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="w-full bg-white py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-extrabold text-brand-900 mb-4">A better rhythm for your family.</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Trade the 45-minute commute for a 5-minute walk to the splash park. This is what a Tuesday in Sterling actually looks like.
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {pathways.map((pathway) => (
+            <Link
+              href={pathway.href}
+              key={pathway.title}
+              className="group rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-brand-700 hover:shadow-md"
+            >
+              <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-brand-700">{pathway.title}</p>
+              <p className="mt-4 text-lg font-extrabold leading-6 text-slate-950">{pathway.description}</p>
+              <span className="mt-6 inline-flex text-sm font-extrabold text-skyline group-hover:text-brand-900">
+                Start here
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-brand-700">Daily life</p>
+            <h2 className="mt-3 text-4xl font-black tracking-tight text-slate-950">The essentials are here.</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Small-town life works best when families have what they need close by. Sterling offers the daily-life essentials that make a move feel realistic: childcare, strong schools, higher education, healthcare, groceries, internet options, outdoor spaces, growing employers, and regional access when you need it.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[250px]">
-            <div className="md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden shadow-sm relative group">
-              <img src="/photos/edu-6.jpg" alt="Family life in Sterling" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-900/60 to-transparent flex items-end p-8">
-                <span className="text-white font-bold text-lg">Community Events</span>
-              </div>
-            </div>
-            
-            <div className="md:col-span-2 rounded-3xl overflow-hidden shadow-sm relative group">
-              <img src="/photos/edu-2.jpg" alt="Friday Night Football" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-900/60 to-transparent flex items-end p-6">
-                <span className="text-white font-bold">Friday Night Lights</span>
-              </div>
-            </div>
-            
-            <div className="rounded-3xl overflow-hidden shadow-sm relative group">
-              <img src="/photos/edu-1.jpg" alt="Local schools" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-            </div>
-            
-            <div className="rounded-3xl overflow-hidden shadow-sm relative group bg-brand-100 flex items-center justify-center p-6 text-center">
-              <div>
-                <span className="text-4xl block mb-2">⛳</span>
-                <span className="text-brand-900 font-bold">5 minutes<br/>to the first tee.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="w-full bg-brand-900 py-24 text-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight mb-4">Don&apos;t just take our word for it.</h2>
-            <p className="text-brand-100">Hear from the families who have already made the move.</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-brand-700 rounded-2xl p-8 border border-brand-500 shadow-xl flex flex-col h-full">
-                <p className="text-lg text-brand-50 leading-relaxed mb-8 flex-grow">
-                  &quot;{testimonial.quote}&quot;
-                </p>
-                <div className="flex items-center gap-4 mt-auto">
-                  <div className="w-12 h-12 rounded-full overflow-hidden bg-brand-900 border-2 border-brand-500">
-                    <img src={testimonial.image} alt={testimonial.author} className="w-full h-full object-cover" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-white">{testimonial.author}</p>
-                    <p className="text-sm text-brand-100">{testimonial.role}</p>
-                  </div>
-                </div>
-              </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {essentials.map((item) => (
+              <article key={item.title} className="rounded-lg border border-slate-200 bg-brand-50 p-6">
+                <h3 className="text-xl font-extrabold text-slate-950">{item.title}</h3>
+                <p className="mt-3 leading-7 text-slate-600">{item.description}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="guide" className="w-full bg-white py-24 scroll-mt-12">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-brand-500 font-bold tracking-wider uppercase text-sm mb-4 block">Free Download</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-brand-900 mb-6">
-            Get the Official Relocation Guide
-          </h2>
-          <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-            Everything you need to run the numbers for your family. Inside, you&apos;ll find the complete guide to the 5-year tax waiver, local housing market contacts, and internet provider breakdowns.
-          </p>
-          
-          {formStatus === 'success' ? (
-            <div className="max-w-md mx-auto p-8 bg-emerald-50 border border-emerald-200 rounded-2xl shadow-sm">
-              <span className="text-4xl block mb-4">📬</span>
-              <h3 className="text-2xl font-bold text-emerald-900 mb-2">Guide Sent!</h3>
-              <p className="text-emerald-700">Check your inbox. Your relocation guide should arrive in the next few minutes.</p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubscribe} className="max-w-md mx-auto space-y-4">
-              <input 
-                type="text" 
-                name="firstName"
-                placeholder="First Name" 
-                required
-                disabled={formStatus === 'loading'}
-                className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all disabled:opacity-50"
-              />
-              <input 
-                type="email" 
-                name="email"
-                placeholder="Work or Personal Email" 
-                required
-                disabled={formStatus === 'loading'}
-                className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all disabled:opacity-50"
-              />
-              <button 
-                type="submit" 
-                disabled={formStatus === 'loading'}
-                className="w-full px-8 py-4 bg-brand-900 text-white font-bold rounded-xl shadow-md hover:bg-slate-800 transition-colors text-lg disabled:opacity-70 disabled:cursor-not-allowed"
-              >
-                {formStatus === 'loading' ? 'Sending...' : 'Send Me the Guide'}
-              </button>
-              
-              {formStatus === 'error' && (
-                <p className="text-red-600 font-bold text-sm mt-2">
-                  Oops! Something went wrong. Please try again or email us directly.
-                </p>
-              )}
-              
-              <p className="text-xs text-slate-400 mt-4">
-                We respect your inbox. No spam, ever. Unsubscribe anytime.
-              </p>
-            </form>
-          )}
+      <section className="py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+          <div>
+            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-brand-700">Education</p>
+            <h2 className="mt-3 text-4xl font-black tracking-tight text-slate-950">
+              Schools are one of the biggest reasons families choose Sterling.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Kids can be known here. They can participate here. They can be challenged here. And the community still shows up.
+            </p>
+            <Link
+              href="/education-family-life"
+              className="mt-8 inline-flex rounded-lg bg-brand-700 px-6 py-3 font-extrabold text-white transition hover:bg-brand-900"
+            >
+              Explore Education & Family Life
+            </Link>
+          </div>
+          <blockquote className="rounded-lg border border-brand-100 bg-white p-8 shadow-sm">
+            <p className="text-2xl font-extrabold leading-9 text-slate-950">&quot;{jedMillerTestimonial}&quot;</p>
+            <footer className="mt-6 text-sm font-bold text-slate-600">Jed Miller, local parent</footer>
+          </blockquote>
         </div>
       </section>
 
+      <section className="bg-slate-950 py-20 text-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <div>
+              <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-brand-300">Business momentum</p>
+              <h2 className="mt-3 text-4xl font-black tracking-tight">A small town with real economic strength.</h2>
+            </div>
+            <p className="text-lg leading-8 text-slate-300">
+              Sterling has more economic strength than many people expect from a town its size. The community is home to growing employers, agriculture, manufacturing, healthcare, education, entrepreneurs, and Main Street businesses.
+            </p>
+          </div>
+          <div className="mt-10 flex flex-wrap gap-3">
+            {employers.map((employer) => (
+              <span key={employer} className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-bold text-slate-100">
+                {employer}
+              </span>
+            ))}
+          </div>
+          <Link
+            href="/work-here"
+            className="mt-10 inline-flex rounded-lg bg-white px-6 py-3 font-extrabold text-slate-950 transition hover:bg-brand-100"
+          >
+            Connect with the Chamber
+          </Link>
+        </div>
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-brand-700">Housing & growth</p>
+            <h2 className="mt-3 text-4xl font-black tracking-tight text-slate-950">
+              Sterling is growing. Be part of what&apos;s next.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Sterling&apos;s schools, employers, college, and community life are creating real momentum. That growth also creates a need for more housing options. Some families will buy existing homes. Others may choose to build. Some workers may need rental options while they settle. Builders, lenders, landowners, developers, and investors all have a role to play in Sterling&apos;s next chapter.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {housingPaths.map((path) => (
+              <article key={path.title} className="rounded-lg border border-slate-200 bg-brand-50 p-6">
+                <h3 className="text-2xl font-black text-slate-950">{path.title}</h3>
+                <p className="mt-3 leading-7 text-slate-600">{path.description}</p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href="/housing-growth#housing-interest" className="rounded-lg bg-brand-700 px-6 py-3 text-center font-extrabold text-white transition hover:bg-brand-900">
+              Share Your Housing Interest
+            </Link>
+            <Link href="/housing-growth#housing-interest" className="rounded-lg border border-slate-300 bg-white px-6 py-3 text-center font-extrabold text-slate-950 transition hover:bg-slate-50">
+              I&apos;m a Builder, Developer, or Investor
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+          <div className="rounded-lg bg-brand-900 p-8 text-white md:p-10">
+            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-brand-300">Belong here</p>
+            <h2 className="mt-3 text-4xl font-black tracking-tight">New here? You don&apos;t have to figure it out alone.</h2>
+            <p className="mt-5 text-lg leading-8 text-brand-100">
+              Connect Sterling helps route people to the right local contacts, calendars, organizations, and opportunities. Whether you are looking for swim lessons, youth sports, Rotary, volunteer opportunities, churches, 5th Quarter, school events, Sterling College events, Golden Ticket, or local groups, we will help point you in the right direction.
+            </p>
+            <Link href="/ask-connect-sterling" className="mt-8 inline-flex rounded-lg bg-white px-6 py-3 font-extrabold text-brand-900 transition hover:bg-brand-100">
+              Ask Connect Sterling
+            </Link>
+          </div>
+          <div className="rounded-lg border border-slate-200 bg-white p-8 shadow-sm md:p-10">
+            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-clay">Golden Ticket</p>
+            <h3 className="mt-3 text-3xl font-black text-slate-950">A small welcome into the life of town.</h3>
+            <p className="mt-4 leading-7 text-slate-600">
+              Adults who relocate through Connect Sterling receive two Golden Tickets to help kickstart their community connection. It is one more way Sterling helps newcomers meet people, support local experiences, and feel invited into the life of the town.
+            </p>
+            <a
+              href={goldenTicketUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex rounded-lg border border-slate-300 px-6 py-3 font-extrabold text-slate-950 transition hover:bg-slate-50"
+            >
+              Learn About Golden Ticket
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

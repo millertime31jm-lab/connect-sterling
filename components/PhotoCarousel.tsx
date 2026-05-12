@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function PhotoCarousel() {
   // Now pulling directly from your local public/photos folder
   const photos = [
@@ -20,12 +22,14 @@ export default function PhotoCarousel() {
         {photos.map((src, index) => (
           <div 
             key={index} 
-            className="shrink-0 w-80 md:w-96 aspect-[4/3] snap-center overflow-hidden rounded-2xl shadow-sm border border-slate-200"
+            className="relative shrink-0 w-80 md:w-96 aspect-[4/3] snap-center overflow-hidden rounded-2xl shadow-sm border border-slate-200"
           >
-            <img 
+            <Image
               src={src} 
               alt={`Sterling Lifestyle ${index + 1}`} 
-              className="w-full h-full object-cover"
+              fill
+              sizes="(min-width: 768px) 24rem, 20rem"
+              className="object-cover"
             />
           </div>
         ))}
