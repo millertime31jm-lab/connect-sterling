@@ -1,63 +1,99 @@
 import Link from "next/link";
-import { goldenTicketUrl, navLinks } from "../data/content";
+
+const mainLinks = [
+  { label: "The Sterling Story", href: "/the-sterling-story" },
+  { label: "Move Here", href: "/move-here" },
+  { label: "Education & Family Life", href: "/education-family-life" },
+  { label: "Housing & Growth", href: "/housing-growth" },
+  { label: "Get Connected", href: "/get-connected" },
+  { label: "Community Calendar Hub", href: "/community-calendar" },
+  { label: "Resources", href: "/resources" },
+];
+
+const localLinks = [
+  { label: "Sterling Chamber Main Street", href: "https://www.visitsterlingks.com/" },
+  { label: "City of Sterling", href: "https://www.sterling-kansas.com/" },
+  { label: "USD 376", href: "https://www.usd376.com/" },
+  { label: "Sterling College", href: "https://www.sterling.edu/" },
+  { label: "Sterling Recreation Commission", href: "https://sterlingrec.org/" },
+  { label: "Golden Ticket", href: "https://www.sterlinggoldenticket.com" },
+];
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-800 bg-slate-950 py-12 text-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-[1.3fr_1fr_1fr]">
-          <div>
-            <h2 className="text-2xl font-black tracking-tight">
-              Connect <span className="text-brand-300">Sterling</span>
-            </h2>
-            <p className="mt-4 max-w-md text-sm leading-6 text-slate-300">
-              Sterling, Kansas&apos; front door for growth and connection. Tell us what you need, and we will point you to the right local person.
-            </p>
-            <p className="mt-4 text-sm font-bold text-brand-100">Trade the commute for community.</p>
-          </div>
+    <footer className="bg-slate-950 text-white">
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 lg:grid-cols-[1.1fr_0.9fr_0.9fr]">
+        <div>
+          <Link href="/" className="inline-block">
+            <div className="text-2xl font-bold tracking-tight">Connect Sterling</div>
+            <div className="mt-1 text-sm font-semibold uppercase tracking-[0.18em] text-amber-300">
+              Trade the commute for community
+            </div>
+          </Link>
 
-          <div>
-            <h3 className="text-sm font-extrabold uppercase tracking-[0.18em] text-slate-400">Explore</h3>
-            <ul className="mt-4 space-y-2 text-sm">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-slate-300 transition hover:text-white">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <p className="mt-5 max-w-xl text-base leading-7 text-slate-300">
+            Sterling, Kansas is for families, remote workers, returners, builders,
+            and new neighbors who want strong schools, real opportunity, everyday
+            essentials, and a place to belong.
+          </p>
 
-          <div>
-            <h3 className="text-sm font-extrabold uppercase tracking-[0.18em] text-slate-400">Connect</h3>
-            <ul className="mt-4 space-y-2 text-sm">
-              <li>
-                <Link href="/ask-connect-sterling" className="text-brand-100 transition hover:text-white">
-                  Ask Connect Sterling
-                </Link>
-              </li>
-              <li>
-                <Link href="/community-calendar" className="text-slate-300 transition hover:text-white">
-                  Community Calendar Hub
-                </Link>
-              </li>
-              <li>
-                <a href={goldenTicketUrl} className="text-slate-300 transition hover:text-white" target="_blank" rel="noopener noreferrer">
-                  Golden Ticket
-                </a>
-              </li>
-              <li>
-                <a href="mailto:hello@connectsterling.com" className="text-slate-300 transition hover:text-white">
-                  hello@connectsterling.com
-                </a>
-              </li>
-            </ul>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="/move-here"
+              className="rounded-full bg-white px-5 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-amber-100"
+            >
+              See if Sterling fits
+            </Link>
+            <Link
+              href="/ask-connect-sterling"
+              className="rounded-full border border-white/25 bg-white/10 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/20"
+            >
+              Ask Connect Sterling
+            </Link>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-slate-800 pt-6 text-sm text-slate-500">
-          <p>&copy; {new Date().getFullYear()} Connect Sterling. All rights reserved.</p>
+        <div>
+          <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-300">
+            Explore
+          </h2>
+          <div className="mt-5 grid gap-3">
+            {mainLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-slate-300 transition hover:text-white"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-300">
+            Local starting points
+          </h2>
+          <div className="mt-5 grid gap-3">
+            {localLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm font-medium text-slate-300 transition hover:text-white"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Connect Sterling. All rights reserved.</p>
+          <p>Built to help people live, work, build, and belong in Sterling.</p>
         </div>
       </div>
     </footer>

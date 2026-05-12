@@ -1,55 +1,309 @@
-import type { Metadata } from "next";
-import InquiryForm from "../../components/InquiryForm";
-import { askCategories } from "../../data/content";
+import Link from "next/link";
+import InquiryForm from "@/components/InquiryForm";
 
-export const metadata: Metadata = {
-  title: "Ask Connect Sterling",
+const commonQuestions = [
+  "Can we find a home in Sterling?",
+  "Who should I talk to about building?",
+  "How do I enroll my kids in school?",
+  "Where do I sign up for youth sports?",
+  "What internet options are available at a specific address?",
+  "Where do families find childcare?",
+  "What churches, groups, or volunteer opportunities should we explore?",
+  "What is happening this weekend?",
+];
+
+const routingExamples = [
+  {
+    title: "Moving here",
+    description:
+      "Ask about schools, housing, internet, childcare, healthcare, daily needs, or what life could actually feel like for your family.",
+  },
+  {
+    title: "Housing",
+    description:
+      "Ask about buying, building, renting, builders, lenders, land, development interest, or local real estate starting points.",
+  },
+  {
+    title: "Kids and activities",
+    description:
+      "Ask about Sterling Rec, swim lessons, school activities, youth sports, church youth groups, 5th Quarter, or community events.",
+  },
+  {
+    title: "Getting plugged in",
+    description:
+      "Ask about churches, civic groups, volunteer roles, Golden Ticket, Sterling College events, Chamber events, or local organizations.",
+  },
+];
+
+export const metadata = {
+  title: "Ask Connect Sterling | Connect Sterling",
   description:
-    "Tell Connect Sterling what you are trying to do and get routed toward the right local contact in Sterling, Kansas.",
+    "Ask Connect Sterling for help finding the right local contact, resource, organization, calendar, or next step in Sterling, Kansas.",
 };
 
 export default function AskConnectSterlingPage() {
   return (
-    <main className="bg-brand-50 py-16">
-      <section className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 max-w-3xl">
-          <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-brand-700">Central intake</p>
-          <h1 className="mt-3 text-4xl font-black tracking-tight text-slate-950 md:text-5xl">
-            What are you trying to do?
-          </h1>
-          <p className="mt-5 text-lg leading-8 text-slate-600">
-            Tell us what you need, and Connect Sterling will help point you toward the right person, organization, calendar, or local resource.
-          </p>
+    <main className="bg-stone-50 text-slate-950">
+      <section className="relative overflow-hidden bg-slate-950 text-white">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1800&q=80"
+            alt="People gathered around a table"
+            className="h-full w-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-emerald-950/75 to-amber-900/70" />
         </div>
 
-        <InquiryForm
-          title="Ask Connect Sterling"
-          intro="Use this as the front door for moving, work, housing, school, childcare, volunteering, events, business, churches, and community connections."
-          subject="Ask Connect Sterling inquiry"
-          submitLabel="Send to Connect Sterling"
-          fields={[
-            { type: "select", name: "category", label: "What are you trying to do?", options: askCategories, required: true },
-            { type: "text", name: "name", label: "Name", required: true },
-            { type: "email", name: "email", label: "Email", required: true },
-            { type: "tel", name: "phone", label: "Phone optional" },
-            { type: "text", name: "currentLocation", label: "Current location" },
-            { type: "text", name: "timeline", label: "Timeline" },
-            {
-              type: "select",
-              name: "followUp",
-              label: "Best way to follow up",
-              options: ["Email", "Phone", "Text", "No preference"],
-              required: true,
-            },
-            {
-              type: "textarea",
-              name: "details",
-              label: "Question or details",
-              placeholder: "Share enough context for us to route you well.",
-              required: true,
-            },
-          ]}
-        />
+        <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32">
+          <div className="max-w-4xl">
+            <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
+              Ask the question you actually need answered.
+            </h1>
+            <p className="mt-6 text-xl leading-8 text-slate-100">
+              You do not need to know who owns the answer. Tell Connect Sterling what
+              you are trying to figure out, and we will help point you toward the right
+              local contact, organization, calendar, or next step.
+            </p>
+            <p className="mt-5 text-lg leading-8 text-slate-200">
+              Moving, housing, schools, childcare, youth sports, churches, events,
+              healthcare, internet, volunteering, or something else. Start here.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gradient-to-r from-amber-100 via-orange-50 to-emerald-100">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
+              Sterling has a lot of good doors. We help you find the right one.
+            </h2>
+          </div>
+
+          <div className="space-y-5 text-lg leading-8 text-slate-700">
+            <p>
+              A connected town can still be hard to navigate when you are new. Which
+              calendar is current? Who runs swim lessons? Which builder should you call?
+              Where do you find youth sports? What do families do on Friday nights?
+            </p>
+            <p>
+              Connect Sterling exists to make those first steps easier. Ask the question,
+              and the central inbox will help route you.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
+              What can you ask about?
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-700">
+              Start with the question in front of you. If it belongs somewhere else,
+              Connect Sterling can help point it in the right direction.
+            </p>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            {commonQuestions.map((question) => (
+              <div
+                key={question}
+                className="rounded-2xl bg-gradient-to-br from-stone-50 to-amber-50 p-5 font-semibold text-slate-900 shadow-sm ring-1 ring-stone-200"
+              >
+                {question}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-950 text-white">
+        <div className="mx-auto max-w-7xl px-6 py-16">
+          <div className="max-w-4xl">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
+              A few common starting points.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              If your question fits one of these areas, use the form below and choose
+              the closest category. If it does not fit neatly, choose “Something else.”
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {routingExamples.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-[2rem] bg-white/10 p-6 ring-1 ring-white/10"
+              >
+                <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                <p className="mt-4 text-sm leading-6 text-slate-300">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-stone-50">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
+              Send your question.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-700">
+              Be as specific as you can. The more context you share, the easier it is
+              to point you toward the right person or resource.
+            </p>
+            <p className="mt-5 text-lg leading-8 text-slate-700">
+              Examples: your timeline, whether you are moving from another town, your
+              kids’ ages, the kind of housing you are looking for, or the activity you
+              are trying to find.
+            </p>
+
+            <div className="mt-8 rounded-[2rem] bg-white p-6 shadow-sm ring-1 ring-stone-200">
+              <h3 className="text-xl font-bold text-slate-950">
+                Need a faster starting point?
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                You can also explore the resource hub, calendar hub, education page, or
+                housing page if you already know what kind of information you need.
+              </p>
+              <div className="mt-5 flex flex-col gap-3">
+                <Link
+                  href="/resources"
+                  className="text-sm font-bold text-emerald-800"
+                >
+                  Explore Resources →
+                </Link>
+                <Link
+                  href="/community-calendar"
+                  className="text-sm font-bold text-emerald-800"
+                >
+                  Find Calendars →
+                </Link>
+                <Link
+                  href="/housing-growth"
+                  className="text-sm font-bold text-emerald-800"
+                >
+                  Explore Housing →
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <InquiryForm
+            title="Ask Connect Sterling"
+            description="Tell us what you are trying to figure out, and we will help point you toward the right local contact or resource."
+            fields={[
+              {
+                name: "name",
+                label: "Name",
+                type: "text",
+                required: true,
+              },
+              {
+                name: "email",
+                label: "Email",
+                type: "email",
+                required: true,
+              },
+              {
+                name: "phone",
+                label: "Phone",
+                type: "tel",
+                required: false,
+              },
+              {
+                name: "currentLocation",
+                label: "Where are you reaching out from?",
+                type: "text",
+                required: false,
+              },
+              {
+                name: "category",
+                label: "What is your question mostly about?",
+                type: "select",
+                required: true,
+                options: [
+                  "Moving to Sterling",
+                  "Housing",
+                  "Schools or enrollment",
+                  "Childcare",
+                  "Youth sports or activities",
+                  "Community events",
+                  "Churches or faith community",
+                  "Volunteering or civic groups",
+                  "Healthcare or wellness",
+                  "Internet or utilities",
+                  "Local business or work",
+                  "Golden Ticket",
+                  "Something else",
+                ],
+              },
+              {
+                name: "timeline",
+                label: "Timeline, if relevant",
+                type: "select",
+                required: false,
+                options: [
+                  "Immediately",
+                  "0-3 months",
+                  "3-6 months",
+                  "6-12 months",
+                  "12+ months",
+                  "Just exploring",
+                  "Not applicable",
+                ],
+              },
+              {
+                name: "details",
+                label: "What are you trying to figure out?",
+                type: "textarea",
+                required: true,
+              },
+            ]}
+          />
+        </div>
+      </section>
+
+      <section className="bg-gradient-to-r from-slate-950 via-emerald-950 to-amber-900 text-white">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
+              Want to keep exploring first?
+            </h2>
+          </div>
+          <div className="space-y-5 text-lg leading-8 text-slate-200">
+            <p>
+              If you are still getting a feel for Sterling, start with the story, the
+              schools, housing, or community connection pages.
+            </p>
+
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/the-sterling-story"
+                className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-amber-100"
+              >
+                Read The Sterling Story
+              </Link>
+              <Link
+                href="/education-family-life"
+                className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/20"
+              >
+                Explore Education
+              </Link>
+              <Link
+                href="/get-connected"
+                className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/20"
+              >
+                Get Connected
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );
