@@ -225,30 +225,40 @@ export default function Home() {
             </div>
 
             <div className="grid gap-4">
-              {proofCards.map((card) => (
-                <Link
-                  key={card.title}
-                  href={card.href}
-                  className="grid gap-5 rounded-[2rem] bg-white/10 p-6 ring-1 ring-white/10 transition hover:bg-white/15 sm:grid-cols-[210px_1fr_auto] sm:items-center"
-                >
-                  <p className="text-3xl font-bold leading-tight text-amber-200 sm:text-4xl">
-                    {card.value}
-                  </p>
+              {proofCards.map((card) => {
+                const isLongValue = card.value.length > 12;
 
-                  <div>
-                    <h3 className="text-xl font-bold leading-snug text-white">
-                      {card.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-300">
-                      {card.description}
+                return (
+                  <Link
+                    key={card.title}
+                    href={card.href}
+                    className="grid gap-5 rounded-[2rem] bg-white/10 p-6 ring-1 ring-white/10 transition hover:bg-white/15 xl:grid-cols-[minmax(0,0.75fr)_minmax(0,1.35fr)_auto] xl:items-center"
+                  >
+                    <p
+                      className={`font-bold leading-tight text-amber-200 ${
+                        isLongValue
+                          ? "text-3xl sm:text-4xl xl:text-3xl 2xl:text-4xl"
+                          : "text-4xl"
+                      }`}
+                    >
+                      {card.value}
                     </p>
-                  </div>
 
-                  <span className="inline-flex text-sm font-semibold text-amber-200 sm:justify-self-end">
-                    Learn more →
-                  </span>
-                </Link>
-              ))}
+                    <div className="min-w-0">
+                      <h3 className="text-xl font-bold leading-snug text-white">
+                        {card.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-6 text-slate-300">
+                        {card.description}
+                      </p>
+                    </div>
+
+                    <span className="inline-flex whitespace-nowrap text-sm font-semibold text-amber-200 xl:justify-self-end">
+                      Learn more →
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>
