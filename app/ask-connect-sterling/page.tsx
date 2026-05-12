@@ -68,86 +68,20 @@ export default function AskConnectSterlingPage() {
               Moving, housing, schools, childcare, youth sports, churches, events,
               healthcare, internet, volunteering, or something else. Start here.
             </p>
-          </div>
-        </div>
-      </section>
 
-      <section className="bg-gradient-to-r from-amber-100 via-orange-50 to-emerald-100">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
-              Sterling has a lot of good doors. We help you find the right one.
-            </h2>
-          </div>
-
-          <div className="space-y-5 text-lg leading-8 text-slate-700">
-            <p>
-              A connected town can still be hard to navigate when you are new. Which
-              calendar is current? Who runs swim lessons? Which builder should you call?
-              Where do you find youth sports? What do families do on Friday nights?
-            </p>
-            <p>
-              Connect Sterling exists to make those first steps easier. Ask the question,
-              and the central inbox will help route you.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
-              What can you ask about?
-            </h2>
-            <p className="mt-5 text-lg leading-8 text-slate-700">
-              Start with the question in front of you. If it belongs somewhere else,
-              Connect Sterling can help point it in the right direction.
-            </p>
-          </div>
-
-          <div className="grid gap-3 sm:grid-cols-2">
-            {commonQuestions.map((question) => (
-              <div
-                key={question}
-                className="rounded-2xl bg-gradient-to-br from-stone-50 to-amber-50 p-5 font-semibold text-slate-900 shadow-sm ring-1 ring-stone-200"
+            <div className="mt-10">
+              <Link
+                href="#ask-form"
+                className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-slate-950 shadow-sm transition hover:bg-amber-100"
               >
-                {question}
-              </div>
-            ))}
+                Go to the form
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-slate-950 text-white">
-        <div className="mx-auto max-w-7xl px-6 py-16">
-          <div className="max-w-4xl">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
-              A few common starting points.
-            </h2>
-            <p className="mt-5 text-lg leading-8 text-slate-300">
-              If your question fits one of these areas, use the form below and choose
-              the closest category. If it does not fit neatly, choose “Something else.”
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {routingExamples.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-[2rem] bg-white/10 p-6 ring-1 ring-white/10"
-              >
-                <h3 className="text-xl font-bold text-white">{item.title}</h3>
-                <p className="mt-4 text-sm leading-6 text-slate-300">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-stone-50">
+      <section id="ask-form" className="scroll-mt-28 bg-stone-50">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
@@ -165,7 +99,7 @@ export default function AskConnectSterlingPage() {
 
             <div className="mt-8 rounded-[2rem] bg-white p-6 shadow-sm ring-1 ring-stone-200">
               <h3 className="text-xl font-bold text-slate-950">
-                Need a faster starting point?
+                Want to browse first?
               </h3>
               <p className="mt-3 text-sm leading-6 text-slate-700">
                 You can also explore the resource hub, calendar hub, education page, or
@@ -269,39 +203,55 @@ export default function AskConnectSterlingPage() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-slate-950 via-emerald-950 to-amber-900 text-white">
+      <section className="bg-white">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
-              Want to keep exploring first?
+              What can you ask about?
             </h2>
-          </div>
-          <div className="space-y-5 text-lg leading-8 text-slate-200">
-            <p>
-              If you are still getting a feel for Sterling, start with the story, the
-              schools, housing, or community connection pages.
+            <p className="mt-5 text-lg leading-8 text-slate-700">
+              Start with the question in front of you. If it belongs somewhere else,
+              Connect Sterling can help point it in the right direction.
             </p>
+          </div>
 
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/the-sterling-story"
-                className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-amber-100"
+          <div className="grid gap-3 sm:grid-cols-2">
+            {commonQuestions.map((question) => (
+              <div
+                key={question}
+                className="rounded-2xl bg-gradient-to-br from-stone-50 to-amber-50 p-5 font-semibold text-slate-900 shadow-sm ring-1 ring-stone-200"
               >
-                Read The Sterling Story
-              </Link>
-              <Link
-                href="/education-family-life"
-                className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/20"
+                {question}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-950 text-white">
+        <div className="mx-auto max-w-7xl px-6 py-16">
+          <div className="max-w-4xl">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
+              A few common starting points.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              If your question fits one of these areas, choose the closest category.
+              If it does not fit neatly, choose “Something else.”
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {routingExamples.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-[2rem] bg-white/10 p-6 ring-1 ring-white/10"
               >
-                Explore Education
-              </Link>
-              <Link
-                href="/get-connected"
-                className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/20"
-              >
-                Get Connected
-              </Link>
-            </div>
+                <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                <p className="mt-4 text-sm leading-6 text-slate-300">
+                  {item.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

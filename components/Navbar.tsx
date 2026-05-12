@@ -35,7 +35,7 @@ export default function Navbar() {
         </div>
 
         <Link
-          href="/ask-connect-sterling"
+          href="/ask-connect-sterling#ask-form"
           className="hidden rounded-full bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-900 sm:inline-flex"
         >
           Ask Connect Sterling
@@ -54,7 +54,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/ask-connect-sterling"
+            href="/ask-connect-sterling#ask-form"
             className="shrink-0 text-sm font-bold text-emerald-800"
           >
             Ask
