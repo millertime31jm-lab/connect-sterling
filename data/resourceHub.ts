@@ -122,12 +122,20 @@ export const resourceCategories: ResourceCategory[] = [
         tag: "Supply",
       },
       {
-        name: "Sterling Bank residential mortgage / construction loans",
+        name: "First Bank",
         description:
-          "Mortgage, construction loan, HELOC, and home lending options.",
-        href: "https://www.sterbank.bank/lending/personal-loans/residential-mortgage/",
-        buttonLabel: "View lending",
-        tag: "Lending",
+          "Sterling banking location with personal, business, mortgage, and lending services.",
+        href: "https://www.first-bank.net/",
+        buttonLabel: "Visit site",
+        tag: "Banking",
+      },
+      {
+        name: "Bank of the Plains",
+        description:
+          "Sterling banking location for personal banking, business banking, lending, and local financial services.",
+        href: "https://www.bankoftheplains.com/locations/sterling",
+        buttonLabel: "Visit location",
+        tag: "Banking",
       },
       {
         name: "First Group Insurance",
