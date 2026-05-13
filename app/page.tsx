@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import { homepagePhotoStrip, sterlingHeroPhotos } from "@/data/sterlingPhotos";
 
 const lifeGains = [
   "More dinners around the table",
@@ -78,10 +80,13 @@ export default function Home() {
     <main className="bg-stone-50 text-slate-950">
       <section className="relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1800&q=80"
-            alt="Open road through rural landscape"
-            className="h-full w-full object-cover opacity-35"
+          <Image
+            src={sterlingHeroPhotos.aerial.src}
+            alt={sterlingHeroPhotos.aerial.alt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-35"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-emerald-950/75 to-amber-900/70" />
         </div>
@@ -101,6 +106,21 @@ export default function Home() {
                 Sterling, Kansas is for families, remote workers, returners, builders,
                 and new neighbors who want more margin and a better daily rhythm.
               </p>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/move-here"
+                  className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-amber-100"
+                >
+                  Explore Moving Here
+                </Link>
+                <Link
+                  href="/ask-connect-sterling#ask-form"
+                  className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
+                >
+                  Ask Connect Sterling
+                </Link>
+              </div>
             </div>
 
             <div className="rounded-[2.25rem] bg-white/10 p-5 shadow-2xl ring-1 ring-white/20 backdrop-blur">
@@ -118,6 +138,32 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+
+                <div className="mt-6 grid grid-cols-3 gap-3">
+                  {homepagePhotoStrip.map((photo) => (
+                    <figure
+                      key={photo.src}
+                      className="overflow-hidden rounded-2xl ring-1 ring-stone-200"
+                    >
+                      <div className="relative aspect-[4/5]">
+                        <Image
+                          src={photo.src}
+                          alt={photo.alt}
+                          fill
+                          sizes="(min-width: 1024px) 12rem, 30vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    </figure>
+                  ))}
+                </div>
+
+                <Link
+                  href="/picture-sterling"
+                  className="mt-6 inline-flex text-sm font-bold text-emerald-800 transition hover:text-emerald-900"
+                >
+                  Picture life in Sterling →
+                </Link>
               </div>
             </div>
           </div>
@@ -161,6 +207,12 @@ export default function Home() {
               than that. It is the life you feel after the moving boxes are gone and
               Tuesday night starts to feel human again.
             </p>
+            <Link
+              href="/picture-sterling"
+              className="mt-6 inline-flex text-sm font-bold text-emerald-800 transition hover:text-emerald-900"
+            >
+              Picture life in Sterling →
+            </Link>
           </div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">

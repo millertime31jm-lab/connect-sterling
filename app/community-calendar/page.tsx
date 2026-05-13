@@ -3,8 +3,7 @@ import Link from "next/link";
 const calendarLinks = [
   {
     title: "Find public community events.",
-    image:
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/events/sterling-events-mainstreet-market.jpg",
     description:
       "Start here for Main Street events, seasonal traditions, local business gatherings, markets, and town-wide celebrations.",
     proof:
@@ -14,8 +13,7 @@ const calendarLinks = [
   },
   {
     title: "Follow school events.",
-    image:
-      "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/schools/sterling-schools-band-choir.jpg",
     description:
       "Games, concerts, plays, activities, meetings, and student celebrations are part of Sterling’s community rhythm.",
     proof:
@@ -25,8 +23,7 @@ const calendarLinks = [
   },
   {
     title: "Catch a Black Bear game.",
-    image:
-      "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/sports/sterling-sports-football.JPG",
     description:
       "Sports are central to Sterling’s culture. Game nights bring students, parents, alumni, grandparents, and neighbors together.",
     proof:
@@ -36,8 +33,7 @@ const calendarLinks = [
   },
   {
     title: "Sign up through Sterling Rec.",
-    image:
-      "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/community/sterling-community-play.jpg",
     description:
       "Sterling Rec helps families find youth sports, recreation programs, wellness opportunities, leagues, classes, and seasonal activities.",
     proof:
@@ -47,8 +43,7 @@ const calendarLinks = [
   },
   {
     title: "See what’s happening at Sterling College.",
-    image:
-      "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/college/sterling-college-speaking-event.jpg",
     description:
       "Sterling College brings athletics, theatre, music, speakers, student activities, and campus life into the broader community.",
     proof:
@@ -58,8 +53,7 @@ const calendarLinks = [
   },
   {
     title: "Follow Warrior athletics.",
-    image:
-      "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/college/sterling-college-warriorfest.jpg",
     description:
       "College athletics add another layer of game-day energy, student life, and weekend activity for local families.",
     proof:
@@ -69,8 +63,7 @@ const calendarLinks = [
   },
   {
     title: "Check city information.",
-    image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/downtown/sterling-downtown-christmas.jpg",
     description:
       "Find city services, civic updates, pool information, public meetings, and local government resources.",
     proof:
@@ -91,8 +84,7 @@ const calendarLinks = [
   },
   {
     title: "Ask about church and youth activities.",
-    image:
-      "https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/community/sterling-community-smore-church.jpg",
     description:
       "Churches help host worship, youth activities, meals, service opportunities, small groups, and community support.",
     proof:
@@ -102,8 +94,7 @@ const calendarLinks = [
   },
   {
     title: "Use your Golden Tickets.",
-    image:
-      "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/events/sterling-events-golden-ticket.jpg",
     description:
       "Golden Ticket gives adults a fun way to meet people, support local experiences, and build community.",
     proof:
@@ -136,8 +127,8 @@ export default function CommunityCalendarPage() {
       <section className="relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1800&q=80"
-            alt="Community event gathering"
+            src="/images/sterling/events/sterling-events-mainstreet-market.jpg"
+            alt="People gathered at a Sterling Main Street event"
             className="h-full w-full object-cover opacity-30"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-emerald-950/75 to-amber-900/70" />
@@ -255,7 +246,7 @@ export default function CommunityCalendarPage() {
                   <div className="relative h-48 overflow-hidden">
                     <img
                       src={card.image}
-                      alt=""
+                      alt={card.title}
                       className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
@@ -292,8 +283,8 @@ export default function CommunityCalendarPage() {
       <section className="relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1800&q=80"
-            alt=""
+            src="/images/sterling/events/sterling-events-outdoor-concert.jpg"
+            alt="Sterling residents enjoying an outdoor event"
             className="h-full w-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/85 to-emerald-950/80" />

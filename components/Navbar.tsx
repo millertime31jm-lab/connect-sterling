@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 const navItems = [
-  { label: "The Sterling Story", href: "/the-sterling-story" },
-  { label: "Move Here", href: "/move-here" },
-  { label: "Education & Family Life", href: "/education-family-life" },
-  { label: "Housing & Growth", href: "/housing-growth" },
-  { label: "Get Connected", href: "/get-connected" },
-  { label: "Resources", href: "/resources" },
+  { label: "The Sterling Story", href: "/the-sterling-story", kind: "story" },
+  { label: "Move Here", href: "/move-here", kind: "story" },
+  { label: "Education & Family Life", href: "/education-family-life", kind: "story" },
+  { label: "Housing & Growth", href: "/housing-growth", kind: "story" },
+  { label: "Get Connected", href: "/get-connected", kind: "utility" },
+  { label: "Resources", href: "/resources", kind: "utility" },
 ];
 
 export default function Navbar() {
@@ -27,7 +27,11 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-semibold text-slate-700 transition hover:text-emerald-800"
+              className={`text-sm font-semibold transition ${
+                item.kind === "utility"
+                  ? "rounded-full bg-amber-50 px-3 py-1.5 text-amber-900 ring-1 ring-amber-200 hover:bg-emerald-50 hover:text-emerald-900 hover:ring-emerald-200"
+                  : "text-slate-700 hover:text-emerald-800"
+              }`}
             >
               {item.label}
             </Link>
@@ -48,7 +52,11 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="shrink-0 text-sm font-semibold text-slate-700 transition hover:text-emerald-800"
+              className={`shrink-0 text-sm font-semibold transition ${
+                item.kind === "utility"
+                  ? "rounded-full bg-amber-50 px-3 py-1.5 text-amber-900 ring-1 ring-amber-200 hover:bg-emerald-50 hover:text-emerald-900 hover:ring-emerald-200"
+                  : "text-slate-700 hover:text-emerald-800"
+              }`}
             >
               {item.label}
             </Link>

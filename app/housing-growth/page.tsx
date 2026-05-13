@@ -183,8 +183,14 @@ export default function HousingGrowthPage() {
   return (
     <main className="bg-stone-50 text-slate-950">
       <section className="relative overflow-hidden bg-slate-950 text-white">
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-950 via-slate-950 to-amber-900" />
-        <div className="absolute inset-0 opacity-25 [background-image:radial-gradient(circle_at_20%_20%,rgba(251,191,36,0.55),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(16,185,129,0.45),transparent_26%),radial-gradient(circle_at_60%_80%,rgba(56,189,248,0.35),transparent_30%)]" />
+        <div className="absolute inset-0">
+          <img
+            src="/images/sterling/housing/sterling-housing-all-american-house.jpg"
+            alt="Sterling neighborhood home"
+            className="h-full w-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-950/95 via-slate-950/88 to-amber-900/82" />
+        </div>
 
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:py-32">
           <div className="max-w-4xl">

@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import { sterlingHeroPhotos, storyPhotoStrip } from "@/data/sterlingPhotos";
 
 const qualityOfLife = [
   "A town where people wave",
@@ -61,10 +63,13 @@ export default function TheSterlingStoryPage() {
     <main className="bg-stone-50 text-slate-950">
       <section className="relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1800&q=80"
-            alt="Open road through rural landscape"
-            className="h-full w-full object-cover opacity-35"
+          <Image
+            src={sterlingHeroPhotos.aerial.src}
+            alt={sterlingHeroPhotos.aerial.alt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-35"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-emerald-950/75 to-amber-900/70" />
         </div>
@@ -151,6 +156,38 @@ export default function TheSterlingStoryPage() {
             <p>
               For the right family, that is not a small thing. That is the product.
             </p>
+            <Link
+              href="/picture-sterling"
+              className="inline-flex text-sm font-bold text-emerald-800 transition hover:text-emerald-900"
+            >
+              Picture life in Sterling →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-stone-50">
+        <div className="mx-auto max-w-7xl px-6 py-8">
+          <div className="grid gap-4 sm:grid-cols-3">
+            {storyPhotoStrip.map((photo) => (
+              <figure
+                key={photo.src}
+                className="overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-stone-200"
+              >
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="(min-width: 640px) 30vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="p-4 text-sm leading-6 text-slate-700">
+                  {photo.caption}
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
@@ -217,8 +254,8 @@ export default function TheSterlingStoryPage() {
       <section className="relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1800&q=80"
-            alt="People gathered together"
+            src="/images/sterling/community/sterling-community-smore-church.jpg"
+            alt="Families gathered together at a Sterling community event"
             className="h-full w-full object-cover opacity-25"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/85 to-emerald-950/80" />

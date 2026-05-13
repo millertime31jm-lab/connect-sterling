@@ -3,8 +3,7 @@ import Link from "next/link";
 const essentials = [
   {
     title: "Your kids can grow here.",
-    image:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/schools/sterling-schools-grade-school-1.jpg",
     description:
       "Sterling gives families a full education path from Lil Cub Childcare to Sterling USD 376 to Sterling College.",
     proof:
@@ -25,8 +24,7 @@ const essentials = [
   },
   {
     title: "You can handle daily life here.",
-    image:
-      "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/downtown/sterling-downtown-mural-1.jpg",
     description:
       "Sterling has the basics families ask about first: groceries, pharmacy, restaurants, local services, schools, churches, and Main Street businesses.",
     proof:
@@ -47,8 +45,7 @@ const essentials = [
   },
   {
     title: "Your family can get outside.",
-    image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/outdoors/sterling-outdoors-sterling-lake.jpg",
     description:
       "Sterling Lake, parks, trails, golf, youth sports, school activities, college athletics, and nearby rural space give families room to move.",
     proof:
@@ -58,8 +55,7 @@ const essentials = [
   },
   {
     title: "You are not cut off.",
-    image:
-      "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/hero/sterling-hero-downtown-arial.jpg",
     description:
       "Sterling gives you a small-town daily rhythm with broader regional access for larger shopping trips, specialized care, air travel, restaurants, and bigger-city amenities.",
     proof:
@@ -106,8 +102,7 @@ const lifeGains = [
 const nextSteps = [
   {
     title: "See the school and family story",
-    image:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/schools/sterling-schools-grade-school-ididaprob.jpg",
     description:
       "Schools are one of the biggest reasons families choose Sterling. See what that could mean for your kids.",
     href: "/education-family-life",
@@ -115,8 +110,7 @@ const nextSteps = [
   },
   {
     title: "Look at housing options",
-    image:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/housing/sterling-housing-all-american-house.jpg",
     description:
       "Buy, build, rent while you settle, or explore housing investment in a growing community.",
     href: "/housing-growth",
@@ -124,8 +118,7 @@ const nextSteps = [
   },
   {
     title: "Ask a real local question",
-    image:
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/community/sterling-community-play.jpg",
     description:
       "Tell Connect Sterling what you are trying to figure out and we’ll help point you toward the right local contact.",
     href: "/ask-connect-sterling#ask-form",
@@ -145,8 +138,8 @@ export default function MoveHerePage() {
       <section className="relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1800&q=80"
-            alt="Open Kansas landscape and road"
+            src="/images/sterling/hero/sterling-hero-downtown-arial.jpg"
+            alt="Aerial view of Sterling showing downtown and surrounding neighborhoods"
             className="h-full w-full object-cover opacity-35"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-emerald-950/75 to-amber-900/70" />
@@ -242,7 +235,7 @@ export default function MoveHerePage() {
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={item.image}
-                    alt=""
+                    alt={item.title}
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
@@ -372,7 +365,7 @@ export default function MoveHerePage() {
                 <div className="relative h-44 overflow-hidden">
                   <img
                     src={step.image}
-                    alt=""
+                    alt={step.title}
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />

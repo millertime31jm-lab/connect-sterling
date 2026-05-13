@@ -3,8 +3,7 @@ import Link from "next/link";
 const connectionCards = [
   {
     title: "Sign your kids up for sports or activities.",
-    image:
-      "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/community/sterling-community-play.jpg",
     description:
       "Sterling Rec is one of the easiest ways for families to plug in. Youth leagues, activities, wellness programs, and community recreation help kids and adults find familiar faces faster.",
     proof:
@@ -14,8 +13,7 @@ const connectionCards = [
   },
   {
     title: "Find swim lessons and pool information.",
-    image:
-      "https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/community/sterling-community-splashpark.jpg",
     description:
       "Summer in Sterling has a rhythm of pool days, swim lessons, and kids seeing friends outside of school.",
     proof:
@@ -25,8 +23,7 @@ const connectionCards = [
   },
   {
     title: "See what’s happening around town.",
-    image:
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/events/sterling-events-mainstreet-market.jpg",
     description:
       "Main Street events, holiday traditions, markets, Warrior Fest, school events, and local gatherings help people move from living near each other to actually knowing each other.",
     proof:
@@ -36,8 +33,7 @@ const connectionCards = [
   },
   {
     title: "Explore downtown and Main Street.",
-    image:
-      "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/downtown/sterling-downtown-mural-1.jpg",
     description:
       "Broadway Avenue is part of Sterling’s front porch: local shops, coffee, events, public art, historic buildings, and the kind of downtown people hope still exists.",
     proof:
@@ -47,8 +43,7 @@ const connectionCards = [
   },
   {
     title: "Find Sterling College events.",
-    image:
-      "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/college/sterling-college-warriorfest.jpg",
     description:
       "Sterling College adds athletics, music, theatre, speakers, students, service, and campus activity that spills into community life.",
     proof:
@@ -58,8 +53,7 @@ const connectionCards = [
   },
   {
     title: "Follow school activities and games.",
-    image:
-      "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/schools/sterling-schools-band-choir.jpg",
     description:
       "School activities are not just for students. Games, concerts, plays, activities, and celebrations become part of the town’s shared rhythm.",
     proof:
@@ -69,8 +63,7 @@ const connectionCards = [
   },
   {
     title: "Find a church or faith community.",
-    image:
-      "https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/community/sterling-community-smore-church.jpg",
     description:
       "Churches are part of Sterling’s connective tissue. They support worship, youth activities, meals, service opportunities, and informal care networks.",
     proof:
@@ -80,8 +73,7 @@ const connectionCards = [
   },
   {
     title: "Ask about 5th Quarter or youth activities.",
-    image:
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/community/sterling-community-inflatables.jpg",
     description:
       "After big school events, students need safe places to gather. Programs like 5th Quarter give high school students food, games, and time together at no cost.",
     proof:
@@ -91,8 +83,7 @@ const connectionCards = [
   },
   {
     title: "Find a place to volunteer.",
-    image:
-      "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/events/sterling-events-outdoor-concert.jpg",
     description:
       "Small towns work best when people participate. Sterling has opportunities to serve through schools, churches, civic groups, events, boards, youth programs, and downtown efforts.",
     proof:
@@ -102,8 +93,7 @@ const connectionCards = [
   },
   {
     title: "Use your Golden Tickets.",
-    image:
-      "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/events/sterling-events-golden-ticket.jpg",
     description:
       "Adults who relocate through Connect Sterling receive two Golden Tickets to help kickstart community connection.",
     proof:
@@ -113,8 +103,7 @@ const connectionCards = [
   },
   {
     title: "Get help with the basics.",
-    image:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/housing/sterling-housing-all-american-house.jpg",
     description:
       "Moving comes with small questions: utilities, school enrollment, internet, trash, healthcare, childcare, activities, and who to call first.",
     proof:
@@ -136,8 +125,8 @@ export default function GetConnectedPage() {
       <section className="relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1800&q=80"
-            alt="People gathered around a table enjoying community"
+            src="/images/sterling/community/sterling-community-smore-church.jpg"
+            alt="Families gathered together at a Sterling community event"
             className="h-full w-full object-cover opacity-35"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-emerald-950/75 to-amber-900/70" />
@@ -222,7 +211,7 @@ export default function GetConnectedPage() {
                     <div className="relative h-48 overflow-hidden">
                       <img
                         src={card.image}
-                        alt=""
+                        alt={card.title}
                         className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
@@ -253,8 +242,8 @@ export default function GetConnectedPage() {
       <section className="relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1800&q=80"
-            alt=""
+            src="/images/sterling/events/sterling-events-outdoor-concert.jpg"
+            alt="Sterling residents gathered at an outdoor community event"
             className="h-full w-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/85 to-emerald-950/80" />

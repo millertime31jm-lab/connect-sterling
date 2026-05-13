@@ -3,8 +3,7 @@ import Link from "next/link";
 const educationPath = [
   {
     title: "Start with childcare.",
-    image:
-      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/people/sterling-people-kids-playing.jpg",
     description:
       "For young families, childcare can decide whether a move is even possible. Lil Cub Childcare gives Sterling an important local foundation for early childhood care.",
     proof:
@@ -14,8 +13,7 @@ const educationPath = [
   },
   {
     title: "Choose schools where your kids can be known.",
-    image:
-      "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/schools/sterling-schools-grade-school-ididaprob.jpg",
     description:
       "Sterling USD 376 gives students a place to learn, compete, perform, lead, and grow up around adults who know more than just their name on a roster.",
     proof:
@@ -25,8 +23,7 @@ const educationPath = [
   },
   {
     title: "Get the college-town bonus.",
-    image:
-      "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/college/sterling-college-cooper-hall.jpg",
     description:
       "Sterling College adds athletics, theatre, music, speakers, service, students, and campus activity that most towns Sterling’s size do not have.",
     proof:
@@ -62,8 +59,7 @@ const schoolStats = [
 const sportsHighlights = [
   {
     title: "Boys Basketball",
-    image:
-      "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/sports/sterling-sports-basketball-champions-1.jpg",
     description:
       "Basketball is part of Sterling’s winter heartbeat. Sterling boys basketball has built one of the strongest recent small-school runs in Kansas.",
     whyItMatters:
@@ -73,8 +69,7 @@ const sportsHighlights = [
   },
   {
     title: "Football",
-    image:
-      "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/sports/sterling-sports-football.JPG",
     description:
       "Football nights bring Sterling together: students, parents, grandparents, alumni, younger kids, and neighbors under the lights.",
     whyItMatters:
@@ -84,8 +79,7 @@ const sportsHighlights = [
   },
   {
     title: "Tennis",
-    image:
-      "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/sports/sterling-sports-jr-high-tennis.jpg",
     description:
       "Sterling’s athletic story is not limited to one or two headline sports. Tennis is part of the broader championship culture.",
     whyItMatters:
@@ -95,8 +89,7 @@ const sportsHighlights = [
   },
   {
     title: "Track & Field",
-    image:
-      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/sports/sterling-sports-track.jpg",
     description:
       "Track and field gives students many ways to compete: speed, endurance, jumps, throws, relays, discipline, and personal growth.",
     whyItMatters:
@@ -106,8 +99,7 @@ const sportsHighlights = [
   },
   {
     title: "Girls Basketball",
-    image:
-      "https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/sports/sterling-sports-basketball-champions-2.JPG",
     description:
       "Sterling’s competitive culture extends across boys and girls programs, giving daughters and sons alike a chance to be part of strong teams.",
     whyItMatters:
@@ -117,8 +109,7 @@ const sportsHighlights = [
   },
   {
     title: "More Ways to Compete",
-    image:
-      "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/sports/sterling-sports-volleyball.JPG",
     description:
       "Students can explore sports like cross country, volleyball, wrestling, baseball, softball, golf, soccer, cheer, and more.",
     whyItMatters:
@@ -131,8 +122,7 @@ const sportsHighlights = [
 const activityCards = [
   {
     title: "Forensics",
-    image:
-      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/schools/sterling-schools-forensics-champions.jpg",
     description:
       "Sterling is not small when it comes to competitive speech. Sterling High School’s forensics tradition includes 30 state titles.",
     whyItMatters:
@@ -142,8 +132,7 @@ const activityCards = [
   },
   {
     title: "Debate",
-    image:
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/schools/sterling-schools-prom-1.JPG",
     description:
       "Sterling’s debate tradition gives students a serious intellectual competition outlet in a small-school setting.",
     whyItMatters:
@@ -153,8 +142,7 @@ const activityCards = [
   },
   {
     title: "Fine Arts & Performing Arts",
-    image:
-      "https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/schools/sterling-schools-band-choir.jpg",
     description:
       "Sterling students have opportunities in band, vocal music, theatre, performing arts, and creative expression.",
     whyItMatters:
@@ -164,8 +152,7 @@ const activityCards = [
   },
   {
     title: "Science Olympiad & Quiz Bowl",
-    image:
-      "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/schools/sterling-schools-grade-school-1.jpg",
     description:
       "Students who love problem-solving, knowledge, and challenge can find academic competition through programs like Science Olympiad and Quiz Bowl.",
     whyItMatters:
@@ -175,8 +162,7 @@ const activityCards = [
   },
   {
     title: "FFA, FBLA & Student Organizations",
-    image:
-      "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/schools/sterling-schools-prom-2.JPG",
     description:
       "Students can build leadership and real-world skills through organizations like FFA, FBLA, FCCLA, student leadership, and service activities.",
     whyItMatters:
@@ -186,8 +172,7 @@ const activityCards = [
   },
   {
     title: "Music, Theatre & School Events",
-    image:
-      "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sterling/schools/sterling-schools-band.jpg",
     description:
       "Concerts, plays, performances, and school events give students more ways to be seen and give families more reasons to gather.",
     whyItMatters:
@@ -227,8 +212,8 @@ export default function EducationFamilyLifePage() {
       <section className="relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1800&q=80"
-            alt="Students walking on a school campus"
+            src="/images/sterling/schools/sterling-schools-grade-school-1.jpg"
+            alt="Students gathered on school grounds in Sterling"
             className="h-full w-full object-cover opacity-35"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-emerald-950/75 to-amber-900/70" />
@@ -324,7 +309,7 @@ export default function EducationFamilyLifePage() {
                   <div className="relative h-48 overflow-hidden">
                     <img
                       src={item.image}
-                      alt=""
+                      alt={item.title}
                       className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
@@ -425,7 +410,7 @@ export default function EducationFamilyLifePage() {
                   <div className="relative h-48 overflow-hidden">
                     <img
                       src={card.image}
-                      alt=""
+                      alt={card.title}
                       className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
@@ -485,7 +470,7 @@ export default function EducationFamilyLifePage() {
                   <div className="relative h-44 overflow-hidden">
                     <img
                       src={card.image}
-                      alt=""
+                      alt={card.title}
                       className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
@@ -527,8 +512,8 @@ export default function EducationFamilyLifePage() {
       <section className="relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1800&q=80"
-            alt=""
+            src="/images/sterling/people/sterling-people-kids-playing.jpg"
+            alt="Children playing together in Sterling"
             className="h-full w-full object-cover opacity-25"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/85 to-emerald-950/80" />

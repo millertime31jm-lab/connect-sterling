@@ -4,6 +4,7 @@ const mainLinks = [
   { label: "The Sterling Story", href: "/the-sterling-story" },
   { label: "Move Here", href: "/move-here" },
   { label: "Education & Family Life", href: "/education-family-life" },
+  { label: "Picture Sterling", href: "/picture-sterling" },
   { label: "Housing & Growth", href: "/housing-growth" },
   { label: "Get Connected", href: "/get-connected" },
   { label: "Community Calendar Hub", href: "/community-calendar" },

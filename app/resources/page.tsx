@@ -1,337 +1,187 @@
+import Image from "next/image";
 import Link from "next/link";
+import { resourceCategories } from "@/data/resourceHub";
 
-const resourceGroups = [
+const resourcePhotos = [
   {
-    title: "Get settled faster.",
-    image:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Moving comes with a dozen small questions: utilities, trash, internet, school enrollment, healthcare, childcare, and who to call first.",
-    proof:
-      "Start here if you are new, moving soon, or trying to help someone land well in Sterling.",
-    href: "/ask-connect-sterling#ask-form",
-    cta: "Ask for newcomer help",
+    src: "/images/sterling/downtown/sterling-downtown-mural-1.jpg",
+    alt: "Downtown mural in Sterling",
+    label: "Main Street",
   },
   {
-    title: "Find the right school path.",
-    image:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Sterling gives families an education path from Lil Cub Childcare to Sterling USD 376 to Sterling College.",
-    proof:
-      "Schools are one of the biggest reasons families choose Sterling.",
-    href: "/education-family-life",
-    cta: "Explore education",
+    src: "/images/sterling/community/sterling-community-play.jpg",
+    alt: "Kids playing at a Sterling community event",
+    label: "Family life",
   },
   {
-    title: "Find everyday care and wellness.",
-    image:
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Need clinic, pharmacy, dental, chiropractic, counseling, physical therapy, wellness, or fitness resources? Sterling has practical health and wellness starting points close to home.",
-    proof:
-      "The Sterling Community Wellness Center offers fitness and wellness access through Sterling Recreation Commission, including cardio equipment, weights, classes, sauna, HydroMassage, and membership options.",
-    href: "https://sterlingrec.org/wellness-center/",
-    cta: "Visit Wellness Center",
-  },
-  {
-    title: "Explore housing options.",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Buy in Sterling, build the home you want, rent while you settle, or explore housing investment in a growing community.",
-    proof:
-      "Sterling’s reported home values showed 22.4% year-over-year growth while still offering a lower entry point than many larger markets.",
-    href: "/housing-growth",
-    cta: "Explore housing",
-  },
-  {
-    title: "Understand the local economy.",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Sterling is not just a bedroom community. It has employers, agriculture, manufacturing, healthcare, education, Main Street businesses, and regional pull.",
-    proof:
-      "Sterling is described as a net importer of jobs, employing 73% more people than its population.",
-    href: "/the-sterling-story",
-    cta: "Read the Sterling story",
-  },
-  {
-    title: "Plug into community life.",
-    image:
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Looking for churches, civic groups, volunteer opportunities, school events, Sterling Rec, Sterling College events, or Golden Ticket?",
-    proof:
-      "The difference between living somewhere and belonging somewhere is often one introduction.",
-    href: "/get-connected",
-    cta: "Get connected",
-  },
-  {
-    title: "Handle daily needs.",
-    image:
-      "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Find groceries, pharmacy, restaurants, local services, Main Street businesses, and practical daily-life starting points.",
-    proof:
-      "Sterling’s strength is not pretending to be a city. It is making daily life work at a better pace.",
-    href: "/ask-connect-sterling#ask-form",
-    cta: "Ask for local recommendations",
-  },
-  {
-    title: "Check utilities and internet.",
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Need city services, utilities, trash, or internet? Sterling has multiple internet providers, including Cox, Brightspeed, and MTC.",
-    proof:
-      "Internet availability and speeds vary by address, so verify service before choosing a home.",
-    href: "/ask-connect-sterling#ask-form",
-    cta: "Ask about setup",
-  },
-  {
-    title: "Find recreation and outdoor life.",
-    image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
-    description:
-      "Explore Sterling Lake, parks, trails, golf, school activities, Sterling Rec, college athletics, youth sports, and nearby rural space.",
-    proof:
-      "For many families, the win is a normal evening with time and space to breathe.",
-    href: "/get-connected",
-    cta: "Find recreation options",
-  },
-];
-
-const directLinks = [
-  {
-    label: "Sterling Recreation Commission",
-    href: "https://sterlingrec.org/",
-    note: "Youth sports, recreation programs, wellness, leagues, and activities.",
-  },
-  {
-    label: "Sterling Community Wellness Center",
-    href: "https://sterlingrec.org/wellness-center/",
-    note: "Fitness facility, cardio equipment, weights, sauna, HydroMassage, memberships, and wellness access.",
-  },
-  {
-    label: "Sterling Chamber Main Street",
-    href: "https://www.visitsterlingks.com/",
-    note: "Business resources, Main Street, events, and community connections.",
-  },
-  {
-    label: "City of Sterling",
-    href: "https://www.sterling-kansas.com/",
-    note: "City services, local government, pool, utilities, and civic information.",
-  },
-  {
-    label: "USD 376",
-    href: "https://www.usd376.com/",
-    note: "Schools, enrollment, athletics, activities, calendars, and district information.",
-  },
-  {
-    label: "Sterling College",
-    href: "https://www.sterling.edu/",
-    note: "College events, athletics, theatre, music, academics, and campus life.",
-  },
-  {
-    label: "Golden Ticket",
-    href: "https://www.sterlinggoldenticket.com",
-    note: "Adult community connection and newcomer social invitations.",
+    src: "/images/sterling/outdoors/sterling-outdoors-sterling-lake.jpg",
+    alt: "Sterling Lake on a calm day",
+    label: "Outdoor life",
   },
 ];
 
 export const metadata = {
   title: "Resources | Connect Sterling",
   description:
-    "Find Sterling, Kansas resources for moving, housing, schools, healthcare, utilities, internet, recreation, work, and community connection.",
+    "Practical Sterling, Kansas resource links for healthcare, housing, utilities, schools, recreation, community life, and everyday local starting points.",
 };
 
 export default function ResourcesPage() {
   return (
     <main className="bg-stone-50 text-slate-950">
-      <section className="relative overflow-hidden bg-slate-950 text-white">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1800&q=80"
-            alt="Community gathering"
-            className="h-full w-full object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-emerald-950/75 to-amber-900/70" />
-        </div>
-
-        <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32">
-          <div className="max-w-4xl">
-            <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
-              Find what you need without guessing who to ask.
+      <section className="border-b border-stone-200 bg-white">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-700">
+              Resources
+            </p>
+            <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-6xl">
+              Start here when you need a real link or local starting point.
             </h1>
-            <p className="mt-6 text-xl leading-8 text-slate-100">
-              Sterling has a lot of good people and organizations doing the work. This
-              page helps you find the right starting point faster.
-            </p>
-            <p className="mt-5 text-lg leading-8 text-slate-200">
-              Schools, housing, healthcare, wellness, utilities, internet, recreation,
-              business, community life, or a simple “who should I call?” question can
-              all start here.
+            <p className="mt-6 text-lg leading-8 text-slate-700">
+              This page is meant to be practical. If there is a direct link, use it.
+              If the right answer still depends on your address, your timeline, or the
+              kind of connection you need, use Ask Connect Sterling and we will help
+              point you in the right direction.
             </p>
 
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/ask-connect-sterling#ask-form"
-                className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-slate-950 shadow-sm transition hover:bg-amber-100"
-              >
-                Ask Connect Sterling
-              </Link>
-              <Link
-                href="/community-calendar"
-                className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
-              >
-                Find calendars
-              </Link>
+            <div className="mt-8 flex flex-wrap gap-3">
+              {resourceCategories.map((category) => (
+                <a
+                  key={category.id}
+                  href={`#${category.id}`}
+                  className="rounded-full border border-stone-300 bg-stone-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-900"
+                >
+                  {category.title}
+                </a>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
 
-      <section className="bg-gradient-to-r from-amber-100 via-orange-50 to-emerald-100">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
-              Start with what you are trying to do.
-            </h2>
-          </div>
-          <div className="space-y-5 text-lg leading-8 text-slate-700">
-            <p>
-              A stale directory does not help much. You need a practical path. If a
-              link gets you there, use it. If you are not sure who owns the answer,
-              ask Connect Sterling and we will help point you toward the right local
-              contact.
-            </p>
-            <p>
-              The goal is simple: fewer dead ends, faster introductions, and better
-              confidence for people trying to live, work, build, and belong in Sterling.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-stone-50">
-        <div className="mx-auto max-w-7xl px-6 py-16">
-          <div className="max-w-4xl">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
-              What do you need help finding?
-            </h2>
-            <p className="mt-5 text-lg leading-8 text-slate-700">
-              Pick the doorway that matches your question. Each one either sends you
-              to the right page or helps you ask for a local connection.
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {resourceGroups.map((group) => {
-              const isExternal = group.href.startsWith("http");
-
-              return (
-                <Link
-                  key={group.title}
-                  href={group.href}
-                  target={isExternal ? "_blank" : undefined}
-                  rel={isExternal ? "noreferrer" : undefined}
-                  className="group overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
-                >
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={group.image}
-                      alt=""
-                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
-                  </div>
-
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-slate-950 group-hover:text-amber-800">
-                      {group.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-6 text-slate-700">
-                      {group.description}
-                    </p>
-                    <div className="mt-5 rounded-2xl bg-amber-50 p-4 text-sm leading-6 text-slate-700 ring-1 ring-amber-100">
-                      {group.proof}
-                    </div>
-                    <span className="mt-5 inline-flex text-sm font-semibold text-emerald-800">
-                      {group.cta} →
-                    </span>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
-              Reliable places to start.
-            </h2>
-            <p className="mt-5 text-lg leading-8 text-slate-700">
-              These organizations maintain key information for Sterling. Event details,
-              program information, and service updates are best confirmed directly with
-              the organization that owns them.
-            </p>
-          </div>
-
-          <div className="grid gap-4">
-            {directLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
-                className="group rounded-[2rem] bg-stone-50 p-6 shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-md"
+          <div className="grid gap-4 sm:grid-cols-3">
+            {resourcePhotos.map((photo) => (
+              <figure
+                key={photo.src}
+                className="overflow-hidden rounded-[1.75rem] bg-stone-50 shadow-sm ring-1 ring-stone-200"
               >
-                <h3 className="text-lg font-bold text-slate-950 group-hover:text-amber-800">
-                  {link.label}
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">
-                  {link.note}
-                </p>
-                <span className="mt-4 inline-flex text-sm font-semibold text-emerald-800">
-                  Visit site →
-                </span>
-              </Link>
+                <div className="relative aspect-[4/5]">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="(min-width: 640px) 30vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="p-4 text-sm font-semibold text-slate-700">
+                  {photo.label}
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-slate-950 text-white">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1800&q=80"
-            alt=""
-            className="h-full w-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/85 to-emerald-950/80" />
-        </div>
+      <section className="bg-stone-50">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+          <div className="space-y-5">
+            {resourceCategories.map((category, index) => (
+              <details
+                key={category.id}
+                id={category.id}
+                open={index === 0}
+                className="overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-stone-200"
+              >
+                <summary className="cursor-pointer list-none px-6 py-5 marker:hidden">
+                  <div className="flex items-start justify-between gap-6">
+                    <div>
+                      <h2 className="text-2xl font-bold tracking-tight text-slate-950">
+                        {category.title}
+                      </h2>
+                      <p className="mt-2 text-sm leading-6 text-slate-600">
+                        {category.intro}
+                      </p>
+                    </div>
+                    <span className="shrink-0 rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-amber-800 ring-1 ring-amber-200">
+                      {category.resources.length} links
+                    </span>
+                  </div>
+                </summary>
 
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr]">
+                <div className="border-t border-stone-200 px-6 py-6">
+                  <div className="grid gap-4 lg:grid-cols-2">
+                    {category.resources.map((resource) => {
+                      const isExternal = resource.href.startsWith("http");
+
+                      return (
+                        <article
+                          key={`${category.id}-${resource.name}`}
+                          className="rounded-[1.5rem] bg-stone-50 p-5 ring-1 ring-stone-200"
+                        >
+                          <div className="flex items-start justify-between gap-4">
+                            <h3 className="text-lg font-bold text-slate-950">
+                              {resource.name}
+                            </h3>
+                            {resource.tag ? (
+                              <span className="shrink-0 rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-slate-600 ring-1 ring-stone-200">
+                                {resource.tag}
+                              </span>
+                            ) : null}
+                          </div>
+
+                          <p className="mt-3 text-sm leading-6 text-slate-700">
+                            {resource.description}
+                          </p>
+
+                          <div className="mt-5">
+                            {isExternal ? (
+                              <a
+                                href={resource.href}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex rounded-full bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-900"
+                              >
+                                {resource.buttonLabel}
+                              </a>
+                            ) : (
+                              <Link
+                                href={resource.href}
+                                className="inline-flex rounded-full bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-900"
+                              >
+                                {resource.buttonLabel}
+                              </Link>
+                            )}
+                          </div>
+                        </article>
+                      );
+                    })}
+                  </div>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-stone-200 bg-white">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               Still not sure where to start?
             </h2>
           </div>
-          <div className="space-y-5 text-lg leading-8 text-slate-200">
+
+          <div className="space-y-5 text-lg leading-8 text-slate-700">
             <p>
-              You do not need to know which organization owns the answer. Tell Connect
-              Sterling what you are looking for, and we will help route your question
-              to the right local contact.
+              That is normal. A lot of questions depend on your address, your timing,
+              your kids, or the kind of local connection you need. Start with the form
+              and we will help point you to the right next step.
             </p>
             <Link
               href="/ask-connect-sterling#ask-form"
-              className="inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-100"
+              className="inline-flex rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-900"
             >
-              Ask Connect Sterling
+              Still not sure where to start? Ask Connect Sterling.
             </Link>
           </div>
         </div>
