@@ -7,29 +7,49 @@ const calendarLinks = [
     description:
       "Start here for Main Street events, seasonal traditions, local business gatherings, markets, and town-wide celebrations.",
     proof:
-      "The Chamber calendar is one of the best starting points for seeing Sterling’s public event rhythm.",
+      "The Chamber calendar is one of the best starting points for seeing Sterling's public event rhythm.",
     href: "https://www.visitsterlingks.com/calendar/",
     cta: "View Chamber calendar",
   },
   {
-    title: "Follow school events.",
+    title: "District Events",
     image: "/images/sterling/schools/sterling-schools-band-choir.jpg",
     description:
-      "Games, concerts, plays, activities, meetings, and student celebrations are part of Sterling’s community rhythm.",
+      "Use the district calendar for broad public-school meetings, district-wide notices, and events that affect families across Sterling schools.",
     proof:
-      "For families, the school calendar is one of the fastest ways to understand what Sterling feels like week to week.",
-    href: "https://www.usd376.com/",
-    cta: "Visit USD 376",
+      "This is the best starting point when you want the district-level calendar, not just one building or one type of event.",
+    href: "https://www.usd376.com/events?section_ids=69308&view=cal-month",
+    cta: "View district events",
   },
   {
-    title: "Catch a Black Bear game.",
+    title: "HS & JH Events",
+    image: "/images/sterling/schools/sterling-schools-high-school-class.jpg",
+    description:
+      "Use this calendar for high school and junior high performances, activities, and school events beyond athletics.",
+    proof:
+      "This is one of the most practical pages for families trying to track the rhythm of student life week to week.",
+    href: "https://www.usd376.com/events?section_ids=189708&view=cal-month",
+    cta: "View HS & JH events",
+  },
+  {
+    title: "Grade School Events",
+    image: "/images/sterling/schools/sterling-schools-grade-school-1.jpg",
+    description:
+      "Use the grade school calendar for elementary events, performances, classroom celebrations, and school-family dates.",
+    proof:
+      "For younger families, this is the cleanest place to see what grade school life actually looks like on the calendar.",
+    href: "https://www.usd376.com/events?section_ids=189707&view=cal-month",
+    cta: "View grade school events",
+  },
+  {
+    title: "High School & Junior High Athletics",
     image: "/images/sterling/sports/sterling-sports-football.JPG",
     description:
-      "Sports are central to Sterling’s culture. Game nights bring students, parents, alumni, grandparents, and neighbors together.",
+      "Use this athletics calendar for Black Bear and Bear Cub games, meets, and competition dates.",
     proof:
-      "Sterling has a championship tradition across multiple sports, and athletics are one of the easiest ways for families to plug in.",
-    href: "https://www.usd376.com/o/usd-376/page/athletics",
-    cta: "View Black Bear athletics",
+      "If you are trying to track game nights, this is the most direct public link for high school and junior high athletics.",
+    href: "https://www.usd376.com/events?section_ids=189709&view=cal-month",
+    cta: "View athletics calendar",
   },
   {
     title: "Sign up through Sterling Rec.",
@@ -42,7 +62,7 @@ const calendarLinks = [
     cta: "Visit Sterling Rec",
   },
   {
-    title: "See what’s happening at Sterling College.",
+    title: "See what's happening at Sterling College.",
     image: "/images/sterling/college/sterling-college-speaking-event.jpg",
     description:
       "Sterling College brings athletics, theatre, music, speakers, student activities, and campus life into the broader community.",
@@ -69,14 +89,14 @@ const calendarLinks = [
     proof:
       "The practical side of belonging starts with knowing where to find city information.",
     href: "https://www.sterling-kansas.com/",
-    cta: "Visit City website",
+    cta: "Visit city website",
   },
   {
     title: "Find library programs.",
     image:
       "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80",
     description:
-      "Libraries are quiet anchors of family life: books, programs, kids’ activities, learning, and community gathering.",
+      "Libraries are quiet anchors of family life: books, programs, kids' activities, learning, and community gathering.",
     proof:
       "For young families and lifelong learners, the library can become a regular connection point.",
     href: "https://www.sterling-kansas.com/214/Public-Library",
@@ -105,7 +125,10 @@ const calendarLinks = [
 ];
 
 const eventTypes = [
-  "School games and performances",
+  "District events",
+  "Grade school events",
+  "HS & JH events",
+  "HS & JH athletics",
   "Youth sports and recreation",
   "Main Street events",
   "Sterling College athletics",
@@ -137,7 +160,7 @@ export default function CommunityCalendarPage() {
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:py-32">
           <div className="max-w-4xl">
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-              Find what’s happening in Sterling.
+              Find what&apos;s happening in Sterling.
             </h1>
             <p className="mt-6 text-lg leading-8 text-slate-100 sm:text-xl">
               You do not need to follow every organization on day one. Start here and
@@ -199,8 +222,8 @@ export default function CommunityCalendarPage() {
             <p className="mt-5 text-lg leading-8 text-slate-700">
               School games, Chamber events, Rec activities, college athletics, church
               youth nights, library programs, city meetings, and Golden Ticket
-              gatherings all become part of how people move from “new here” to
-              “known here.”
+              gatherings all become part of how people move from &ldquo;new here&rdquo; to
+              &ldquo;known here.&rdquo;
             </p>
           </div>
 
@@ -243,29 +266,29 @@ export default function CommunityCalendarPage() {
                   className="group flex h-full overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
                 >
                   <article className="flex h-full w-full flex-col">
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={card.image}
-                      alt={card.title}
-                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
-                  </div>
-
-                  <div className="flex flex-1 flex-col p-6">
-                    <h3 className="text-xl font-bold text-slate-950 group-hover:text-amber-800">
-                      {card.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-6 text-slate-700">
-                      {card.description}
-                    </p>
-                    <div className="mt-5 rounded-2xl bg-amber-50 p-4 text-sm leading-6 text-slate-700 ring-1 ring-amber-100">
-                      {card.proof}
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={card.image}
+                        alt={card.title}
+                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
                     </div>
-                    <span className="mt-5 inline-flex text-sm font-semibold text-emerald-800">
-                      {card.cta} →
-                    </span>
-                  </div>
+
+                    <div className="flex flex-1 flex-col p-6">
+                      <h3 className="text-xl font-bold text-slate-950 group-hover:text-amber-800">
+                        {card.title}
+                      </h3>
+                      <p className="mt-3 text-sm leading-6 text-slate-700">
+                        {card.description}
+                      </p>
+                      <div className="mt-5 rounded-2xl bg-amber-50 p-4 text-sm leading-6 text-slate-700 ring-1 ring-amber-100">
+                        {card.proof}
+                      </div>
+                      <span className="mt-5 inline-flex text-sm font-semibold text-emerald-800">
+                        {card.cta} →
+                      </span>
+                    </div>
                   </article>
                 </Link>
               );

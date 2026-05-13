@@ -64,7 +64,7 @@ const sportsHighlights = [
       "Basketball is part of Sterling’s winter heartbeat. Sterling boys basketball has built one of the strongest recent small-school runs in Kansas.",
     whyItMatters:
       "Your kids can experience a small-school setting without giving up the energy of a serious winning culture.",
-    href: "https://www.usd376.com/o/usd-376/page/athletics",
+    href: "https://www.usd376.com/events?section_ids=189709&view=cal-month",
     cta: "View USD 376 athletics",
   },
   {
@@ -74,7 +74,7 @@ const sportsHighlights = [
       "Football nights bring Sterling together: students, parents, grandparents, alumni, younger kids, and neighbors under the lights.",
     whyItMatters:
       "Game night is one of the easiest places for a new family to start recognizing faces and feeling part of the town.",
-    href: "https://www.usd376.com/o/usd-376/page/athletics",
+    href: "https://www.usd376.com/events?section_ids=189709&view=cal-month",
     cta: "View football and athletics",
   },
   {
@@ -84,7 +84,7 @@ const sportsHighlights = [
       "Sterling’s athletic story is not limited to one or two headline sports. Tennis is part of the broader championship culture.",
     whyItMatters:
       "More programs means more students can find their lane, compete, contribute, and be part of something excellent.",
-    href: "https://www.usd376.com/o/usd-376/page/athletics",
+    href: "https://www.usd376.com/events?section_ids=189709&view=cal-month",
     cta: "Explore athletics",
   },
   {
@@ -94,17 +94,18 @@ const sportsHighlights = [
       "Track and field gives students many ways to compete: speed, endurance, jumps, throws, relays, discipline, and personal growth.",
     whyItMatters:
       "Some kids find their confidence in a team sport. Others find it in the quiet discipline of beating their own best mark.",
-    href: "https://www.usd376.com/o/usd-376/page/athletics",
+    href: "https://www.usd376.com/events?section_ids=189709&view=cal-month",
     cta: "Explore track and activities",
   },
   {
     title: "Girls Basketball",
-    image: "/images/sterling/sports/sterling-sports-basketball-champions-2.JPG",
+    image: "/images/sterling/sports/sterling-sports-basketball-girls-1.jpg",
+    alt: "Sterling girls basketball players in action during a game",
     description:
       "Sterling’s competitive culture extends across boys and girls programs, giving daughters and sons alike a chance to be part of strong teams.",
     whyItMatters:
       "Families want their kids to have opportunity. Sterling gives students a chance to participate and compete.",
-    href: "https://www.usd376.com/o/usd-376/page/athletics",
+    href: "https://www.usd376.com/events?section_ids=189709&view=cal-month",
     cta: "View girls athletics",
   },
   {
@@ -114,7 +115,7 @@ const sportsHighlights = [
       "Students can explore sports like cross country, volleyball, wrestling, baseball, softball, golf, soccer, cheer, and more.",
     whyItMatters:
       "In a smaller school, kids often get the chance to try multiple sports, discover what they love, and contribute earlier.",
-    href: "https://www.usd376.com/o/usd-376/page/athletics",
+    href: "https://www.usd376.com/events?section_ids=189709&view=cal-month",
     cta: "Explore all athletics",
   },
 ];
@@ -132,7 +133,8 @@ const activityCards = [
   },
   {
     title: "Debate",
-    image: "/images/sterling/schools/sterling-schools-prom-1.JPG",
+    image: "/images/sterling/schools/sterling-schools-debate.jpg",
+    alt: "Sterling students competing in a debate event",
     description:
       "Sterling’s debate tradition gives students a serious intellectual competition outlet in a small-school setting.",
     whyItMatters:
@@ -240,12 +242,12 @@ export default function EducationFamilyLifePage() {
                 View USD 376 Enrollment
               </Link>
               <Link
-                href="https://www.usd376.com/o/usd-376/page/athletics"
+                href="https://www.usd376.com/events?section_ids=189709&view=cal-month"
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
               >
-                View Black Bear Athletics
+                View HS & JH Athletics
               </Link>
               <Link
                 href="/ask-connect-sterling#ask-form"
@@ -410,7 +412,7 @@ export default function EducationFamilyLifePage() {
                   <div className="relative h-48 overflow-hidden">
                     <img
                       src={card.image}
-                      alt={card.title}
+                      alt={card.alt ?? card.title}
                       className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
@@ -470,7 +472,7 @@ export default function EducationFamilyLifePage() {
                   <div className="relative h-44 overflow-hidden">
                     <img
                       src={card.image}
-                      alt={card.title}
+                      alt={card.alt ?? card.title}
                       className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
