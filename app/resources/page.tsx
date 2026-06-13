@@ -85,6 +85,20 @@ export default function ResourcesPage() {
                             <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-700">
                               {resource.description}
                             </p>
+
+                            {resource.address ? (
+                              <p className="mt-3 text-sm leading-6 text-slate-600">
+                                <span className="font-semibold text-slate-800">Address:</span>{" "}
+                                {resource.address}
+                              </p>
+                            ) : null}
+
+                            {resource.phone ? (
+                              <p className="mt-1 text-sm leading-6 text-slate-600">
+                                <span className="font-semibold text-slate-800">Phone:</span>{" "}
+                                {resource.phone}
+                              </p>
+                            ) : null}
                           </div>
 
                           <a

@@ -3,6 +3,8 @@ export type ResourceItem = {
   description: string;
   href: string;
   buttonLabel: string;
+  address?: string;
+  phone?: string;
   tag?: string;
 };
 
@@ -74,6 +76,14 @@ export const resourceCategories: ResourceCategory[] = [
         href: "https://highertactics.com/",
         buttonLabel: "Visit site",
         tag: "Training",
+      },
+      {
+        name: "Ark Veterinary Clinic",
+        description:
+          "Local veterinary clinic in Sterling for pet care, animal health, and veterinary services.",
+        href: "http://www.arkvetclinic.com/",
+        buttonLabel: "Visit site",
+        tag: "Veterinary Care",
       },
     ],
   },
@@ -168,6 +178,60 @@ export const resourceCategories: ResourceCategory[] = [
         href: "https://www.sterling-kansas.com/",
         buttonLabel: "Visit city site",
         tag: "City",
+      },
+    ],
+  },
+  {
+    id: "places-to-stay",
+    title: "Places to Stay",
+    intro:
+      "Hotels, bed and breakfasts, and short-term stay options for family visits, college visits, game weekends, relocation scouting trips, and guests coming to Sterling.",
+    resources: [
+      {
+        name: "Sterling Country Inn",
+        description:
+          "Local hotel option on Broadway for visitors, family, college trips, and short stays in Sterling.",
+        href: "https://sterlingcountryinn.com/",
+        buttonLabel: "Visit site",
+        tag: "Hotel",
+      },
+      {
+        name: "Rest Haven Bed & Breakfast",
+        description:
+          "Sterling bed and breakfast option for guests, family visits, and short stays.",
+        href: "https://www.instagram.com/sterlingresthaven/",
+        buttonLabel: "Visit Instagram",
+        tag: "Bed & Breakfast",
+      },
+      {
+        name: "Sterling Lake House",
+        description: "Local guest stay option near Sterling Lake.",
+        href: "https://www.google.com/maps/search/?api=1&query=Sterling+Lake+House+212+E+Van+Buren+St+Sterling+KS",
+        buttonLabel: "View map",
+        address: "212 E Van Buren St, Sterling, KS",
+        phone: "620-204-0696",
+      },
+      {
+        name: "Main Street Cottage Bed and Breakfast",
+        description: "Bed and breakfast option near Main Street in Sterling.",
+        href: "https://www.google.com/maps/search/?api=1&query=Main+Street+Cottage+Bed+and+Breakfast+529+E+Main+St+Sterling+KS",
+        buttonLabel: "View map",
+        address: "529 E Main St, Sterling, KS",
+        phone: "620-204-0696",
+      },
+      {
+        name: "Prairie Garden Bed & Breakfast",
+        description: "Local bed and breakfast option in Sterling.",
+        href: "https://www.google.com/maps/search/?api=1&query=Prairie+Garden+Bed+and+Breakfast+320+E+Monroe+St+Sterling+KS",
+        buttonLabel: "View map",
+        address: "320 E Monroe St, Sterling, KS",
+      },
+      {
+        name: "The English Gardens Bed and Breakfast",
+        description: "Local bed and breakfast option in Sterling.",
+        href: "https://www.google.com/maps/search/?api=1&query=The+English+Gardens+Bed+and+Breakfast+227+N+8th+St+Sterling+KS",
+        buttonLabel: "View map",
+        address: "227 N 8th St, Sterling, KS",
       },
     ],
   },
@@ -346,12 +410,37 @@ export const resourceCategories: ResourceCategory[] = [
         tag: "Co-op",
       },
       {
+        name: "Sterling Chamber Main Street business directory",
+        description:
+          "Starting point for local restaurants, coffee, retail, services, and Main Street businesses.",
+        href: "https://www.visitsterlingks.com/",
+        buttonLabel: "Visit site",
+        tag: "Business directory",
+      },
+      {
+        name: "Sun Risen Outfitters",
+        description:
+          "Local outdoor, apparel, and lifestyle retail resource in Sterling.",
+        href: "https://www.sunrisenoutfitter.com/",
+        buttonLabel: "Visit site",
+        tag: "Retail",
+      },
+      {
         name: "Sterling Pharmacy",
         description:
           "Local pharmacy with prescription and pharmacy services.",
         href: "https://www.visitsterlingks.com/connections/76317-sterling-pharmacy",
         buttonLabel: "Visit listing",
         tag: "Pharmacy",
+      },
+      {
+        name: "AB’s Barbershop",
+        description: "Local barbershop in Sterling.",
+        href: "https://www.facebook.com/absbarbershopks",
+        buttonLabel: "Visit page",
+        address: "124 N 3rd St, Sterling, KS",
+        phone: "620-204-9505",
+        tag: "Barber",
       },
       {
         name: "Dos Amigos",
@@ -361,11 +450,65 @@ export const resourceCategories: ResourceCategory[] = [
         tag: "Restaurant",
       },
       {
+        name: "The Wild Hair Salon",
+        description: "Local hair salon in Sterling.",
+        href: "https://www.google.com/maps/search/?api=1&query=The+Wild+Hair+Salon+836+E+Monroe+St+Sterling+KS",
+        buttonLabel: "View map",
+        address: "836 E Monroe St, Sterling, KS",
+        phone: "620-278-6344",
+        tag: "Salon",
+      },
+      {
+        name: "Studio M Salon",
+        description: "Local hair salon on Broadway in Sterling.",
+        href: "https://www.google.com/maps/search/?api=1&query=Studio+M+Salon+112+S+Broadway+Ave+Sterling+KS",
+        buttonLabel: "View map",
+        address: "112 S Broadway Ave, Sterling, KS",
+        phone: "620-727-7584",
+        tag: "Salon",
+      },
+      {
+        name: "Salon Out Back",
+        description: "Local hair salon serving the Sterling area.",
+        href: "https://www.google.com/maps/search/?api=1&query=Salon+Out+Back+2250+19th+Rd+Sterling+KS",
+        buttonLabel: "View map",
+        address: "2250 19th Rd, Sterling, KS",
+        phone: "620-278-3151",
+        tag: "Salon",
+      },
+      {
+        name: "The Big Blonde Salon",
+        description: "Local salon on Broadway in Sterling.",
+        href: "https://www.google.com/maps/search/?api=1&query=The+Big+Blonde+Salon+109+N+Broadway+Ave+Sterling+KS",
+        buttonLabel: "View map",
+        address: "109 N Broadway Ave, Sterling, KS",
+        phone: "620-278-6217",
+        tag: "Salon",
+      },
+      {
         name: "Sterling Cafe",
         description: "Local cafe and restaurant serving Sterling.",
         href: "https://www.facebook.com/SterlingCafe1945",
         buttonLabel: "Visit page",
         tag: "Cafe",
+      },
+      {
+        name: "Ol’ Time Barber Shop",
+        description: "Local barber shop in Sterling.",
+        href: "https://www.google.com/maps/search/?api=1&query=Ol+Time+Barber+Shop+349+E+Garfield+Ave+Sterling+KS",
+        buttonLabel: "View map",
+        address: "349 E Garfield Ave, Sterling, KS",
+        phone: "620-278-2223",
+        tag: "Barber",
+      },
+      {
+        name: "Luxe Skin Lab",
+        description: "Local skin care and personal care resource in Sterling.",
+        href: "https://www.google.com/maps/search/?api=1&query=Luxe+Skin+Lab+112+S+Broadway+Ave+Sterling+KS",
+        buttonLabel: "View map",
+        address: "112 S Broadway Ave, Sterling, KS",
+        phone: "816-645-9039",
+        tag: "Skin Care",
       },
       {
         name: "Buster's Burgers",
@@ -394,14 +537,6 @@ export const resourceCategories: ResourceCategory[] = [
         href: "https://www.tntdairyland.com/",
         buttonLabel: "Visit site",
         tag: "Food",
-      },
-      {
-        name: "Sterling Chamber Main Street business directory",
-        description:
-          "Starting point for local restaurants, coffee, retail, services, and Main Street businesses.",
-        href: "https://www.visitsterlingks.com/",
-        buttonLabel: "Visit site",
-        tag: "Business directory",
       },
     ],
   },
