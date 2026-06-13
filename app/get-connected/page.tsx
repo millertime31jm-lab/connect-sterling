@@ -67,9 +67,9 @@ const connectionCards = [
     description:
       "Churches are part of Sterling’s connective tissue. They support worship, youth activities, meals, service opportunities, and informal care networks.",
     proof:
-      "If you are looking for a church home or youth activity, Connect Sterling can help point you toward local contacts.",
-    href: "/ask-connect-sterling#ask-form",
-    cta: "Ask for church connections",
+      "Sterling has a strong faith community, and the church list gives you a practical place to start exploring local options.",
+    href: "/resources#churches",
+    cta: "View local churches",
   },
   {
     title: "Ask about 5th Quarter or youth activities.",
@@ -92,16 +92,6 @@ const connectionCards = [
     cta: "Start with the Chamber",
   },
   {
-    title: "Use your Golden Tickets.",
-    image: "/images/sterling/events/sterling-events-golden-ticket.jpg",
-    description:
-      "Adults who relocate through Connect Sterling receive two Golden Tickets to help kickstart community connection.",
-    proof:
-      "It is a fun first doorway into adult social life, local experiences, and meeting people.",
-    href: "https://www.sterlinggoldenticket.com",
-    cta: "Learn about Golden Ticket",
-  },
-  {
     title: "Get help with the basics.",
     image: "/images/sterling/housing/sterling-housing-all-american-house.jpg",
     description:
@@ -116,7 +106,7 @@ const connectionCards = [
 export const metadata = {
   title: "Get Connected | Connect Sterling",
   description:
-    "Find youth activities, community events, Sterling Rec, school events, churches, volunteer opportunities, Golden Ticket, and newcomer resources in Sterling, Kansas.",
+    "Find youth activities, community events, Sterling Rec, school events, churches, volunteer opportunities, and newcomer resources in Sterling, Kansas.",
 };
 
 export default function GetConnectedPage() {
@@ -190,7 +180,7 @@ export default function GetConnectedPage() {
             </h2>
             <p className="mt-5 text-lg leading-8 text-slate-700">
               Start with the question you already have. Sports, swim lessons, school
-              events, churches, volunteering, college events, Golden Ticket, city
+              events, churches, volunteering, college events, city
               resources, or just “who do I ask?”
             </p>
           </div>
@@ -263,7 +253,7 @@ export default function GetConnectedPage() {
             </p>
             <p>
               That might mean a coach, a church, a school activity, a Rec program, a
-              Chamber event, a volunteer role, a Golden Ticket night, or another family
+              Chamber event, a volunteer role, or another family
               who says, “Come sit with us.”
             </p>
             <Link

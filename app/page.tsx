@@ -277,40 +277,30 @@ export default function Home() {
             </div>
 
             <div className="grid gap-4">
-              {proofCards.map((card) => {
-                const isLongValue = card.value.length > 12;
-
-                return (
-                  <Link
-                    key={card.title}
-                    href={card.href}
-                    className="grid gap-5 rounded-[2rem] bg-white/10 p-6 ring-1 ring-white/10 transition hover:bg-white/15 xl:grid-cols-[minmax(0,0.75fr)_minmax(0,1.35fr)_auto] xl:items-center"
-                  >
-                    <p
-                      className={`font-bold leading-tight text-amber-200 ${
-                        isLongValue
-                          ? "text-3xl sm:text-4xl xl:text-3xl 2xl:text-4xl"
-                          : "text-4xl"
-                      }`}
-                    >
+              {proofCards.map((card) => (
+                <Link
+                  key={card.title}
+                  href={card.href}
+                  className="rounded-[2rem] bg-white/10 p-6 ring-1 ring-white/10 transition hover:bg-white/15"
+                >
+                  <div className="flex h-full flex-col">
+                    <p className="text-3xl font-bold leading-tight text-amber-200 sm:text-4xl">
                       {card.value}
                     </p>
 
-                    <div className="min-w-0">
-                      <h3 className="text-xl font-bold leading-snug text-white">
-                        {card.title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-6 text-slate-300">
-                        {card.description}
-                      </p>
-                    </div>
+                    <h3 className="mt-4 text-xl font-bold leading-snug text-white">
+                      {card.title}
+                    </h3>
+                    <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300">
+                      {card.description}
+                    </p>
 
-                    <span className="inline-flex whitespace-nowrap text-sm font-semibold text-amber-200 xl:justify-self-end">
+                    <span className="mt-5 inline-flex text-sm font-semibold text-amber-200">
                       Learn more →
                     </span>
-                  </Link>
-                );
-              })}
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </div>

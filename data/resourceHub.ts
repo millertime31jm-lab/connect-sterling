@@ -62,8 +62,8 @@ export const resourceCategories: ResourceCategory[] = [
       {
         name: "Mental health resources",
         description:
-          "Regional mental health, therapy, crisis, and support resources.",
-        href: "https://www.thecentergb.org/",
+          "Local therapy and mental health support resource serving the Sterling area.",
+        href: "https://www.pivotalpointtherapy.com/",
         buttonLabel: "Visit site",
         tag: "Support",
       },
@@ -81,13 +81,13 @@ export const resourceCategories: ResourceCategory[] = [
     id: "housing-home-services",
     title: "Housing, Building & Home Services",
     intro:
-      "Use these links for buying, building, lending, insurance, and city starting points tied to property and home setup.",
+      "Use these links for buying, building, lending, insurance, rentals, and city starting points tied to property and home setup.",
     resources: [
       {
         name: "Timber Oaks Realty",
         description:
           "Local and regional real estate starting point serving Sterling and Rice County.",
-        href: "https://timberoaksrealty.com/",
+        href: "https://www.timberoaks-realty.com/team-4",
         buttonLabel: "Visit site",
         tag: "Real estate",
       },
@@ -134,7 +134,7 @@ export const resourceCategories: ResourceCategory[] = [
         description:
           "Sterling banking location for personal banking, business banking, lending, and local financial services.",
         href: "https://www.bankoftheplains.com/locations/sterling",
-        buttonLabel: "Visit location",
+        buttonLabel: "Visit site",
         tag: "Banking",
       },
       {
@@ -142,8 +142,24 @@ export const resourceCategories: ResourceCategory[] = [
         description:
           "Local insurance agency offering home, auto, commercial, farm, renters, and related coverage.",
         href: "https://www.insurewithus.net/contact-us.html",
-        buttonLabel: "Contact agency",
+        buttonLabel: "Visit site",
         tag: "Insurance",
+      },
+      {
+        name: "Farm Bureau Financial Services - Teresa Boeken",
+        description:
+          "Local Farm Bureau agent offering insurance and financial services for families, homes, farms, and businesses.",
+        href: "https://www.fbfs.com/find-an-agent/teresaboeken?y_source=1_MTAzNDg5OTI0MC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+        buttonLabel: "Visit site",
+        tag: "Insurance",
+      },
+      {
+        name: "M&A Property Management",
+        description:
+          "Local rental and property management starting point for housing options in the Sterling area.",
+        href: "https://www.facebook.com/rentalmanagaementforyou/",
+        buttonLabel: "Visit page",
+        tag: "Rentals",
       },
       {
         name: "City of Sterling utilities / building starting point",
@@ -159,7 +175,7 @@ export const resourceCategories: ResourceCategory[] = [
     id: "community-life",
     title: "Community Life",
     intro:
-      "These are the practical public starting points for events, organizations, newcomer connection, and community participation.",
+      "These are the practical public starting points for events, organizations, and everyday community participation.",
     resources: [
       {
         name: "Sterling Chamber Main Street",
@@ -178,14 +194,6 @@ export const resourceCategories: ResourceCategory[] = [
         tag: "Recreation",
       },
       {
-        name: "Golden Ticket",
-        description:
-          "Adult community connection and newcomer social experiences.",
-        href: "https://www.sterlinggoldenticket.com",
-        buttonLabel: "Visit site",
-        tag: "Newcomers",
-      },
-      {
         name: "Sterling College",
         description:
           "College events, athletics, theatre, music, speakers, and campus life.",
@@ -193,21 +201,62 @@ export const resourceCategories: ResourceCategory[] = [
         buttonLabel: "Visit site",
         tag: "College",
       },
+    ],
+  },
+  {
+    id: "churches",
+    title: "Churches",
+    intro:
+      "Sterling has a strong faith community. Use these links to explore local churches, worship times, youth activities, and connection points.",
+    resources: [
       {
-        name: "Churches",
+        name: "Calvary Baptist Church",
         description:
-          "Start with Sterling Chamber Main Street for local community organizations and connection points.",
-        href: "https://www.visitsterlingks.com/",
+          "Local church in Sterling with worship, teaching, and community connection.",
+        href: "https://calvarybaptistofsterling.com/",
         buttonLabel: "Visit site",
-        tag: "Community guide",
       },
       {
-        name: "Civic groups",
+        name: "CrossPoint Church",
         description:
-          "Start with Chamber Main Street for local civic and volunteer connection points.",
-        href: "https://www.visitsterlingks.com/",
+          "Local church community with worship, groups, and ministries.",
+        href: "https://crosspointchurch.com/",
         buttonLabel: "Visit site",
-        tag: "Volunteer",
+      },
+      {
+        name: "Encounter Church Sterling",
+        description:
+          "Local church community in Sterling with worship and connection opportunities.",
+        href: "https://www.encounterchurchsterling.com/",
+        buttonLabel: "Visit site",
+      },
+      {
+        name: "First United Methodist Church",
+        description:
+          "Local Methodist church with worship, ministries, and community connection.",
+        href: "https://sterlingfirst.org/",
+        buttonLabel: "Visit site",
+      },
+      {
+        name: "Sterling Bible Church",
+        description:
+          "Local Bible church with worship, teaching, and community life.",
+        href: "https://www.sterlingbible.org/",
+        buttonLabel: "Visit site",
+      },
+      {
+        name: "Sterling Church of Christ",
+        description:
+          "Local church community with updates and connection information on Facebook.",
+        href: "https://www.facebook.com/sterlingchurchofchrist",
+        buttonLabel: "Visit page",
+      },
+      {
+        name: "United Presbyterian Church",
+        description:
+          "Local Presbyterian church with worship, ministries, and community connection.",
+        href: "https://upcsterling.com/",
+        buttonLabel: "Visit site",
       },
     ],
   },
@@ -215,16 +264,8 @@ export const resourceCategories: ResourceCategory[] = [
     id: "recreation-outdoors",
     title: "Recreation & Outdoor Life",
     intro:
-      "Go here for the public links families usually need for lake time, golf, pool season, fitness, and recreation programs.",
+      "Go here for the direct public links families usually need for pool season, fitness, golf, and recreation programs.",
     resources: [
-      {
-        name: "Sterling Lake",
-        description:
-          "City starting point for Sterling Lake, parks, and outdoor public spaces.",
-        href: "https://www.sterling-kansas.com/",
-        buttonLabel: "Visit city site",
-        tag: "Outdoors",
-      },
       {
         name: "Sterling Municipal Pool",
         description:
@@ -257,21 +298,13 @@ export const resourceCategories: ResourceCategory[] = [
         buttonLabel: "Visit site",
         tag: "Golf",
       },
-      {
-        name: "Water park / splash pad",
-        description:
-          "Use the city site as the current public starting point for community outdoor amenities.",
-        href: "https://www.sterling-kansas.com/",
-        buttonLabel: "Visit city site",
-        tag: "City guide",
-      },
     ],
   },
   {
     id: "daily-needs",
     title: "Daily Needs",
     intro:
-      "This section is for the links people use once they are trying to make normal weekly life work: groceries, pharmacy, supplies, food, and local business.",
+      "This section is for the links people use once they are trying to make normal weekly life work: groceries, convenience stops, coffee, restaurants, and local business.",
     resources: [
       {
         name: "Dillons Sterling",
@@ -279,6 +312,38 @@ export const resourceCategories: ResourceCategory[] = [
         href: "https://www.dillons.com/stores/grocery/ks/sterling/sterling-dillons/615/00007",
         buttonLabel: "Visit store page",
         tag: "Groceries",
+      },
+      {
+        name: "Dollar General",
+        description:
+          "Everyday household goods, basic groceries, and convenience items in Sterling.",
+        href: "https://www.dollargeneral.com/store-directory/ks/sterling/11441",
+        buttonLabel: "Visit store page",
+        tag: "Everyday goods",
+      },
+      {
+        name: "Casey's",
+        description:
+          "Convenience store, fuel, pizza, and quick daily needs.",
+        href: "https://www.caseys.com/",
+        buttonLabel: "Visit site",
+        tag: "Convenience",
+      },
+      {
+        name: "Rural Market",
+        description:
+          "Online market and local ordering resource connected to Central Prairie Co-op.",
+        href: "https://market.cpcoop.us/",
+        buttonLabel: "Visit market",
+        tag: "Ordering",
+      },
+      {
+        name: "Central Prairie Co-op",
+        description:
+          "Local cooperative serving agriculture, energy, retail, and community needs.",
+        href: "https://www.cpcoop.us/",
+        buttonLabel: "Visit site",
+        tag: "Co-op",
       },
       {
         name: "Sterling Pharmacy",
@@ -289,20 +354,54 @@ export const resourceCategories: ResourceCategory[] = [
         tag: "Pharmacy",
       },
       {
+        name: "Dos Amigos",
+        description: "Local Mexican restaurant in Sterling.",
+        href: "https://www.facebook.com/dosamigosrestaurantKS/",
+        buttonLabel: "Visit page",
+        tag: "Restaurant",
+      },
+      {
+        name: "Sterling Cafe",
+        description: "Local cafe and restaurant serving Sterling.",
+        href: "https://www.facebook.com/SterlingCafe1945",
+        buttonLabel: "Visit page",
+        tag: "Cafe",
+      },
+      {
+        name: "Buster's Burgers",
+        description: "Local burger restaurant in Sterling.",
+        href: "https://www.burgersbybuster.com/",
+        buttonLabel: "Visit site",
+        tag: "Restaurant",
+      },
+      {
+        name: "Gambino's Pizza",
+        description: "Pizza restaurant serving Sterling.",
+        href: "https://gambinospizza.com/locations/sterling-ks/",
+        buttonLabel: "Visit site",
+        tag: "Pizza",
+      },
+      {
+        name: "Clive's Staples",
+        description: "Local coffee, food, and gathering place in Sterling.",
+        href: "https://clivesstaples.com/",
+        buttonLabel: "Visit site",
+        tag: "Coffee",
+      },
+      {
+        name: "TNT Dairyland",
+        description: "Local ice cream, food, and family-friendly stop.",
+        href: "https://www.tntdairyland.com/",
+        buttonLabel: "Visit site",
+        tag: "Food",
+      },
+      {
         name: "Sterling Chamber Main Street business directory",
         description:
           "Starting point for local restaurants, coffee, retail, services, and Main Street businesses.",
         href: "https://www.visitsterlingks.com/",
         buttonLabel: "Visit site",
         tag: "Business directory",
-      },
-      {
-        name: "Home Lumber & Supply",
-        description:
-          "Building supplies, home projects, hardware-related support, and local materials.",
-        href: "https://homelumberandsupply.com/locations/sterling/",
-        buttonLabel: "Visit site",
-        tag: "Hardware",
       },
     ],
   },
@@ -338,8 +437,7 @@ export const resourceCategories: ResourceCategory[] = [
       },
       {
         name: "Cox availability",
-        description:
-          "Check Cox internet availability by address.",
+        description: "Check Cox internet availability by address.",
         href: "https://www.cox.com/residential/internet.html",
         buttonLabel: "Check availability",
         tag: "Internet",
@@ -350,7 +448,7 @@ export const resourceCategories: ResourceCategory[] = [
     id: "schools-childcare",
     title: "Schools & Childcare",
     intro:
-      "Use these links for childcare, enrollment, district information, college, and youth program signups.",
+      "Use these links for childcare, enrollment, district information, and college starting points.",
     resources: [
       {
         name: "Lil Cub Childcare",
@@ -383,14 +481,6 @@ export const resourceCategories: ResourceCategory[] = [
         href: "https://www.sterling.edu/",
         buttonLabel: "Visit site",
         tag: "College",
-      },
-      {
-        name: "Sterling Rec youth programs",
-        description:
-          "Youth sports, activities, recreation programs, and seasonal signups.",
-        href: "https://sterlingrec.org/",
-        buttonLabel: "Visit site",
-        tag: "Youth programs",
       },
     ],
   },
