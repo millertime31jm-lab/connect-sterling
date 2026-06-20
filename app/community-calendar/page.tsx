@@ -3,7 +3,7 @@ import Link from "next/link";
 const calendarLinks = [
   {
     title: "Find public community events.",
-    image: "/images/sterling/events/sterling-events-mainstreet-market.jpg",
+    image: "/images/sterling/downtown/sterling-downtown-christmas.jpg",
     description:
       "Start here for Main Street events, seasonal traditions, local business gatherings, markets, and town-wide celebrations.",
     proof:
@@ -13,7 +13,6 @@ const calendarLinks = [
   },
   {
     title: "District Events",
-    image: "/images/sterling/schools/sterling-schools-band-choir.jpg",
     description:
       "Use the district calendar for broad public-school meetings, district-wide notices, and events that affect families across Sterling schools.",
     proof:
@@ -23,7 +22,6 @@ const calendarLinks = [
   },
   {
     title: "HS & JH Events",
-    image: "/images/sterling/schools/sterling-schools-high-school-class.jpg",
     description:
       "Use this calendar for high school and junior high performances, activities, and school events beyond athletics.",
     proof:
@@ -33,7 +31,6 @@ const calendarLinks = [
   },
   {
     title: "Grade School Events",
-    image: "/images/sterling/schools/sterling-schools-grade-school-1.jpg",
     description:
       "Use the grade school calendar for elementary events, performances, classroom celebrations, and school-family dates.",
     proof:
@@ -43,7 +40,6 @@ const calendarLinks = [
   },
   {
     title: "High School & Junior High Athletics",
-    image: "/images/sterling/sports/sterling-sports-football.JPG",
     description:
       "Use this athletics calendar for Black Bear and Bear Cub games, meets, and competition dates.",
     proof:
@@ -53,7 +49,6 @@ const calendarLinks = [
   },
   {
     title: "Sign up through Sterling Rec.",
-    image: "/images/sterling/community/sterling-community-play.jpg",
     description:
       "Sterling Rec helps families find youth sports, recreation programs, wellness opportunities, leagues, classes, and seasonal activities.",
     proof:
@@ -63,7 +58,7 @@ const calendarLinks = [
   },
   {
     title: "See what's happening at Sterling College.",
-    image: "/images/sterling/college/sterling-college-speaking-event.jpg",
+    image: "/images/sterling/college/sterling-college-cooper-hall.jpg",
     description:
       "Sterling College brings athletics, theatre, music, speakers, student activities, and campus life into the broader community.",
     proof:
@@ -73,7 +68,6 @@ const calendarLinks = [
   },
   {
     title: "Follow Warrior athletics.",
-    image: "/images/sterling/college/sterling-college-warriorfest.jpg",
     description:
       "College athletics add another layer of game-day energy, student life, and weekend activity for local families.",
     proof:
@@ -93,8 +87,6 @@ const calendarLinks = [
   },
   {
     title: "Find library programs.",
-    image:
-      "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80",
     description:
       "Libraries are quiet anchors of family life: books, programs, kids' activities, learning, and community gathering.",
     proof:
@@ -104,7 +96,6 @@ const calendarLinks = [
   },
   {
     title: "Ask about church and youth activities.",
-    image: "/images/sterling/community/sterling-community-smore-church.jpg",
     description:
       "Churches help host worship, youth activities, meals, service opportunities, small groups, and community support.",
     proof:
@@ -150,8 +141,8 @@ export default function CommunityCalendarPage() {
       <section className="relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0">
           <img
-            src="/images/sterling/events/sterling-events-mainstreet-market.jpg"
-            alt="People gathered at a Sterling Main Street event"
+            src="/images/sterling/hero/Sterling_Kansas_Skyline.jpg"
+            alt="Skyline view of Sterling"
             className="h-full w-full object-cover opacity-30"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-emerald-950/75 to-amber-900/70" />
@@ -266,16 +257,18 @@ export default function CommunityCalendarPage() {
                   className="group flex h-full overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
                 >
                   <article className="flex h-full w-full flex-col">
-                    <div className="relative h-48 overflow-hidden">
-                      <img
-                        src={card.image}
-                        alt={card.title}
-                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
-                    </div>
+                    {card.image ? (
+                      <div className="relative h-48 overflow-hidden">
+                        <img
+                          src={card.image}
+                          alt={card.title}
+                          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
+                      </div>
+                    ) : null}
 
-                    <div className="flex flex-1 flex-col p-6">
+                    <div className={`flex flex-1 flex-col ${card.image ? "p-6" : "p-7"}`}>
                       <h3 className="text-xl font-bold text-slate-950 group-hover:text-amber-800">
                         {card.title}
                       </h3>
@@ -304,14 +297,7 @@ export default function CommunityCalendarPage() {
       </section>
 
       <section className="relative overflow-hidden bg-slate-950 text-white">
-        <div className="absolute inset-0">
-          <img
-            src="/images/sterling/events/sterling-events-outdoor-concert.jpg"
-            alt="Sterling residents enjoying an outdoor event"
-            className="h-full w-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/85 to-emerald-950/80" />
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/85 to-emerald-950/80" />
 
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div>

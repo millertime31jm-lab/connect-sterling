@@ -3,7 +3,6 @@ import Link from "next/link";
 const essentials = [
   {
     title: "Your kids can grow here.",
-    image: "/images/sterling/schools/sterling-schools-grade-school-1.jpg",
     description:
       "Sterling gives families a full education path from Lil Cub Childcare to Sterling USD 376 to Sterling College.",
     proof:
@@ -13,8 +12,6 @@ const essentials = [
   },
   {
     title: "You can work from here.",
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
     description:
       "Remote work only works if the internet works. Sterling has multiple internet providers, including Cox, Brightspeed, and MTC.",
     proof:
@@ -34,8 +31,6 @@ const essentials = [
   },
   {
     title: "You can get care close to home.",
-    image:
-      "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
     description:
       "A small-town move needs practical confidence. Sterling has local access to everyday healthcare and wellness providers, with broader regional care available when needed.",
     proof:
@@ -55,7 +50,7 @@ const essentials = [
   },
   {
     title: "You are not cut off.",
-    image: "/images/sterling/hero/sterling-hero-downtown-arial.jpg",
+    image: "/images/sterling/hero/Sterling_Kansas_Skyline.jpg",
     description:
       "Sterling gives you a small-town daily rhythm with broader regional access for larger shopping trips, specialized care, air travel, restaurants, and bigger-city amenities.",
     proof:
@@ -102,7 +97,6 @@ const lifeGains = [
 const nextSteps = [
   {
     title: "See the school and family story",
-    image: "/images/sterling/schools/sterling-schools-grade-school-ididaprob.jpg",
     description:
       "Schools are one of the biggest reasons families choose Sterling. See what that could mean for your kids.",
     href: "/education-family-life",
@@ -118,7 +112,6 @@ const nextSteps = [
   },
   {
     title: "Ask a real local question",
-    image: "/images/sterling/community/sterling-community-play.jpg",
     description:
       "Tell Connect Sterling what you are trying to figure out and we’ll help point you toward the right local contact.",
     href: "/ask-connect-sterling#ask-form",
@@ -138,8 +131,8 @@ export default function MoveHerePage() {
       <section className="relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0">
           <img
-            src="/images/sterling/hero/sterling-hero-downtown-arial.jpg"
-            alt="Aerial view of Sterling showing downtown and surrounding neighborhoods"
+            src="/images/sterling/hero/Sterling_Kansas_Skyline.jpg"
+            alt="Skyline view of Sterling showing town and surrounding neighborhoods"
             className="h-full w-full object-cover opacity-35"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-emerald-950/75 to-amber-900/70" />
@@ -232,16 +225,18 @@ export default function MoveHerePage() {
                 className="group flex h-full overflow-hidden rounded-[2rem] bg-stone-50 shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <article className="flex h-full w-full flex-col">
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
-                </div>
+                  {item.image ? (
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
+                    </div>
+                  ) : null}
 
-                <div className="flex flex-1 flex-col p-6">
+                <div className={`flex flex-1 flex-col ${item.image ? "p-6" : "p-7"}`}>
                   <h3 className="text-xl font-bold text-slate-950 group-hover:text-amber-800">
                     {item.title}
                   </h3>
@@ -362,16 +357,18 @@ export default function MoveHerePage() {
                 className="group flex h-full overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <article className="flex h-full w-full flex-col">
-                <div className="relative h-44 overflow-hidden">
-                  <img
-                    src={step.image}
-                    alt={step.title}
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
-                </div>
+                  {step.image ? (
+                    <div className="relative h-44 overflow-hidden">
+                      <img
+                        src={step.image}
+                        alt={step.title}
+                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
+                    </div>
+                  ) : null}
 
-                <div className="flex flex-1 flex-col p-6">
+                <div className={`flex flex-1 flex-col ${step.image ? "p-6" : "p-7"}`}>
                   <h3 className="text-xl font-bold text-slate-950 group-hover:text-amber-800">
                     {step.title}
                   </h3>

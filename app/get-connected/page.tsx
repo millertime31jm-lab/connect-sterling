@@ -3,7 +3,6 @@ import Link from "next/link";
 const connectionCards = [
   {
     title: "Sign your kids up for sports or activities.",
-    image: "/images/sterling/community/sterling-community-play.jpg",
     description:
       "Sterling Rec is one of the easiest ways for families to plug in. Youth leagues, activities, wellness programs, and community recreation help kids and adults find familiar faces faster.",
     proof:
@@ -13,7 +12,6 @@ const connectionCards = [
   },
   {
     title: "Find swim lessons and pool information.",
-    image: "/images/sterling/community/sterling-community-splashpark.jpg",
     description:
       "Summer in Sterling has a rhythm of pool days, swim lessons, and kids seeing friends outside of school.",
     proof:
@@ -23,7 +21,7 @@ const connectionCards = [
   },
   {
     title: "See what’s happening around town.",
-    image: "/images/sterling/events/sterling-events-mainstreet-market.jpg",
+    image: "/images/sterling/downtown/sterling-downtown-christmas.jpg",
     description:
       "Main Street events, holiday traditions, markets, Warrior Fest, school events, and local gatherings help people move from living near each other to actually knowing each other.",
     proof:
@@ -43,7 +41,7 @@ const connectionCards = [
   },
   {
     title: "Find Sterling College events.",
-    image: "/images/sterling/college/sterling-college-warriorfest.jpg",
+    image: "/images/sterling/college/sterling-college-cooper-hall.jpg",
     description:
       "Sterling College adds athletics, music, theatre, speakers, students, service, and campus activity that spills into community life.",
     proof:
@@ -53,7 +51,6 @@ const connectionCards = [
   },
   {
     title: "Follow school activities and games.",
-    image: "/images/sterling/schools/sterling-schools-band-choir.jpg",
     description:
       "School activities are not just for students. Games, concerts, plays, activities, and celebrations become part of the town’s shared rhythm.",
     proof:
@@ -63,7 +60,6 @@ const connectionCards = [
   },
   {
     title: "Find a church or faith community.",
-    image: "/images/sterling/community/sterling-community-smore-church.jpg",
     description:
       "Churches are part of Sterling’s connective tissue. They support worship, youth activities, meals, service opportunities, and informal care networks.",
     proof:
@@ -73,7 +69,6 @@ const connectionCards = [
   },
   {
     title: "Ask about 5th Quarter or youth activities.",
-    image: "/images/sterling/community/sterling-community-inflatables.jpg",
     description:
       "After big school events, students need safe places to gather. Programs like 5th Quarter give high school students food, games, and time together at no cost.",
     proof:
@@ -83,7 +78,6 @@ const connectionCards = [
   },
   {
     title: "Find a place to volunteer.",
-    image: "/images/sterling/events/sterling-events-outdoor-concert.jpg",
     description:
       "Small towns work best when people participate. Sterling has opportunities to serve through schools, churches, civic groups, events, boards, youth programs, and downtown efforts.",
     proof:
@@ -115,8 +109,8 @@ export default function GetConnectedPage() {
       <section className="relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0">
           <img
-            src="/images/sterling/community/sterling-community-smore-church.jpg"
-            alt="Families gathered together at a Sterling community event"
+            src="/images/sterling/downtown/sterling-downtown-christmas.jpg"
+            alt="Downtown Sterling decorated for a community event"
             className="h-full w-full object-cover opacity-35"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-emerald-950/75 to-amber-900/70" />
@@ -198,16 +192,18 @@ export default function GetConnectedPage() {
                   className="group flex h-full overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
                 >
                   <article className="flex h-full w-full flex-col">
-                    <div className="relative h-48 overflow-hidden">
-                      <img
-                        src={card.image}
-                        alt={card.title}
-                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
-                    </div>
+                    {card.image ? (
+                      <div className="relative h-48 overflow-hidden">
+                        <img
+                          src={card.image}
+                          alt={card.title}
+                          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
+                      </div>
+                    ) : null}
 
-                    <div className="flex flex-1 flex-col p-6">
+                    <div className={`flex flex-1 flex-col ${card.image ? "p-6" : "p-7"}`}>
                       <h3 className="text-xl font-bold text-slate-950 group-hover:text-amber-800">
                         {card.title}
                       </h3>
@@ -230,14 +226,7 @@ export default function GetConnectedPage() {
       </section>
 
       <section className="relative overflow-hidden bg-slate-950 text-white">
-        <div className="absolute inset-0">
-          <img
-            src="/images/sterling/events/sterling-events-outdoor-concert.jpg"
-            alt="Sterling residents gathered at an outdoor community event"
-            className="h-full w-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/85 to-emerald-950/80" />
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/85 to-emerald-950/80" />
 
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div>

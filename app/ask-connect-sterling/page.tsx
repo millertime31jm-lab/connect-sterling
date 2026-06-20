@@ -47,8 +47,8 @@ export default function AskConnectSterlingPage() {
       <section className="relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1800&q=80"
-            alt="People gathered around a table"
+            src="/images/sterling/hero/Sterling_Kansas_Skyline.jpg"
+            alt="Skyline view of Sterling"
             className="h-full w-full object-cover opacity-30"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-emerald-950/75 to-amber-900/70" />

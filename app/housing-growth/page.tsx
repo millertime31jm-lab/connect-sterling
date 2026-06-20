@@ -44,6 +44,14 @@ const housingPaths = [
         href: "https://timberoaksrealty.com/",
       },
       {
+        label:
+          "Berkshire Hathaway HomeServices Preferred Real Estate - Cylia LaTourell",
+        note:
+          "Local real estate resource for homes, agents, and buying opportunities in Sterling and the surrounding area.",
+        href: "https://cylielatourell.bhhspfrconnectks.com/",
+        ctaLabel: "Visit site",
+      },
+      {
         label: "Homes.com Sterling agent list",
         note:
           "Public list of agents serving Sterling, including agents with Sterling sales history.",
@@ -331,7 +339,7 @@ export default function HousingGrowthPage() {
                             {resource.note}
                           </p>
                           <span className="mt-3 inline-flex text-sm font-semibold text-emerald-800">
-                            Visit resource →
+                            {resource.ctaLabel ?? "Visit resource"} {"->"}
                           </span>
                         </Link>
                       );

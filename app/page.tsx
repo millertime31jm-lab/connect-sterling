@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { homepagePhotoStrip, sterlingHeroPhotos } from "@/data/sterlingPhotos";
+import { sterlingHeroPhotos } from "@/data/sterlingPhotos";
 
 const lifeGains = [
   "More dinners around the table",
@@ -139,31 +139,7 @@ export default function Home() {
                   ))}
                 </div>
 
-                <div className="mt-6 grid grid-cols-3 gap-3">
-                  {homepagePhotoStrip.map((photo) => (
-                    <figure
-                      key={photo.src}
-                      className="overflow-hidden rounded-2xl ring-1 ring-stone-200"
-                    >
-                      <div className="relative aspect-[4/5]">
-                        <Image
-                          src={photo.src}
-                          alt={photo.alt}
-                          fill
-                          sizes="(min-width: 1024px) 12rem, 30vw"
-                          className="object-cover"
-                        />
-                      </div>
-                    </figure>
-                  ))}
-                </div>
 
-                <Link
-                  href="/picture-sterling"
-                  className="mt-6 inline-flex text-sm font-bold text-emerald-800 transition hover:text-emerald-900"
-                >
-                  Picture life in Sterling →
-                </Link>
               </div>
             </div>
           </div>

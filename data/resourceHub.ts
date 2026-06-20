@@ -102,6 +102,15 @@ export const resourceCategories: ResourceCategory[] = [
         tag: "Real estate",
       },
       {
+        name:
+          "Berkshire Hathaway HomeServices Preferred Real Estate - Cylia LaTourell",
+        description:
+          "Real estate resource for home listings, agents, and buying support in Sterling and the surrounding area.",
+        href: "https://cylielatourell.bhhspfrconnectks.com/",
+        buttonLabel: "Visit site",
+        tag: "Real Estate",
+      },
+      {
         name: "Homes.com Sterling agent list",
         description: "Public agent directory for the Sterling market.",
         href: "https://www.homes.com/real-estate-agents/sterling-ks/",

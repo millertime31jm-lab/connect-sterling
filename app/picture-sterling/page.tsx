@@ -5,10 +5,14 @@ import { pictureSterlingSections, sterlingHeroPhotos } from "@/data/sterlingPhot
 export const metadata = {
   title: "Picture Sterling | Connect Sterling",
   description:
-    "Picture life in Sterling through schools, sports, downtown, the lake, community events, college life, and the ordinary moments that make the town feel like home.",
+    "Picture Sterling through approved downtown, campus, lake, housing, and place-based photos from around town.",
 };
 
 export default function PictureSterlingPage() {
+  const activeSections = pictureSterlingSections.filter(
+    (section) => section.photos.length > 0,
+  );
+
   return (
     <main className="bg-stone-50 text-slate-950">
       <section className="relative overflow-hidden bg-slate-950 text-white">
@@ -33,9 +37,9 @@ export default function PictureSterlingPage() {
               Picture life in Sterling.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-100 sm:text-xl">
-              Sterling is best understood through ordinary moments: school mornings,
-              game nights, Main Street, the lake, college life, community events, and
-              neighbors showing up for each other.
+              Sterling is best understood through the places people move through every
+              week: Main Street, the lake, neighborhoods, campus, and the town spaces
+              that shape daily life.
             </p>
           </div>
         </div>
@@ -52,14 +56,12 @@ export default function PictureSterlingPage() {
           <div className="space-y-5 text-lg leading-8 text-slate-700">
             <p>
               A move to Sterling is not sold by one big attraction. It is built out of
-              the smaller things families live inside every week: drop-off, practice,
-              a walk downtown, a game, a church meal, a trip to the lake, or a college
-              event that gives the town a little extra energy.
+              the smaller things families live inside every week: a walk downtown, a
+              trip to the lake, a drive through town, a neighborhood you can imagine
+              living in, or a campus that adds another layer of activity.
             </p>
             <p>
-              These photos are here to help you picture the kind of life people are
-              talking about when they say Sterling feels friendlier, safer, calmer, and
-              more connected.
+              We&apos;re refreshing this gallery with photos approved for community use.
             </p>
           </div>
         </div>
@@ -67,10 +69,14 @@ export default function PictureSterlingPage() {
 
       <section className="bg-stone-50">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+          <div className="rounded-[2rem] bg-white p-6 shadow-sm ring-1 ring-stone-200">
+            <p className="text-sm leading-6 text-slate-700">
+              We&apos;re refreshing this gallery with photos approved for community use.
+            </p>
+          </div>
+
           <div className="space-y-16">
-            {pictureSterlingSections
-              .filter((section) => section.photos.length > 0)
-              .map((section) => (
+            {activeSections.map((section) => (
                 <section key={section.id} aria-labelledby={section.id}>
                   <div className="max-w-3xl">
                     <h2

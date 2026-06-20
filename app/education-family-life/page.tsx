@@ -3,7 +3,6 @@ import Link from "next/link";
 const educationPath = [
   {
     title: "Start with childcare.",
-    image: "/images/sterling/people/sterling-people-kids-playing.jpg",
     description:
       "For young families, childcare can decide whether a move is even possible. Lil Cub Childcare gives Sterling an important local foundation for early childhood care.",
     proof:
@@ -13,7 +12,6 @@ const educationPath = [
   },
   {
     title: "Choose schools where your kids can be known.",
-    image: "/images/sterling/schools/sterling-schools-grade-school-ididaprob.jpg",
     description:
       "Sterling USD 376 gives students a place to learn, compete, perform, lead, and grow up around adults who know more than just their name on a roster.",
     proof:
@@ -59,7 +57,6 @@ const schoolStats = [
 const sportsHighlights = [
   {
     title: "Boys Basketball",
-    image: "/images/sterling/sports/sterling-sports-basketball-champions-1.jpg",
     description:
       "Basketball is part of Sterling’s winter heartbeat. Sterling boys basketball has built one of the strongest recent small-school runs in Kansas.",
     whyItMatters:
@@ -69,7 +66,6 @@ const sportsHighlights = [
   },
   {
     title: "Football",
-    image: "/images/sterling/sports/sterling-sports-football.JPG",
     description:
       "Football nights bring Sterling together: students, parents, grandparents, alumni, younger kids, and neighbors under the lights.",
     whyItMatters:
@@ -79,7 +75,6 @@ const sportsHighlights = [
   },
   {
     title: "Tennis",
-    image: "/images/sterling/sports/sterling-sports-jr-high-tennis.jpg",
     description:
       "Sterling’s athletic story is not limited to one or two headline sports. Tennis is part of the broader championship culture.",
     whyItMatters:
@@ -89,7 +84,6 @@ const sportsHighlights = [
   },
   {
     title: "Track & Field",
-    image: "/images/sterling/sports/sterling-sports-track.jpg",
     description:
       "Track and field gives students many ways to compete: speed, endurance, jumps, throws, relays, discipline, and personal growth.",
     whyItMatters:
@@ -99,8 +93,6 @@ const sportsHighlights = [
   },
   {
     title: "Girls Basketball",
-    image: "/images/sterling/sports/sterling-sports-basketball-girls-1.jpg",
-    alt: "Sterling girls basketball players in action during a game",
     description:
       "Sterling’s competitive culture extends across boys and girls programs, giving daughters and sons alike a chance to be part of strong teams.",
     whyItMatters:
@@ -110,7 +102,6 @@ const sportsHighlights = [
   },
   {
     title: "More Ways to Compete",
-    image: "/images/sterling/sports/sterling-sports-volleyball.JPG",
     description:
       "Students can explore sports like cross country, volleyball, wrestling, baseball, softball, golf, soccer, cheer, and more.",
     whyItMatters:
@@ -123,7 +114,6 @@ const sportsHighlights = [
 const activityCards = [
   {
     title: "Forensics",
-    image: "/images/sterling/schools/sterling-schools-forensics-champions.jpg",
     description:
       "Sterling is not small when it comes to competitive speech. Sterling High School’s forensics tradition includes 30 state titles.",
     whyItMatters:
@@ -133,8 +123,6 @@ const activityCards = [
   },
   {
     title: "Debate",
-    image: "/images/sterling/schools/sterling-schools-debate.jpg",
-    alt: "Sterling students competing in a debate event",
     description:
       "Sterling’s debate tradition gives students a serious intellectual competition outlet in a small-school setting.",
     whyItMatters:
@@ -144,7 +132,6 @@ const activityCards = [
   },
   {
     title: "Fine Arts & Performing Arts",
-    image: "/images/sterling/schools/sterling-schools-band-choir.jpg",
     description:
       "Sterling students have opportunities in band, vocal music, theatre, performing arts, and creative expression.",
     whyItMatters:
@@ -154,7 +141,6 @@ const activityCards = [
   },
   {
     title: "Science Olympiad & Quiz Bowl",
-    image: "/images/sterling/schools/sterling-schools-grade-school-1.jpg",
     description:
       "Students who love problem-solving, knowledge, and challenge can find academic competition through programs like Science Olympiad and Quiz Bowl.",
     whyItMatters:
@@ -164,7 +150,6 @@ const activityCards = [
   },
   {
     title: "FFA, FBLA & Student Organizations",
-    image: "/images/sterling/schools/sterling-schools-prom-2.JPG",
     description:
       "Students can build leadership and real-world skills through organizations like FFA, FBLA, FCCLA, student leadership, and service activities.",
     whyItMatters:
@@ -174,7 +159,6 @@ const activityCards = [
   },
   {
     title: "Music, Theatre & School Events",
-    image: "/images/sterling/schools/sterling-schools-band.jpg",
     description:
       "Concerts, plays, performances, and school events give students more ways to be seen and give families more reasons to gather.",
     whyItMatters:
@@ -214,8 +198,8 @@ export default function EducationFamilyLifePage() {
       <section className="relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0">
           <img
-            src="/images/sterling/schools/sterling-schools-grade-school-1.jpg"
-            alt="Students gathered on school grounds in Sterling"
+            src="/images/sterling/college/sterling-college-cooper-hall.jpg"
+            alt="Cooper Hall at Sterling College"
             className="h-full w-full object-cover opacity-35"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-emerald-950/75 to-amber-900/70" />
@@ -308,16 +292,18 @@ export default function EducationFamilyLifePage() {
                   className="group flex h-full overflow-hidden rounded-[2rem] bg-stone-50 shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
                 >
                   <article className="flex h-full w-full flex-col">
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
-                  </div>
+                    {item.image ? (
+                      <div className="relative h-48 overflow-hidden">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
+                      </div>
+                    ) : null}
 
-                  <div className="flex flex-1 flex-col p-6">
+                  <div className={`flex flex-1 flex-col ${item.image ? "p-6" : "p-7"}`}>
                     <h3 className="text-xl font-bold text-slate-950 group-hover:text-amber-800">
                       {item.title}
                     </h3>
@@ -407,18 +393,9 @@ export default function EducationFamilyLifePage() {
                   href={card.href}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noreferrer" : undefined}
-                  className="group overflow-hidden rounded-[2rem] bg-stone-50 shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
+                  className="group rounded-[2rem] bg-gradient-to-br from-stone-50 to-white p-6 shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={card.image}
-                      alt={card.alt ?? card.title}
-                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
-                  </div>
-
-                  <div className="p-6">
+                  <div>
                     <h3 className="text-xl font-bold text-slate-950 group-hover:text-amber-800">
                       {card.title}
                     </h3>
@@ -467,18 +444,9 @@ export default function EducationFamilyLifePage() {
                   href={card.href}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noreferrer" : undefined}
-                  className="group overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
+                  className="group rounded-[2rem] bg-white p-6 shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <div className="relative h-44 overflow-hidden">
-                    <img
-                      src={card.image}
-                      alt={card.alt ?? card.title}
-                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
-                  </div>
-
-                  <div className="p-6">
+                  <div>
                     <h3 className="text-xl font-bold text-slate-950 group-hover:text-amber-800">
                       {card.title}
                     </h3>
@@ -512,14 +480,7 @@ export default function EducationFamilyLifePage() {
       </section>
 
       <section className="relative overflow-hidden bg-slate-950 text-white">
-        <div className="absolute inset-0">
-          <img
-            src="/images/sterling/people/sterling-people-kids-playing.jpg"
-            alt="Children playing together in Sterling"
-            className="h-full w-full object-cover opacity-25"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/85 to-emerald-950/80" />
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/85 to-emerald-950/80" />
 
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
