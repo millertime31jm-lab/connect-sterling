@@ -45,7 +45,7 @@ const housingPaths = [
       },
       {
         label:
-          "Berkshire Hathaway HomeServices Preferred Real Estate - Cylia LaTourell",
+          "Berkshire Hathaway HomeServices Preferred Real Estate - Cylie LaTourell",
         note:
           "Local real estate resource for homes, agents, and buying opportunities in Sterling and the surrounding area.",
         href: "https://cylielatourell.bhhspfrconnectks.com/",
