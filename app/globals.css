@@ -22,3 +22,8 @@ body {
   background: #d7b46a;
   color: #17352f;
 }
+
+@keyframes golden-ticket-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

@@ -7,6 +7,7 @@ const mainLinks = [
   { label: "Picture Sterling", href: "/picture-sterling" },
   { label: "Housing & Growth", href: "/housing-growth" },
   { label: "Get Connected", href: "/get-connected" },
+  { label: "Golden Ticket Events", href: "/goldenticket" },
   { label: "Community Calendar Hub", href: "/community-calendar" },
   { label: "Resources", href: "/resources" },
 ];
@@ -17,7 +18,6 @@ const localLinks = [
   { label: "USD 376", href: "https://www.usd376.com/" },
   { label: "Sterling College", href: "https://www.sterling.edu/" },
   { label: "Sterling Recreation Commission", href: "https://sterlingrec.org/" },
-  { label: "Golden Ticket", href: "https://www.sterlinggoldenticket.com" },
 ];
 
 export default function Footer() {

@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/picture-sterling", priority: 0.85, changeFrequency: "monthly" as const },
     { path: "/housing-growth", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "/get-connected", priority: 0.85, changeFrequency: "weekly" as const },
+    { path: "/goldenticket", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "/community-calendar", priority: 0.75, changeFrequency: "weekly" as const },
     { path: "/resources", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/ask-connect-sterling", priority: 0.9, changeFrequency: "monthly" as const },
