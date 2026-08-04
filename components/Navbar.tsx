@@ -5,6 +5,7 @@ const navItems = [
   { label: "Move Here", href: "/move-here", kind: "story" },
   { label: "Education & Family Life", href: "/education-family-life", kind: "story" },
   { label: "Housing & Growth", href: "/housing-growth", kind: "story" },
+  { label: "Golden Ticket", href: "/goldenticket", kind: "story" },
   { label: "Get Connected", href: "/get-connected", kind: "utility" },
   { label: "Resources", href: "/resources", kind: "utility" },
 ];
@@ -22,7 +23,7 @@ export default function Navbar() {
           </div>
         </Link>
 
-        <div className="hidden items-center gap-5 lg:flex">
+        <div className="hidden items-center gap-5 xl:flex">
           {navItems.map((item) =>
             item.href === "/get-connected" ? (
               <div key={item.href} className="group relative">
@@ -67,7 +68,7 @@ export default function Navbar() {
         </Link>
       </nav>
 
-      <div className="border-t border-stone-100 bg-stone-50 lg:hidden">
+      <div className="border-t border-stone-100 bg-stone-50 xl:hidden">
         <div className="mx-auto flex max-w-7xl gap-4 overflow-x-auto px-4 py-3 sm:px-6">
           {navItems.map((item) => (
             <Link
@@ -82,12 +83,6 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href="/goldenticket"
-            className="shrink-0 rounded-full bg-amber-100 px-3 py-1.5 text-sm font-semibold text-amber-950 ring-1 ring-amber-300"
-          >
-            Golden Ticket Events
-          </Link>
           <Link
             href="/ask-connect-sterling#ask-form"
             className="shrink-0 text-sm font-bold text-emerald-800"
