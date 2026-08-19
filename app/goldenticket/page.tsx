@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import EventGallery from "./EventGallery";
 
-const singleTicketUrl = "https://buy.stripe.com/3clfZgcF2e4ng1z5vD6Zy02";
+const singleTicketUrl = "https://buy.stripe.com/7sY3cu0Wk6BV9Db5vD6Zy00";
 const individualSubscriptionUrl = "#pricing";
 const couplesSubscriptionUrl = "https://url8931.mailer.zeffy.com/ls/click?upn=u001.7cq20uXr5lGk8D7lfBpXB1eldth7kKWxbtp0TTXJxHHEVih0jTZkghfD-2Fh2v7D-2F3VeY96qRGwl6vNqemy7YmLUTMcP44iOAiAvhFpZz4km-2FXMCBkD8XYtjAOIMQTN2tMI56j52JpjW4bFh4m1tCVpQ-3D-3DKxXt_WfYHBNAWFN-2BaD4DmPOAzWZ-2Fl46kueL2heXD6O6yJAh6YUbMg-2FW0ls3KXO1tjt-2FDx3l-2FgtLOTqxEUhHtJhZ-2BgTk-2FaVXWfI-2FKPQZJin7DOyGdWOV8NKT3ok1ewSbhEaS3IlDNvMnq4bjYLZWDdy-2FeiqH2loaeM-2FinRXqelRUwutInhPrPp8ZHT3GnmuAP4UzAuZwe6Xj-2BhEXaZTgqsA-2Fc1yTOs2n1w4BubPrZKZSBS15lDOggblZniCW7MH2EIYMU59UBWG1gI8UAVmnfSXGSsr7qmWXqPA18LvRiIC7Pc8Gef-2FIlefOYESz54099Ok6FX4ITncGXUoB-2FR-2Btd2nihIQ3DDwqujyLR1szlSUwvQ-2BOtF1W924GAFZNn8ydkD9CEliVXcZ1wAqpFqXXvAys5sxgNCzu3YQd08VeRyjxpHkiNUgCCA-2BqcmXQieT4RFwG8ISPpYIKkGYHV-2FVBveM1764w-3D-3D";
 const imageRoot = "/images/sterling/golden ticket";
