@@ -8,10 +8,10 @@ const couplesSubscriptionUrl = "https://url8931.mailer.zeffy.com/ls/click?upn=u0
 const imageRoot = "/images/sterling/golden ticket";
 
 const eventFeatures = [
-  ["01", "All-Inclusive Food & Craft Beverages", "Top-tier catered food and curated drinks are fully covered with your admission. No hidden costs or cash bar inside."],
-  ["02", "1920s Attire Optional", "Dress the part in prohibition speakeasy style if you'd like, or come comfortably as you are!"],
-  ["03", "Card Games & Beginner Instruction", "Classic parlor card games all night. Never played? Don't worry—we'll teach you the ropes at the table!"],
-  ["04", "Secret Location & Password Access", "Because it's a true speakeasy, the location remains off the grid. The venue address and secret entry password are sent 48 hours before doors open."],
+  ["01", "Memorable Food", "A fall evening built around food worth slowing down for, served in the warm atmosphere of Clive’s."],
+  ["02", "Distinctive Drinks", "Raise a stein and enjoy craft beverages selected to match the Oktoberfest feel of the night."],
+  ["03", "Authentic Fall Atmosphere", "A seasonal gathering with the kind of details, setting, and hospitality that make Golden Ticket events feel different."],
+  ["04", "Local Connection", "An unhurried evening to sit with friends, meet new people, and cultivate the community we want Sterling to be known for."],
 ];
 
 const subscriberBenefits = [
@@ -23,16 +23,16 @@ const subscriberBenefits = [
 
 const faqs = [
   ["What is included with my Golden Ticket?", "Everything! Your ticket covers full event entry, gourmet catered food, craft alcoholic and non-alcoholic beverages, themed decor, and entertainment. You never need to spend additional money inside the venue."],
-  ["What if I don't know how to play poker or blackjack at the Speakeasy?", "Don't worry at all! We will have friendly hosts on site teaching game rules step-by-step at the tables. Whether you're a seasoned player or a complete beginner, you will feel right at home."],
-  ["Do I have to dress in 1920s speakeasy attire?", "Dressing in 1920s/prohibition attire is welcomed and encouraged for fun, but it is completely optional. Wear whatever makes you feel comfortable!"],
-  ["Why don't I know the exact event location yet?", "To keep our Prohibition Speakeasy exclusive and authentic, the exact Sterling address and secret entry password are emailed directly to ticket holders 48 hours before doors open."],
+  ["What should I expect at Oktoberfest?", "Expect a relaxed fall evening at Clive’s with memorable food, distinctive drinks, and plenty of time to connect with friends and neighbors."],
+  ["Do I need to dress in Oktoberfest attire?", "Oktoberfest-inspired attire is welcome if you want to have fun with the theme, but it is not required. Come comfortable and ready for a good evening."],
+  ["Where is the event?", "This month’s Golden Ticket event will be held at Clive’s in Sterling, Kansas. The event begins at 6:30 PM."],
   ["How does subscription billing work?", "Subscribers are automatically billed ($52 for single, $104 for couples) before each bi-monthly event cycle. You can log into your account or contact us to pause or cancel anytime with one click."],
   ["Who operates Sterling Golden Ticket?", "Golden Ticket events are designed and hosted by The Sterling Collective in Sterling, Kansas, as part of our mission to build strong local community and meaningful connection."],
 ];
 
 export const metadata: Metadata = {
-  title: "Golden Ticket Events",
-  description: "Curated bi-monthly adult social experiences from The Sterling Collective in Sterling, Kansas, with catered food, craft drinks, and genuine connection.",
+  title: "Golden Ticket Oktoberfest",
+  description: "Join The Sterling Collective for Happy Fall, Y’all: an Oktoberfest-inspired Golden Ticket evening at Clive’s in Sterling, Kansas on Saturday, October 17.",
 };
 
 function TicketLink({ children, href = singleTicketUrl, variant = "gold" }: { children: React.ReactNode; href?: string; variant?: "gold" | "outline" | "dark" }) {
@@ -53,7 +53,7 @@ export default function GoldenTicketPage() {
         <div className="absolute -right-36 bottom-0 -z-10 h-[28rem] w-[28rem] rotate-45 border border-amber-300/10" />
         <div className="mx-auto flex max-w-6xl flex-col items-center px-5 py-16 text-center sm:px-8 sm:py-24 lg:py-28">
           <Image src={`${imageRoot}/the.sterling.collective.logo.png`} alt="The Sterling Collective" width={440} height={444} priority className="mb-9 h-[180px] w-[180px] rounded-[2.5rem] object-cover shadow-2xl ring-1 ring-white/10 sm:h-[220px] sm:w-[220px]" />
-          <p className="rounded-full border border-amber-300/50 bg-amber-300/10 px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-amber-200 sm:text-xs sm:tracking-[0.22em]">Our next event: Prohibition Speakeasy • Saturday, August 22nd</p>
+          <p className="rounded-full border border-amber-300/50 bg-amber-300/10 px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-amber-200 sm:text-xs sm:tracking-[0.22em]">Our next event: Oktoberfest • Saturday, October 17</p>
           <h1 className="mt-7 max-w-5xl text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">A Community with Unique Experiences. Experience the Golden Ticket.</h1>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-stone-200 sm:text-xl">Curated adult social experiences hosted bi-monthly by The Sterling Collective in Sterling, Kansas. Premium catered food, craft drinks, themed atmospheres, and genuine local connection.</p>
           <div className="mt-10 flex w-full max-w-xl flex-col gap-3 sm:flex-row sm:justify-center">
@@ -67,10 +67,12 @@ export default function GoldenTicketPage() {
       <section id="next-event" className="scroll-mt-28 bg-[#f7f1e4]">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:py-28">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-amber-800">Our next event</p>
-            <h2 className="mt-4 max-w-3xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl">Prohibition Speakeasy &amp; Card Parlor</h2>
-            <p className="mt-4 text-sm font-bold uppercase tracking-[0.18em] text-amber-800">Saturday, August 22nd</p>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-700">Step back into the Roaring Twenties for an exclusive Prohibition-era speakeasy night right here in Sterling. Expect a hidden atmosphere, high-stakes charm, and an unhurried night out with classic card games like poker and blackjack.</p>
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-amber-800">The Fall Collective Golden Ticket Event</p>
+            <h2 className="mt-4 max-w-3xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl">Oktoberfest</h2>
+            <p className="mt-4 text-2xl font-semibold text-amber-800">Happy Fall, Y’all</p>
+            <p className="mt-4 text-sm font-bold uppercase tracking-[0.18em] text-amber-800">Saturday, October 17</p>
+            <p className="mt-3 text-sm font-bold text-amber-800">6:30 PM · Clive’s · Sterling, KS</p>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-700">Raise a stein with friends and savor an evening designed around memorable food, distinctive drinks, and the connections that cultivate our community.</p>
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
               {eventFeatures.map(([number, title, description]) => (
                 <article key={title} className="rounded-3xl border border-amber-900/10 bg-white p-6 shadow-sm">
@@ -81,7 +83,7 @@ export default function GoldenTicketPage() {
               ))}
             </div>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <TicketLink href={singleTicketUrl}>Reserve Single Ticket ($65)</TicketLink>
+              <TicketLink href={singleTicketUrl}>Reserve Event Pass ($65)</TicketLink>
               <TicketLink href="#pricing" variant="dark">Reserve Couple Pass ($130)</TicketLink>
               <TicketLink href="#pricing" variant="dark">Lock In $52 Subscriber Rate</TicketLink>
             </div>
@@ -89,12 +91,12 @@ export default function GoldenTicketPage() {
           <div className="lg:sticky lg:top-28">
             <div className="overflow-hidden rounded-[2rem] border border-amber-900/15 bg-[#111916] p-3 shadow-2xl shadow-slate-950/20">
               <div className="overflow-hidden rounded-[1.4rem] bg-slate-900">
-                <div className="relative aspect-[4/3]">
-                <Image src={`${imageRoot}/speakeasy.night.graphic.png`} alt="Prohibition Speakeasy Night event graphic" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" />
+                <div className="relative aspect-[1206/1705]">
+                <Image src="/images/goldenticket/oktoberfest-2026.jpeg" alt="Happy Fall, Y’all Oktoberfest Golden Ticket event flyer for Saturday, October 17 at Clive’s in Sterling, Kansas" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-contain" />
                 </div>
                 <div className="px-6 py-6 text-white">
                   <p className="text-xs font-bold uppercase tracking-[0.22em] text-amber-300">The Sterling Collective</p>
-                  <p className="mt-2 text-2xl font-bold">Your invitation is waiting.</p>
+                  <p className="mt-2 text-2xl font-bold">Claim Your Golden Ticket</p>
                 </div>
               </div>
             </div>
@@ -163,8 +165,8 @@ export default function GoldenTicketPage() {
               <p className="text-xs font-bold uppercase tracking-[0.22em] text-amber-800">Individual pass</p>
               <h3 className="mt-4 text-3xl font-bold">Single Event Pass</h3>
               <div className="mt-7 flex items-end gap-3 border-b border-slate-200 pb-7"><span className="text-6xl font-bold tracking-tight">$65</span><span className="pb-2 text-sm text-slate-500">single event admission</span></div>
-              <FeatureList items={["Single entry to upcoming Prohibition Speakeasy event", "All-inclusive food & craft beverages included", "Subject to remaining ticket availability"]} />
-              <div className="mt-9"><TicketLink href={singleTicketUrl} variant="dark">Purchase Speakeasy Pass ($65)</TicketLink></div>
+              <FeatureList items={["Single entry to upcoming Oktoberfest event", "All-inclusive food & craft beverages included", "Subject to remaining ticket availability"]} />
+              <div className="mt-9"><TicketLink href={singleTicketUrl} variant="dark">Purchase Oktoberfest Pass ($65)</TicketLink></div>
             </article>
           </div>
         </div>
